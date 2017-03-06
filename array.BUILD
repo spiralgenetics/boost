@@ -19,15 +19,15 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/detail/workaround.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/swap.hpp:
+        # Because of boost/detail/iterator.hpp:
         "@boost_core//:headers_only",
         # Because of boost/functional/hash_fwd.hpp:
         "@boost_functional//:headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
     ],
 )

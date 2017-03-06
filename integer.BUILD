@@ -39,7 +39,7 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",

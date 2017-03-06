@@ -117,28 +117,28 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/transform.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/preprocessor/iteration/iterate.hpp:
+        # Because of boost/preprocessor/repetition/enum.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/utility/declval.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/mpl/size.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/type_traits/remove_cv.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/iterator/iterator_categories.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/make_shared.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/fusion/include/sequence_facade.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/iterator/iterator_categories.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/fusion/include/category_of.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/make_shared.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/typeof/typeof.hpp:
+        "@boost_typeof//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/align/align.hpp:

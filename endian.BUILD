@@ -39,17 +39,17 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/predef/detail/endian_compat.h:
-        "@boost_predef//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/core/scoped_enum.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/predef/detail/endian_compat.h:
+        "@boost_predef//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/type_traits/is_signed.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/current_function.hpp:
+        # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
         # Because of boost/system/api_config.hpp:
         "@boost_system//:headers_only",

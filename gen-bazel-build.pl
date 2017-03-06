@@ -187,6 +187,10 @@ copts=[";
     if ($lib eq 'python') {
 	print BUILD "linkopts=[\"-lpython2.7\"],\n";
     }
+    if ($lib eq 'thread') {
+	print BUILD "linkopts=[\"-lpthread\"],\n";
+    }
+
     print BUILD "
 hdrs=[";
     print BUILD &quoted_list(keys %{$inc_files{$lib}});

@@ -85,40 +85,40 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/remove_const.hpp:
+        # Because of boost/type_traits/is_convertible.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/utility/result_of.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/mpl/not.hpp:
+        # Because of boost/mpl/bool.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/iterator.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/concept_archetype.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/detail/numeric_traits.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/none.hpp:
         "@boost_optional//:headers_only",
-        # Because of boost/function_types/is_function_reference.hpp:
-        "@boost_function_types//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/function_types/is_function_pointer.hpp:
+        "@boost_function_types//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/detail/iterator.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/next_prior.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/concept_archetype.hpp:
+        "@boost_concept_check//:headers_only",
         # Because of boost/implicit_cast.hpp:
         "@boost_conversion//:headers_only",
+        # Because of boost/detail/numeric_traits.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",
+        # Because of boost/preprocessor/cat.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
         # Because of boost/predef.h:

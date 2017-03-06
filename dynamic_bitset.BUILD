@@ -29,18 +29,18 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/pending/integer_log2.hpp:
+        "@boost_integer//:headers_only",
         # Because of boost/utility/addressof.hpp:
         "@boost_core//:headers_only",
         # Because of boost/move/move.hpp:
         "@boost_move//:headers_only",
-        # Because of boost/limits.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/pending/integer_log2.hpp:
-        "@boost_integer//:headers_only",
         # Because of boost/current_function.hpp:
         "@boost_assert//:headers_only",
     ],

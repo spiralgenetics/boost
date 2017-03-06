@@ -143,13 +143,13 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/and.hpp:
+        # Because of boost/cstdint.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/mpl/protect.hpp:
         "@boost_mpl//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/preprocessor/dec.hpp:
+        # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
     ],
 )

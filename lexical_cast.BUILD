@@ -45,32 +45,32 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/type_traits/ice.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/limits.hpp:
         "@boost_config//:headers_only",
         # Because of boost/range/iterator_range_core.hpp:
         "@boost_range//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/ice.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
         # Because of boost/container/container_fwd.hpp:
         "@boost_container//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/numeric/conversion/cast.hpp:
-        "@boost_numeric_conversion//:headers_only",
         # Because of boost/integer.hpp:
         "@boost_integer//:headers_only",
         # Because of boost/noncopyable.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/math/special_functions/sign.hpp:
         "@boost_math//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
         # Because of boost/iterator/iterator_traits.hpp:
         "@boost_iterator//:headers_only",
         # Because of boost/functional/hash_fwd.hpp:
@@ -81,9 +81,9 @@ cc_library(
         "@boost_detail//:headers_only",
         # Because of boost/detail/endian.hpp:
         "@boost_predef//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
         # Because of boost/utility.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
     ],
 )

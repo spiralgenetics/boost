@@ -77,35 +77,35 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/type_traits/is_pointer.hpp:
-        "@boost_type_traits//:headers_only",
         # Because of boost/intrusive_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/mpl/equal_to.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/noncopyable.hpp:
-        "@boost_core//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/polymorphic_cast.hpp:
         "@boost_conversion//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/noncopyable.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/detail/allocator_utilities.hpp:
         "@boost_detail//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/thread/mutex.hpp:
-        "@boost_thread//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
+        # Because of boost/thread/condition.hpp:
+        "@boost_thread//:headers_only",
         # Because of boost/function/function0.hpp:
         "@boost_function//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/preprocessor/stringize.hpp:
+        # Because of boost/preprocessor/inc.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/chrono/system_clocks.hpp:
+        # Because of boost/chrono/ceil.hpp:
         "@boost_chrono//:headers_only",
         # Because of boost/date_time/posix_time/conversion.hpp:
         "@boost_date_time//:headers_only",

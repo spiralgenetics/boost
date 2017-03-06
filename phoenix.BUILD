@@ -665,36 +665,36 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
+        # Because of boost/preprocessor/repetition/repeat_from_to.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/mpl/int.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/proto/transform/lazy.hpp:
         "@boost_proto//:headers_only",
+        # Because of boost/fusion/algorithm/iteration/for_each.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/visit_each.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/type_traits/remove_pointer.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/mpl/eval_if.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/fusion/include/transform.hpp:
-        "@boost_fusion//:headers_only",
         # Because of boost/range/result_iterator.hpp:
         "@boost_range//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/version.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/is_placeholder.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/noncopyable.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/utility/result_of.hpp:
+        # Because of boost/call_traits.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/intrusive_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
         # Because of boost/detail/container_fwd.hpp:
         "@boost_detail//:headers_only",
+        # Because of boost/is_placeholder.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/intrusive_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/function.hpp:
         "@boost_function//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
         # Because of boost/static_assert.hpp:

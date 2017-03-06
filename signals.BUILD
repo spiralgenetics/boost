@@ -71,36 +71,36 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        # Because of boost/smart_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/function/function2.hpp:
-        "@boost_function//:headers_only",
         # Because of boost/noncopyable.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/any.hpp:
-        "@boost_any//:headers_only",
-        # Because of boost/operators.hpp:
-        "@boost_utility//:headers_only",
+        # Because of boost/function/function2.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/smart_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/type_traits.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/iterator/iterator_facade.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/config/auto_link.hpp:
+        # Because of boost/any.hpp:
+        "@boost_any//:headers_only",
+        # Because of boost/operators.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/mpl/and.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/current_function.hpp:
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/preprocessor/cat.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/preprocessor/list/for_each_i.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/detail/indirect_traits.hpp:
         "@boost_detail//:headers_only",
         # Because of boost/move/utility_core.hpp:

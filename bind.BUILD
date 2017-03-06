@@ -55,7 +55,7 @@ cc_library(
         ":headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/ref.hpp:
+        # Because of boost/get_pointer.hpp:
         "@boost_core//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",

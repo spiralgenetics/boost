@@ -203,23 +203,23 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/move/utility_core.hpp:
-        "@boost_move//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/move/utility_core.hpp:
+        "@boost_move//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/core/no_exceptions_support.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_functional//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_functional//:headers_only",
         # Because of boost/type_traits/is_integral.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/integer/static_log2.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/preprocessor/repetition/repeat_from_to.hpp:
+        # Because of boost/preprocessor/repetition/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/detail/container_fwd.hpp:
         "@boost_detail//:headers_only",

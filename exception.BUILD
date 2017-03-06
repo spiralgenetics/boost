@@ -75,8 +75,8 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_throw_exception//:throw_exception",
         "@boost_smart_ptr//:smart_ptr",
+        "@boost_throw_exception//:throw_exception",
         "@boost_config//:config",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
@@ -90,14 +90,14 @@ cc_library(
         "@boost_core//:headers_only",
         # Because of boost/type_traits/type_with_alignment.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/preprocessor/list/for_each_i.hpp:
+        # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/mpl/if.hpp:
         "@boost_mpl//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
     ],

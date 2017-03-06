@@ -157,17 +157,17 @@ cc_library(
     ],
     deps = [
         ":headers_only",
+        "@boost_assert//:assert",
+        "@boost_throw_exception//:throw_exception",
         "@boost_system//:system",
         "@boost_config//:config",
-        "@boost_throw_exception//:throw_exception",
-        "@boost_assert//:assert",
-        # Because of boost/config/auto_link.hpp:
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/system/error_code.hpp:
+        # Because of boost/system/system_error.hpp:
         "@boost_system//:headers_only",
         # Because of boost/noncopyable.hpp:
         "@boost_core//:headers_only",
@@ -175,14 +175,14 @@ cc_library(
         "@boost_predef//:headers_only",
         # Because of boost/type_traits/make_unsigned.hpp:
         "@boost_type_traits//:headers_only",
+        # Because of boost/integer/integer_mask.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/mpl/int.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/integer_traits.hpp:
-        "@boost_integer//:headers_only",
         # Because of boost/range/end.hpp:
         "@boost_range//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/operators.hpp:
         "@boost_utility//:headers_only",
         # Because of boost/preprocessor/cat.hpp:

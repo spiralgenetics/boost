@@ -1972,33 +1972,33 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/pop_back.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/is_const.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/preprocessor/repetition/repeat_from_to.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/type_traits/add_const.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/end.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/function_types/is_callable_builtin.hpp:
-        "@boost_function_types//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_functional//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_functional//:headers_only",
+        # Because of boost/function_types/parameter_types.hpp:
+        "@boost_function_types//:headers_only",
         # Because of boost/blank.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/integer/static_log2.hpp:
-        "@boost_integer//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/integer/static_log2.hpp:
+        "@boost_integer//:headers_only",
     ],
 )

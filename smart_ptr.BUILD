@@ -221,7 +221,7 @@ cc_library(
         "@boost_predef//:headers_only",
         # Because of boost/type_traits/type_with_alignment.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/preprocessor/list/for_each_i.hpp:
+        # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",

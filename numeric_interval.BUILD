@@ -95,7 +95,7 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/limits.hpp:
         "@boost_config//:headers_only",
         # Because of boost/detail/fenv.hpp:
         "@boost_detail//:headers_only",
