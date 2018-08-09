@@ -1,0 +1,10 @@
+To generate bazel build files for boost:
+
+# Get all source files present in the repository.
+git submodule update --recursive
+
+# Generate build files, etc.
+./gen-bazel-build.pl
+
+# Make sure all build files are added to the repo before committing
+git add *BUILD *.bzl
