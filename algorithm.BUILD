@@ -4,6 +4,7 @@ cc_library(
     name = "headers_only",
     hdrs = [
         "include/boost/algorithm/algorithm.hpp",
+        "include/boost/algorithm/apply_permutation.hpp",
         "include/boost/algorithm/clamp.hpp",
         "include/boost/algorithm/cxx11/all_of.hpp",
         "include/boost/algorithm/cxx11/any_of.hpp",
@@ -21,8 +22,19 @@ cc_library(
         "include/boost/algorithm/cxx14/equal.hpp",
         "include/boost/algorithm/cxx14/is_permutation.hpp",
         "include/boost/algorithm/cxx14/mismatch.hpp",
+        "include/boost/algorithm/cxx17/exclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/for_each_n.hpp",
+        "include/boost/algorithm/cxx17/inclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/reduce.hpp",
+        "include/boost/algorithm/cxx17/transform_exclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/transform_inclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/transform_reduce.hpp",
+        "include/boost/algorithm/find_backward.hpp",
+        "include/boost/algorithm/find_not.hpp",
         "include/boost/algorithm/gather.hpp",
         "include/boost/algorithm/hex.hpp",
+        "include/boost/algorithm/is_palindrome.hpp",
+        "include/boost/algorithm/is_partitioned_until.hpp",
         "include/boost/algorithm/minmax.hpp",
         "include/boost/algorithm/minmax_element.hpp",
         "include/boost/algorithm/searching/boyer_moore.hpp",
@@ -30,6 +42,7 @@ cc_library(
         "include/boost/algorithm/searching/detail/bm_traits.hpp",
         "include/boost/algorithm/searching/detail/debugging.hpp",
         "include/boost/algorithm/searching/knuth_morris_pratt.hpp",
+        "include/boost/algorithm/sort_subrange.hpp",
         "include/boost/algorithm/string.hpp",
         "include/boost/algorithm/string/case_conv.hpp",
         "include/boost/algorithm/string/classification.hpp",
@@ -87,6 +100,7 @@ cc_library(
     srcs = [],
     hdrs = [
         "include/boost/algorithm/algorithm.hpp",
+        "include/boost/algorithm/apply_permutation.hpp",
         "include/boost/algorithm/clamp.hpp",
         "include/boost/algorithm/cxx11/all_of.hpp",
         "include/boost/algorithm/cxx11/any_of.hpp",
@@ -104,8 +118,19 @@ cc_library(
         "include/boost/algorithm/cxx14/equal.hpp",
         "include/boost/algorithm/cxx14/is_permutation.hpp",
         "include/boost/algorithm/cxx14/mismatch.hpp",
+        "include/boost/algorithm/cxx17/exclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/for_each_n.hpp",
+        "include/boost/algorithm/cxx17/inclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/reduce.hpp",
+        "include/boost/algorithm/cxx17/transform_exclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/transform_inclusive_scan.hpp",
+        "include/boost/algorithm/cxx17/transform_reduce.hpp",
+        "include/boost/algorithm/find_backward.hpp",
+        "include/boost/algorithm/find_not.hpp",
         "include/boost/algorithm/gather.hpp",
         "include/boost/algorithm/hex.hpp",
+        "include/boost/algorithm/is_palindrome.hpp",
+        "include/boost/algorithm/is_partitioned_until.hpp",
         "include/boost/algorithm/minmax.hpp",
         "include/boost/algorithm/minmax_element.hpp",
         "include/boost/algorithm/searching/boyer_moore.hpp",
@@ -113,6 +138,7 @@ cc_library(
         "include/boost/algorithm/searching/detail/bm_traits.hpp",
         "include/boost/algorithm/searching/detail/debugging.hpp",
         "include/boost/algorithm/searching/knuth_morris_pratt.hpp",
+        "include/boost/algorithm/sort_subrange.hpp",
         "include/boost/algorithm/string.hpp",
         "include/boost/algorithm/string/case_conv.hpp",
         "include/boost/algorithm/string/classification.hpp",
@@ -163,59 +189,61 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/regex.hpp:
-        "@boost_regex//:headers_only",
-        # Because of boost/range/begin.hpp:
+        # Because of boost/range/end.hpp:
         "@boost_range//:headers_only",
-        # Because of boost/detail/iterator.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/type_traits/remove_const.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/identity.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
-        # Because of boost/iterator/iterator_facade.hpp:
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/mpl/identity.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/iterator/transform_iterator.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/function.hpp:
-        "@boost_function//:headers_only",
-        # Because of boost/exception/all.hpp:
-        "@boost_exception//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
         # Because of boost/unordered_map.hpp:
         "@boost_unordered//:headers_only",
+        # Because of boost/regex.hpp:
+        "@boost_regex//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
-        # Because of boost/preprocessor/iterate.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/exception/exception.hpp:
+        # Because of boost/function.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/exception/info.hpp:
+        "@boost_exception//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
+        # Because of boost/preprocessor/iterate.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/move/move.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
         # Because of boost/detail/indirect_traits.hpp:
         "@boost_detail//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/move/move.hpp:
-        "@boost_move//:headers_only",
+        # Because of boost/type_index.hpp:
+        "@boost_type_index//:headers_only",
         # Because of boost/integer.hpp:
         "@boost_integer//:headers_only",
         # Because of boost/container/allocator_traits.hpp:
         "@boost_container//:headers_only",
-        # Because of boost/intrusive/detail/mpl.hpp:
+        # Because of boost/intrusive/detail/has_member_function_callable_with.hpp:
         "@boost_intrusive//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
     ],
 )

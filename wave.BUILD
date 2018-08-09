@@ -147,85 +147,89 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_static_assert//:static_assert",
-        "@boost_assert//:assert",
-        "@boost_preprocessor//:preprocessor",
         "@boost_config//:config",
-        # Because of boost/detail/workaround.hpp:
-        "@boost_config//:headers_only",
+        "@boost_preprocessor//:preprocessor",
+        "@boost_assert//:assert",
+        "@boost_static_assert//:static_assert",
         # Because of boost/preprocessor/stringize.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
+        # Because of boost/config/warning_disable.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/spirit/include/phoenix1_functions.hpp:
         "@boost_spirit//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
+        # Because of boost/pool/pool_alloc.hpp:
+        "@boost_pool//:headers_only",
         # Because of boost/serialization/serialization.hpp:
         "@boost_serialization//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/detail/atomic_count.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/pool/singleton_pool.hpp:
-        "@boost_pool//:headers_only",
         # Because of boost/concept_check.hpp:
         "@boost_concept_check//:headers_only",
         # Because of boost/type_traits/aligned_storage.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/detail/iterator.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/iterator/reverse_iterator.hpp:
         "@boost_iterator//:headers_only",
+        # Because of boost/mpl/bool.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/operators.hpp:
         "@boost_utility//:headers_only",
         # Because of boost/integer/common_factor_ct.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/thread/once.hpp:
-        "@boost_thread//:headers_only",
+        # Because of boost/core/addressof.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/move/utility_core.hpp:
+        "@boost_move//:headers_only",
         # Because of boost/optional.hpp:
         "@boost_optional//:headers_only",
+        # Because of boost/thread/tss.hpp:
+        "@boost_thread//:headers_only",
+        # Because of boost/chrono/duration.hpp:
+        "@boost_chrono//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
         # Because of boost/atomic.hpp:
         "@boost_atomic//:headers_only",
-        # Because of boost/detail/reference_content.hpp:
+        # Because of boost/detail/indirect_traits.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/move/utility.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/chrono/ceil.hpp:
-        "@boost_chrono//:headers_only",
-        # Because of boost/date_time/posix_time/conversion.hpp:
+        # Because of boost/date_time/time_clock.hpp:
         "@boost_date_time//:headers_only",
-        # Because of boost/system/error_code.hpp:
+        # Because of boost/system/system_error.hpp:
         "@boost_system//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
         # Because of boost/ratio/ratio.hpp:
         "@boost_ratio//:headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
         # Because of boost/rational.hpp:
         "@boost_rational//:headers_only",
-        # Because of boost/align/align.hpp:
-        "@boost_align//:headers_only",
-        # Because of boost/filesystem/operations.hpp:
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
+        # Because of boost/filesystem/path.hpp:
         "@boost_filesystem//:headers_only",
+        # Because of boost/lexical_cast.hpp:
+        "@boost_lexical_cast//:headers_only",
         # Because of boost/multi_index/member.hpp:
         "@boost_multi_index//:headers_only",
-        # Because of boost/range/mutable_iterator.hpp:
-        "@boost_range//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
         # Because of boost/io/detail/quoted_manip.hpp:
         "@boost_io//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/range/iterator_range_core.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/container/container_fwd.hpp:
+        "@boost_container//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/foreach_fwd.hpp:
         "@boost_foreach//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
+        # Because of boost/math/special_functions/sign.hpp:
+        "@boost_math//:headers_only",
     ],
 )

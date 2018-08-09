@@ -34,12 +34,15 @@ cc_library(
         "include/boost/log/core/core.hpp",
         "include/boost/log/core/record.hpp",
         "include/boost/log/core/record_view.hpp",
+        "include/boost/log/detail/adaptive_mutex.hpp",
+        "include/boost/log/detail/allocator_traits.hpp",
         "include/boost/log/detail/asio_fwd.hpp",
         "include/boost/log/detail/attachable_sstream_buf.hpp",
         "include/boost/log/detail/attr_output_impl.hpp",
         "include/boost/log/detail/attr_output_terminal.hpp",
         "include/boost/log/detail/attribute_get_value_impl.hpp",
         "include/boost/log/detail/attribute_predicate.hpp",
+        "include/boost/log/detail/c_str.hpp",
         "include/boost/log/detail/cleanup_scope_guard.hpp",
         "include/boost/log/detail/code_conversion.hpp",
         "include/boost/log/detail/config.hpp",
@@ -60,6 +63,8 @@ cc_library(
         "include/boost/log/detail/generate_overloads.hpp",
         "include/boost/log/detail/header.hpp",
         "include/boost/log/detail/id.hpp",
+        "include/boost/log/detail/is_character_type.hpp",
+        "include/boost/log/detail/is_ostream.hpp",
         "include/boost/log/detail/light_function.hpp",
         "include/boost/log/detail/light_function_pp.hpp",
         "include/boost/log/detail/light_rw_mutex.hpp",
@@ -68,13 +73,14 @@ cc_library(
         "include/boost/log/detail/named_scope_fmt_pp.hpp",
         "include/boost/log/detail/native_typeof.hpp",
         "include/boost/log/detail/parameter_tools.hpp",
+        "include/boost/log/detail/pause.hpp",
         "include/boost/log/detail/pp_identity.hpp",
         "include/boost/log/detail/process_id.hpp",
         "include/boost/log/detail/setup_config.hpp",
+        "include/boost/log/detail/sfinae_tools.hpp",
         "include/boost/log/detail/singleton.hpp",
         "include/boost/log/detail/sink_init_helpers.hpp",
         "include/boost/log/detail/snprintf.hpp",
-        "include/boost/log/detail/spin_mutex.hpp",
         "include/boost/log/detail/tagged_integer.hpp",
         "include/boost/log/detail/thread_id.hpp",
         "include/boost/log/detail/thread_specific.hpp",
@@ -84,7 +90,6 @@ cc_library(
         "include/boost/log/detail/unary_function_terminal.hpp",
         "include/boost/log/detail/unhandled_exception_count.hpp",
         "include/boost/log/detail/value_ref_visitation.hpp",
-        "include/boost/log/detail/visible_type.hpp",
         "include/boost/log/exceptions.hpp",
         "include/boost/log/expressions.hpp",
         "include/boost/log/expressions/attr.hpp",
@@ -98,6 +103,7 @@ cc_library(
         "include/boost/log/expressions/formatters/date_time.hpp",
         "include/boost/log/expressions/formatters/format.hpp",
         "include/boost/log/expressions/formatters/if.hpp",
+        "include/boost/log/expressions/formatters/max_size_decorator.hpp",
         "include/boost/log/expressions/formatters/named_scope.hpp",
         "include/boost/log/expressions/formatters/stream.hpp",
         "include/boost/log/expressions/formatters/wrap_formatter.hpp",
@@ -117,10 +123,13 @@ cc_library(
         "include/boost/log/expressions/predicates/matches.hpp",
         "include/boost/log/expressions/record.hpp",
         "include/boost/log/keywords/auto_flush.hpp",
+        "include/boost/log/keywords/block_size.hpp",
+        "include/boost/log/keywords/capacity.hpp",
         "include/boost/log/keywords/channel.hpp",
         "include/boost/log/keywords/delimiter.hpp",
         "include/boost/log/keywords/depth.hpp",
         "include/boost/log/keywords/empty_marker.hpp",
+        "include/boost/log/keywords/enable_final_rotation.hpp",
         "include/boost/log/keywords/facility.hpp",
         "include/boost/log/keywords/file_name.hpp",
         "include/boost/log/keywords/filter.hpp",
@@ -131,12 +140,16 @@ cc_library(
         "include/boost/log/keywords/iteration.hpp",
         "include/boost/log/keywords/log_name.hpp",
         "include/boost/log/keywords/log_source.hpp",
+        "include/boost/log/keywords/max_files.hpp",
         "include/boost/log/keywords/max_size.hpp",
         "include/boost/log/keywords/message_file.hpp",
         "include/boost/log/keywords/min_free_space.hpp",
+        "include/boost/log/keywords/name.hpp",
         "include/boost/log/keywords/open_mode.hpp",
         "include/boost/log/keywords/order.hpp",
         "include/boost/log/keywords/ordering_window.hpp",
+        "include/boost/log/keywords/overflow_policy.hpp",
+        "include/boost/log/keywords/permissions.hpp",
         "include/boost/log/keywords/registration.hpp",
         "include/boost/log/keywords/rotation_size.hpp",
         "include/boost/log/keywords/scan_method.hpp",
@@ -163,6 +176,7 @@ cc_library(
         "include/boost/log/sinks/syslog_backend.hpp",
         "include/boost/log/sinks/syslog_constants.hpp",
         "include/boost/log/sinks/text_file_backend.hpp",
+        "include/boost/log/sinks/text_ipc_message_queue_backend.hpp",
         "include/boost/log/sinks/text_multifile_backend.hpp",
         "include/boost/log/sinks/text_ostream_backend.hpp",
         "include/boost/log/sinks/unbounded_fifo_queue.hpp",
@@ -188,9 +202,7 @@ cc_library(
         "include/boost/log/support/std_regex.hpp",
         "include/boost/log/support/xpressive.hpp",
         "include/boost/log/trivial.hpp",
-        "include/boost/log/utility/empty_deleter.hpp",
         "include/boost/log/utility/exception_handler.hpp",
-        "include/boost/log/utility/explicit_operator_bool.hpp",
         "include/boost/log/utility/formatting_ostream.hpp",
         "include/boost/log/utility/formatting_ostream_fwd.hpp",
         "include/boost/log/utility/functional.hpp",
@@ -208,12 +220,15 @@ cc_library(
         "include/boost/log/utility/functional/matches.hpp",
         "include/boost/log/utility/functional/nop.hpp",
         "include/boost/log/utility/functional/save_result.hpp",
-        "include/boost/log/utility/intrusive_ref_counter.hpp",
+        "include/boost/log/utility/ipc/object_name.hpp",
+        "include/boost/log/utility/ipc/reliable_message_queue.hpp",
         "include/boost/log/utility/manipulators.hpp",
         "include/boost/log/utility/manipulators/add_value.hpp",
         "include/boost/log/utility/manipulators/dump.hpp",
         "include/boost/log/utility/manipulators/to_log.hpp",
         "include/boost/log/utility/once_block.hpp",
+        "include/boost/log/utility/open_mode.hpp",
+        "include/boost/log/utility/permissions.hpp",
         "include/boost/log/utility/record_ordering.hpp",
         "include/boost/log/utility/setup.hpp",
         "include/boost/log/utility/setup/common_attributes.hpp",
@@ -233,7 +248,6 @@ cc_library(
         "include/boost/log/utility/type_dispatch/standard_types.hpp",
         "include/boost/log/utility/type_dispatch/static_type_dispatcher.hpp",
         "include/boost/log/utility/type_dispatch/type_dispatcher.hpp",
-        "include/boost/log/utility/type_info_wrapper.hpp",
         "include/boost/log/utility/unique_identifier_name.hpp",
         "include/boost/log/utility/unused_variable.hpp",
         "include/boost/log/utility/value_ref.hpp",
@@ -248,47 +262,48 @@ cc_library(
     name = "log",
     srcs = [
         "src/alignment_gap_between.hpp",
-        "src/atomic_queue.hpp",
         "src/attribute_name.cpp",
         "src/attribute_set.cpp",
         "src/attribute_set_impl.hpp",
         "src/attribute_value_set.cpp",
+        "src/bit_tools.hpp",
         "src/code_conversion.cpp",
         "src/core.cpp",
         "src/date_time_format_parser.cpp",
-        "src/debug_output_backend.cpp",
         "src/default_attribute_names.cpp",
-        "src/default_filter_factory.cpp",
-        "src/default_filter_factory.hpp",
-        "src/default_formatter_factory.cpp",
-        "src/default_formatter_factory.hpp",
         "src/default_sink.cpp",
         "src/default_sink.hpp",
         "src/dump.cpp",
         "src/dump_avx2.cpp",
         "src/dump_ssse3.cpp",
         "src/event.cpp",
-        "src/event_log_backend.cpp",
-        "src/event_log_registry.hpp",
         "src/exceptions.cpp",
-        "src/filter_parser.cpp",
         "src/format_parser.cpp",
-        "src/formatter_parser.cpp",
         "src/global_logger_storage.cpp",
         "src/id_formatting.hpp",
-        "src/init_from_settings.cpp",
-        "src/init_from_stream.cpp",
-        "src/light_rw_mutex.cpp",
-        "src/matches_relation_factory.cpp",
+        "src/murmur3.hpp",
         "src/named_scope.cpp",
         "src/named_scope_format_parser.cpp",
         "src/once_block.cpp",
-        "src/parser_utils.cpp",
-        "src/parser_utils.hpp",
+        "src/permissions.cpp",
+        "src/posix/ipc_reliable_message_queue.cpp",
+        "src/posix/ipc_sync_wrappers.hpp",
+        "src/posix/object_name.cpp",
         "src/process_id.cpp",
         "src/process_name.cpp",
         "src/record_ostream.cpp",
-        "src/settings_parser.cpp",
+        "src/setup/default_filter_factory.cpp",
+        "src/setup/default_filter_factory.hpp",
+        "src/setup/default_formatter_factory.cpp",
+        "src/setup/default_formatter_factory.hpp",
+        "src/setup/filter_parser.cpp",
+        "src/setup/formatter_parser.cpp",
+        "src/setup/init_from_settings.cpp",
+        "src/setup/init_from_stream.cpp",
+        "src/setup/matches_relation_factory.cpp",
+        "src/setup/parser_utils.cpp",
+        "src/setup/parser_utils.hpp",
+        "src/setup/settings_parser.cpp",
         "src/severity_level.cpp",
         "src/spirit_encoding.cpp",
         "src/spirit_encoding.hpp",
@@ -304,7 +319,19 @@ cc_library(
         "src/timestamp.cpp",
         "src/trivial.cpp",
         "src/unhandled_exception_count.cpp",
-        "src/windows_version.hpp",
+        "src/unique_ptr.hpp",
+        "src/windows/auto_handle.hpp",
+        "src/windows/debug_output_backend.cpp",
+        "src/windows/event_log_backend.cpp",
+        "src/windows/event_log_registry.hpp",
+        "src/windows/ipc_reliable_message_queue.cpp",
+        "src/windows/ipc_sync_wrappers.cpp",
+        "src/windows/ipc_sync_wrappers.hpp",
+        "src/windows/light_rw_mutex.cpp",
+        "src/windows/mapped_shared_memory.cpp",
+        "src/windows/mapped_shared_memory.hpp",
+        "src/windows/object_name.cpp",
+        "src/windows/utf_code_conversion.hpp",
     ],
     hdrs = [
         "include/boost/log/attributes.hpp",
@@ -338,12 +365,15 @@ cc_library(
         "include/boost/log/core/core.hpp",
         "include/boost/log/core/record.hpp",
         "include/boost/log/core/record_view.hpp",
+        "include/boost/log/detail/adaptive_mutex.hpp",
+        "include/boost/log/detail/allocator_traits.hpp",
         "include/boost/log/detail/asio_fwd.hpp",
         "include/boost/log/detail/attachable_sstream_buf.hpp",
         "include/boost/log/detail/attr_output_impl.hpp",
         "include/boost/log/detail/attr_output_terminal.hpp",
         "include/boost/log/detail/attribute_get_value_impl.hpp",
         "include/boost/log/detail/attribute_predicate.hpp",
+        "include/boost/log/detail/c_str.hpp",
         "include/boost/log/detail/cleanup_scope_guard.hpp",
         "include/boost/log/detail/code_conversion.hpp",
         "include/boost/log/detail/config.hpp",
@@ -364,6 +394,8 @@ cc_library(
         "include/boost/log/detail/generate_overloads.hpp",
         "include/boost/log/detail/header.hpp",
         "include/boost/log/detail/id.hpp",
+        "include/boost/log/detail/is_character_type.hpp",
+        "include/boost/log/detail/is_ostream.hpp",
         "include/boost/log/detail/light_function.hpp",
         "include/boost/log/detail/light_function_pp.hpp",
         "include/boost/log/detail/light_rw_mutex.hpp",
@@ -372,13 +404,14 @@ cc_library(
         "include/boost/log/detail/named_scope_fmt_pp.hpp",
         "include/boost/log/detail/native_typeof.hpp",
         "include/boost/log/detail/parameter_tools.hpp",
+        "include/boost/log/detail/pause.hpp",
         "include/boost/log/detail/pp_identity.hpp",
         "include/boost/log/detail/process_id.hpp",
         "include/boost/log/detail/setup_config.hpp",
+        "include/boost/log/detail/sfinae_tools.hpp",
         "include/boost/log/detail/singleton.hpp",
         "include/boost/log/detail/sink_init_helpers.hpp",
         "include/boost/log/detail/snprintf.hpp",
-        "include/boost/log/detail/spin_mutex.hpp",
         "include/boost/log/detail/tagged_integer.hpp",
         "include/boost/log/detail/thread_id.hpp",
         "include/boost/log/detail/thread_specific.hpp",
@@ -388,7 +421,6 @@ cc_library(
         "include/boost/log/detail/unary_function_terminal.hpp",
         "include/boost/log/detail/unhandled_exception_count.hpp",
         "include/boost/log/detail/value_ref_visitation.hpp",
-        "include/boost/log/detail/visible_type.hpp",
         "include/boost/log/exceptions.hpp",
         "include/boost/log/expressions.hpp",
         "include/boost/log/expressions/attr.hpp",
@@ -402,6 +434,7 @@ cc_library(
         "include/boost/log/expressions/formatters/date_time.hpp",
         "include/boost/log/expressions/formatters/format.hpp",
         "include/boost/log/expressions/formatters/if.hpp",
+        "include/boost/log/expressions/formatters/max_size_decorator.hpp",
         "include/boost/log/expressions/formatters/named_scope.hpp",
         "include/boost/log/expressions/formatters/stream.hpp",
         "include/boost/log/expressions/formatters/wrap_formatter.hpp",
@@ -421,10 +454,13 @@ cc_library(
         "include/boost/log/expressions/predicates/matches.hpp",
         "include/boost/log/expressions/record.hpp",
         "include/boost/log/keywords/auto_flush.hpp",
+        "include/boost/log/keywords/block_size.hpp",
+        "include/boost/log/keywords/capacity.hpp",
         "include/boost/log/keywords/channel.hpp",
         "include/boost/log/keywords/delimiter.hpp",
         "include/boost/log/keywords/depth.hpp",
         "include/boost/log/keywords/empty_marker.hpp",
+        "include/boost/log/keywords/enable_final_rotation.hpp",
         "include/boost/log/keywords/facility.hpp",
         "include/boost/log/keywords/file_name.hpp",
         "include/boost/log/keywords/filter.hpp",
@@ -435,12 +471,16 @@ cc_library(
         "include/boost/log/keywords/iteration.hpp",
         "include/boost/log/keywords/log_name.hpp",
         "include/boost/log/keywords/log_source.hpp",
+        "include/boost/log/keywords/max_files.hpp",
         "include/boost/log/keywords/max_size.hpp",
         "include/boost/log/keywords/message_file.hpp",
         "include/boost/log/keywords/min_free_space.hpp",
+        "include/boost/log/keywords/name.hpp",
         "include/boost/log/keywords/open_mode.hpp",
         "include/boost/log/keywords/order.hpp",
         "include/boost/log/keywords/ordering_window.hpp",
+        "include/boost/log/keywords/overflow_policy.hpp",
+        "include/boost/log/keywords/permissions.hpp",
         "include/boost/log/keywords/registration.hpp",
         "include/boost/log/keywords/rotation_size.hpp",
         "include/boost/log/keywords/scan_method.hpp",
@@ -467,6 +507,7 @@ cc_library(
         "include/boost/log/sinks/syslog_backend.hpp",
         "include/boost/log/sinks/syslog_constants.hpp",
         "include/boost/log/sinks/text_file_backend.hpp",
+        "include/boost/log/sinks/text_ipc_message_queue_backend.hpp",
         "include/boost/log/sinks/text_multifile_backend.hpp",
         "include/boost/log/sinks/text_ostream_backend.hpp",
         "include/boost/log/sinks/unbounded_fifo_queue.hpp",
@@ -492,9 +533,7 @@ cc_library(
         "include/boost/log/support/std_regex.hpp",
         "include/boost/log/support/xpressive.hpp",
         "include/boost/log/trivial.hpp",
-        "include/boost/log/utility/empty_deleter.hpp",
         "include/boost/log/utility/exception_handler.hpp",
-        "include/boost/log/utility/explicit_operator_bool.hpp",
         "include/boost/log/utility/formatting_ostream.hpp",
         "include/boost/log/utility/formatting_ostream_fwd.hpp",
         "include/boost/log/utility/functional.hpp",
@@ -512,12 +551,15 @@ cc_library(
         "include/boost/log/utility/functional/matches.hpp",
         "include/boost/log/utility/functional/nop.hpp",
         "include/boost/log/utility/functional/save_result.hpp",
-        "include/boost/log/utility/intrusive_ref_counter.hpp",
+        "include/boost/log/utility/ipc/object_name.hpp",
+        "include/boost/log/utility/ipc/reliable_message_queue.hpp",
         "include/boost/log/utility/manipulators.hpp",
         "include/boost/log/utility/manipulators/add_value.hpp",
         "include/boost/log/utility/manipulators/dump.hpp",
         "include/boost/log/utility/manipulators/to_log.hpp",
         "include/boost/log/utility/once_block.hpp",
+        "include/boost/log/utility/open_mode.hpp",
+        "include/boost/log/utility/permissions.hpp",
         "include/boost/log/utility/record_ordering.hpp",
         "include/boost/log/utility/setup.hpp",
         "include/boost/log/utility/setup/common_attributes.hpp",
@@ -537,7 +579,6 @@ cc_library(
         "include/boost/log/utility/type_dispatch/standard_types.hpp",
         "include/boost/log/utility/type_dispatch/static_type_dispatcher.hpp",
         "include/boost/log/utility/type_dispatch/type_dispatcher.hpp",
-        "include/boost/log/utility/type_info_wrapper.hpp",
         "include/boost/log/utility/unique_identifier_name.hpp",
         "include/boost/log/utility/unused_variable.hpp",
         "include/boost/log/utility/value_ref.hpp",
@@ -548,151 +589,166 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_predef//:predef",
-        "@boost_lexical_cast//:lexical_cast",
-        "@boost_date_time//:date_time",
-        "@boost_intrusive//:intrusive",
-        "@boost_xpressive//:xpressive",
-        "@boost_move//:move",
-        "@boost_preprocessor//:preprocessor",
+        "@boost_asio//:asio",
         "@boost_smart_ptr//:smart_ptr",
-        "@boost_utility//:utility",
-        "@boost_assert//:assert",
-        "@boost_thread//:thread",
-        "@boost_config//:config",
-        "@boost_regex//:regex",
-        "@boost_throw_exception//:throw_exception",
-        "@boost_system//:system",
+        "@boost_bind//:bind",
         "@boost_property_tree//:property_tree",
+        "@boost_random//:random",
+        "@boost_type_traits//:type_traits",
         "@boost_spirit//:spirit",
+        "@boost_filesystem//:filesystem",
+        "@boost_io//:io",
+        "@boost_interprocess//:interprocess",
+        "@boost_config//:config",
+        "@boost_optional//:optional",
+        "@boost_static_assert//:static_assert",
+        "@boost_date_time//:date_time",
+        "@boost_fusion//:fusion",
+        "@boost_move//:move",
+        "@boost_type_index//:type_index",
+        "@boost_core//:core",
+        "@boost_align//:align",
+        "@boost_system//:system",
+        "@boost_xpressive//:xpressive",
+        "@boost_lexical_cast//:lexical_cast",
+        "@boost_throw_exception//:throw_exception",
+        "@boost_atomic//:atomic",
+        "@boost_mpl//:mpl",
+        "@boost_assert//:assert",
+        "@boost_preprocessor//:preprocessor",
+        "@boost_regex//:regex",
         "@boost_range//:range",
         "@boost_exception//:exception",
-        "@boost_bind//:bind",
-        "@boost_asio//:asio",
-        "@boost_optional//:optional",
-        "@boost_fusion//:fusion",
-        "@boost_core//:core",
-        "@boost_io//:io",
-        "@boost_type_traits//:type_traits",
+        "@boost_thread//:thread",
         "@boost_array//:array",
-        "@boost_align//:align",
-        "@boost_filesystem//:filesystem",
-        "@boost_mpl//:mpl",
+        "@boost_utility//:utility",
+        "@boost_predef//:predef",
+        "@boost_intrusive//:intrusive",
         "@boost_phoenix//:phoenix",
-        # Because of boost/aligned_storage.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/ref.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/spirit/include/qi_core.hpp:
-        "@boost_spirit//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
-        # Because of boost/thread/shared_mutex.hpp:
-        "@boost_thread//:headers_only",
-        # Because of boost/filesystem/operations.hpp:
-        "@boost_filesystem//:headers_only",
-        # Because of boost/date_time/time_resolution_traits.hpp:
+        # Because of boost/date_time/special_defs.hpp:
         "@boost_date_time//:headers_only",
-        # Because of boost/smart_ptr/make_shared_object.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/align/aligned_alloc.hpp:
-        "@boost_align//:headers_only",
-        # Because of boost/move/core.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/phoenix/operator/logical.hpp:
-        "@boost_phoenix//:headers_only",
-        # Because of boost/asio/socket_base.hpp:
-        "@boost_asio//:headers_only",
-        # Because of boost/mpl/back_inserter.hpp:
-        "@boost_mpl//:headers_only",
+        # Because of boost/thread/mutex.hpp:
+        "@boost_thread//:headers_only",
         # Because of boost/cstdint.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/property_tree/ptree.hpp:
-        "@boost_property_tree//:headers_only",
-        # Because of boost/preprocessor/seq/for_each.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/utility/in_place_factory.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/io/ios_state.hpp:
-        "@boost_io//:headers_only",
-        # Because of boost/system/system_error.hpp:
-        "@boost_system//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/intrusive/list.hpp:
-        "@boost_intrusive//:headers_only",
-        # Because of boost/fusion/container/set.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/regex.hpp:
-        "@boost_regex//:headers_only",
-        # Because of boost/exception/errinfo_at_line.hpp:
-        "@boost_exception//:headers_only",
-        # Because of boost/lexical_cast.hpp:
-        "@boost_lexical_cast//:headers_only",
+        # Because of boost/core/swap.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
-        # Because of boost/array.hpp:
-        "@boost_array//:headers_only",
-        # Because of boost/range/iterator_range_core.hpp:
-        "@boost_range//:headers_only",
-        # Because of boost/xpressive/xpressive_dynamic.hpp:
-        "@boost_xpressive//:headers_only",
+        # Because of boost/spirit/include/karma_uint.hpp:
+        "@boost_spirit//:headers_only",
+        # Because of boost/align/aligned_alloc.hpp:
+        "@boost_align//:headers_only",
+        # Because of boost/exception/errinfo_at_line.hpp:
+        "@boost_exception//:headers_only",
+        # Because of boost/atomic/atomic.hpp:
+        "@boost_atomic//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/move/core.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/random/taus88.hpp:
+        "@boost_random//:headers_only",
+        # Because of boost/preprocessor/seq/size.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/asio/ip/host_name.hpp:
+        "@boost_asio//:headers_only",
+        # Because of boost/range/iterator_range_core.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/type_index.hpp:
+        "@boost_type_index//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/enable_shared_from_this.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/filesystem/path.hpp:
+        "@boost_filesystem//:headers_only",
+        # Because of boost/intrusive/options.hpp:
+        "@boost_intrusive//:headers_only",
+        # Because of boost/system/windows_error.hpp:
+        "@boost_system//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/none.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/interprocess/exceptions.hpp:
+        "@boost_interprocess//:headers_only",
+        # Because of boost/fusion/sequence/intrinsic/at_key.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/property_tree/ptree.hpp:
+        "@boost_property_tree//:headers_only",
+        # Because of boost/io/ios_state.hpp:
+        "@boost_io//:headers_only",
+        # Because of boost/regex.hpp:
+        "@boost_regex//:headers_only",
+        # Because of boost/array.hpp:
+        "@boost_array//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/utility/in_place_factory.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/phoenix/operator/logical.hpp:
+        "@boost_phoenix//:headers_only",
         # Because of boost/predef/other/endian.h:
         "@boost_predef//:headers_only",
-        # Because of boost/detail/bitmask.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/proto/operators.hpp:
-        "@boost_proto//:headers_only",
-        # Because of boost/multi_index/sequenced_index.hpp:
-        "@boost_multi_index//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/iterator/iterator_traits.hpp:
+        # Because of boost/lexical_cast.hpp:
+        "@boost_lexical_cast//:headers_only",
+        # Because of boost/xpressive/xpressive_dynamic.hpp:
+        "@boost_xpressive//:headers_only",
+        # Because of boost/next_prior.hpp:
         "@boost_iterator//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/multi_index/member.hpp:
+        "@boost_multi_index//:headers_only",
         # Because of boost/parameter/binding.hpp:
         "@boost_parameter//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
+        # Because of boost/proto/operators.hpp:
+        "@boost_proto//:headers_only",
+        # Because of boost/locale/utf.hpp:
+        "@boost_locale//:headers_only",
+        # Because of boost/detail/bitmask.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/chrono/ceil.hpp:
         "@boost_chrono//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
-        "@boost_tuple//:headers_only",
-        # Because of boost/foreach_fwd.hpp:
-        "@boost_foreach//:headers_only",
-        # Because of boost/archive/archive_exception.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/any.hpp:
-        "@boost_any//:headers_only",
+        # Because of boost/integer/integer_mask.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/container/allocator_traits.hpp:
+        "@boost_container//:headers_only",
         # Because of boost/function.hpp:
         "@boost_function//:headers_only",
-        # Because of boost/container/container_fwd.hpp:
-        "@boost_container//:headers_only",
-        # Because of boost/numeric/conversion/converter.hpp:
+        # Because of boost/serialization/version.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/foreach_fwd.hpp:
+        "@boost_foreach//:headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
+        # Because of boost/any.hpp:
+        "@boost_any//:headers_only",
+        # Because of boost/unordered/unordered_map.hpp:
+        "@boost_unordered//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/integer.hpp:
-        "@boost_integer//:headers_only",
+        # Because of boost/variant/apply_visitor.hpp:
+        "@boost_variant//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
         # Because of boost/tokenizer.hpp:
         "@boost_tokenizer//:headers_only",
-        # Because of boost/variant/variant.hpp:
-        "@boost_variant//:headers_only",
-        # Because of boost/algorithm/string/erase.hpp:
+        # Because of boost/algorithm/string/replace.hpp:
         "@boost_algorithm//:headers_only",
         # Because of boost/ratio/ratio.hpp:
         "@boost_ratio//:headers_only",
-        # Because of boost/type_index.hpp:
-        "@boost_type_index//:headers_only",
-        # Because of boost/function_types/is_function.hpp:
-        "@boost_function_types//:headers_only",
-        # Because of boost/math/common_factor_ct.hpp:
+        # Because of boost/math/special_functions/fpclassify.hpp:
         "@boost_math//:headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
         # Because of boost/rational.hpp:
         "@boost_rational//:headers_only",
+        # Because of boost/function_types/result_type.hpp:
+        "@boost_function_types//:headers_only",
+        # Because of boost/typeof/typeof.hpp:
+        "@boost_typeof//:headers_only",
         # Because of boost/implicit_cast.hpp:
         "@boost_conversion//:headers_only",
     ],

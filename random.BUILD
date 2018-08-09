@@ -18,25 +18,32 @@ cc_library(
         "include/boost/random/detail/enable_warnings.hpp",
         "include/boost/random/detail/generator_bits.hpp",
         "include/boost/random/detail/generator_seed_seq.hpp",
+        "include/boost/random/detail/gray_coded_qrng.hpp",
+        "include/boost/random/detail/int_float_pair.hpp",
         "include/boost/random/detail/integer_log2.hpp",
         "include/boost/random/detail/iterator_mixin.hpp",
         "include/boost/random/detail/large_arithmetic.hpp",
+        "include/boost/random/detail/niederreiter_base2_table.hpp",
         "include/boost/random/detail/operators.hpp",
         "include/boost/random/detail/polynomial.hpp",
         "include/boost/random/detail/ptr_helper.hpp",
+        "include/boost/random/detail/qrng_base.hpp",
         "include/boost/random/detail/seed.hpp",
         "include/boost/random/detail/seed_impl.hpp",
         "include/boost/random/detail/signed_unsigned_tools.hpp",
+        "include/boost/random/detail/sobol_table.hpp",
         "include/boost/random/detail/uniform_int_float.hpp",
         "include/boost/random/detail/vector_io.hpp",
         "include/boost/random/discard_block.hpp",
         "include/boost/random/discrete_distribution.hpp",
         "include/boost/random/exponential_distribution.hpp",
         "include/boost/random/extreme_value_distribution.hpp",
+        "include/boost/random/faure.hpp",
         "include/boost/random/fisher_f_distribution.hpp",
         "include/boost/random/gamma_distribution.hpp",
         "include/boost/random/generate_canonical.hpp",
         "include/boost/random/geometric_distribution.hpp",
+        "include/boost/random/hyperexponential_distribution.hpp",
         "include/boost/random/independent_bits.hpp",
         "include/boost/random/inversive_congruential.hpp",
         "include/boost/random/lagged_fibonacci.hpp",
@@ -46,6 +53,7 @@ cc_library(
         "include/boost/random/lognormal_distribution.hpp",
         "include/boost/random/mersenne_twister.hpp",
         "include/boost/random/negative_binomial_distribution.hpp",
+        "include/boost/random/niederreiter_base2.hpp",
         "include/boost/random/non_central_chi_squared_distribution.hpp",
         "include/boost/random/normal_distribution.hpp",
         "include/boost/random/piecewise_constant_distribution.hpp",
@@ -57,9 +65,11 @@ cc_library(
         "include/boost/random/seed_seq.hpp",
         "include/boost/random/shuffle_order.hpp",
         "include/boost/random/shuffle_output.hpp",
+        "include/boost/random/sobol.hpp",
         "include/boost/random/student_t_distribution.hpp",
         "include/boost/random/subtract_with_carry.hpp",
         "include/boost/random/taus88.hpp",
+        "include/boost/random/traits.hpp",
         "include/boost/random/triangle_distribution.hpp",
         "include/boost/random/uniform_01.hpp",
         "include/boost/random/uniform_int.hpp",
@@ -98,25 +108,32 @@ cc_library(
         "include/boost/random/detail/enable_warnings.hpp",
         "include/boost/random/detail/generator_bits.hpp",
         "include/boost/random/detail/generator_seed_seq.hpp",
+        "include/boost/random/detail/gray_coded_qrng.hpp",
+        "include/boost/random/detail/int_float_pair.hpp",
         "include/boost/random/detail/integer_log2.hpp",
         "include/boost/random/detail/iterator_mixin.hpp",
         "include/boost/random/detail/large_arithmetic.hpp",
+        "include/boost/random/detail/niederreiter_base2_table.hpp",
         "include/boost/random/detail/operators.hpp",
         "include/boost/random/detail/polynomial.hpp",
         "include/boost/random/detail/ptr_helper.hpp",
+        "include/boost/random/detail/qrng_base.hpp",
         "include/boost/random/detail/seed.hpp",
         "include/boost/random/detail/seed_impl.hpp",
         "include/boost/random/detail/signed_unsigned_tools.hpp",
+        "include/boost/random/detail/sobol_table.hpp",
         "include/boost/random/detail/uniform_int_float.hpp",
         "include/boost/random/detail/vector_io.hpp",
         "include/boost/random/discard_block.hpp",
         "include/boost/random/discrete_distribution.hpp",
         "include/boost/random/exponential_distribution.hpp",
         "include/boost/random/extreme_value_distribution.hpp",
+        "include/boost/random/faure.hpp",
         "include/boost/random/fisher_f_distribution.hpp",
         "include/boost/random/gamma_distribution.hpp",
         "include/boost/random/generate_canonical.hpp",
         "include/boost/random/geometric_distribution.hpp",
+        "include/boost/random/hyperexponential_distribution.hpp",
         "include/boost/random/independent_bits.hpp",
         "include/boost/random/inversive_congruential.hpp",
         "include/boost/random/lagged_fibonacci.hpp",
@@ -126,6 +143,7 @@ cc_library(
         "include/boost/random/lognormal_distribution.hpp",
         "include/boost/random/mersenne_twister.hpp",
         "include/boost/random/negative_binomial_distribution.hpp",
+        "include/boost/random/niederreiter_base2.hpp",
         "include/boost/random/non_central_chi_squared_distribution.hpp",
         "include/boost/random/normal_distribution.hpp",
         "include/boost/random/piecewise_constant_distribution.hpp",
@@ -137,9 +155,11 @@ cc_library(
         "include/boost/random/seed_seq.hpp",
         "include/boost/random/shuffle_order.hpp",
         "include/boost/random/shuffle_output.hpp",
+        "include/boost/random/sobol.hpp",
         "include/boost/random/student_t_distribution.hpp",
         "include/boost/random/subtract_with_carry.hpp",
         "include/boost/random/taus88.hpp",
+        "include/boost/random/traits.hpp",
         "include/boost/random/triangle_distribution.hpp",
         "include/boost/random/uniform_01.hpp",
         "include/boost/random/uniform_int.hpp",
@@ -157,37 +177,63 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_assert//:assert",
         "@boost_throw_exception//:throw_exception",
-        "@boost_system//:system",
         "@boost_config//:config",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
+        "@boost_assert//:assert",
+        "@boost_system//:system",
+        # Because of boost/system/error_code.hpp:
+        "@boost_system//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/system/system_error.hpp:
-        "@boost_system//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/noncopyable.hpp:
         "@boost_core//:headers_only",
         # Because of boost/predef/platform.h:
         "@boost_predef//:headers_only",
-        # Because of boost/type_traits/make_unsigned.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/integer/integer_mask.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/mpl/int.hpp:
+        # Because of boost/io/ios_state.hpp:
+        "@boost_io//:headers_only",
+        # Because of boost/mpl/bool.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/range/end.hpp:
-        "@boost_range//:headers_only",
+        # Because of boost/type_traits/is_integral.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/integer.hpp:
+        "@boost_integer//:headers_only",
         # Because of boost/operators.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
+        # Because of boost/range/end.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/dynamic_bitset.hpp:
+        "@boost_dynamic_bitset//:headers_only",
+        # Because of boost/multiprecision/integer.hpp:
+        "@boost_multiprecision//:headers_only",
+        # Because of boost/math/special_functions/fpclassify.hpp:
+        "@boost_math//:headers_only",
+        # Because of boost/move/move.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/preprocessor/list/for_each_i.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/array.hpp:
+        "@boost_array//:headers_only",
         # Because of boost/iterator/iterator_traits.hpp:
         "@boost_iterator//:headers_only",
+        # Because of boost/container_hash/hash.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/rational.hpp:
+        "@boost_rational//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/detail/fenv.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/lexical_cast.hpp:
+        "@boost_lexical_cast//:headers_only",
+        # Because of boost/container/container_fwd.hpp:
+        "@boost_container//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
     ],
 )

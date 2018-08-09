@@ -49,41 +49,39 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
+        # Because of boost/type_traits/remove_pointer.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
+        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/range/end.hpp:
-        "@boost_range//:headers_only",
+        # Because of boost/ptr_container/ptr_vector.hpp:
+        "@boost_ptr_container//:headers_only",
         # Because of boost/mpl/if.hpp:
         "@boost_mpl//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/range/end.hpp:
+        "@boost_range//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/ptr_container/ptr_vector.hpp:
-        "@boost_ptr_container//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/ref.hpp:
         "@boost_core//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/iterator/iterator_traits.hpp:
+        # Because of boost/next_prior.hpp:
         "@boost_iterator//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/detail/indirect_traits.hpp:
-        "@boost_detail//:headers_only",
         # Because of boost/scoped_array.hpp:
         "@boost_smart_ptr//:headers_only",
+        # Because of boost/detail/is_incrementable.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
     ],
 )

@@ -46,6 +46,11 @@ alias(
 )
 
 alias(
+    name = "beast",
+    actual = "@boost_beast//:beast",
+)
+
+alias(
     name = "bimap",
     actual = "@boost_bimap//:bimap",
 )
@@ -53,6 +58,11 @@ alias(
 alias(
     name = "bind",
     actual = "@boost_bind//:bind",
+)
+
+alias(
+    name = "callable_traits",
+    actual = "@boost_callable_traits//:callable_traits",
 )
 
 alias(
@@ -71,6 +81,11 @@ alias(
 )
 
 alias(
+    name = "compute",
+    actual = "@boost_compute//:compute",
+)
+
+alias(
     name = "concept_check",
     actual = "@boost_concept_check//:concept_check",
 )
@@ -86,13 +101,28 @@ alias(
 )
 
 alias(
+    name = "container_hash",
+    actual = "@boost_container_hash//:container_hash",
+)
+
+alias(
     name = "context",
     actual = "@boost_context//:context",
 )
 
 alias(
+    name = "contract",
+    actual = "@boost_contract//:contract",
+)
+
+alias(
     name = "conversion",
     actual = "@boost_conversion//:conversion",
+)
+
+alias(
+    name = "convert",
+    actual = "@boost_convert//:convert",
 )
 
 alias(
@@ -103,6 +133,11 @@ alias(
 alias(
     name = "coroutine",
     actual = "@boost_coroutine//:coroutine",
+)
+
+alias(
+    name = "coroutine2",
+    actual = "@boost_coroutine2//:coroutine2",
 )
 
 alias(
@@ -126,6 +161,11 @@ alias(
 )
 
 alias(
+    name = "dll",
+    actual = "@boost_dll//:dll",
+)
+
+alias(
     name = "dynamic_bitset",
     actual = "@boost_dynamic_bitset//:dynamic_bitset",
 )
@@ -138,6 +178,11 @@ alias(
 alias(
     name = "exception",
     actual = "@boost_exception//:exception",
+)
+
+alias(
+    name = "fiber",
+    actual = "@boost_fiber//:fiber",
 )
 
 alias(
@@ -201,8 +246,18 @@ alias(
 )
 
 alias(
+    name = "hana",
+    actual = "@boost_hana//:hana",
+)
+
+alias(
     name = "heap",
     actual = "@boost_heap//:heap",
+)
+
+alias(
+    name = "hof",
+    actual = "@boost_hof//:hof",
 )
 
 alias(
@@ -281,8 +336,18 @@ alias(
 )
 
 alias(
+    name = "metaparse",
+    actual = "@boost_metaparse//:metaparse",
+)
+
+alias(
     name = "move",
     actual = "@boost_move//:move",
+)
+
+alias(
+    name = "mp11",
+    actual = "@boost_mp11//:mp11",
 )
 
 alias(
@@ -351,6 +416,11 @@ alias(
 )
 
 alias(
+    name = "poly_collection",
+    actual = "@boost_poly_collection//:poly_collection",
+)
+
+alias(
     name = "polygon",
     actual = "@boost_polygon//:polygon",
 )
@@ -368,6 +438,11 @@ alias(
 alias(
     name = "preprocessor",
     actual = "@boost_preprocessor//:preprocessor",
+)
+
+alias(
+    name = "process",
+    actual = "@boost_process//:process",
 )
 
 alias(
@@ -398,6 +473,11 @@ alias(
 alias(
     name = "python",
     actual = "@boost_python//:python",
+)
+
+alias(
+    name = "qvm",
+    actual = "@boost_qvm//:qvm",
 )
 
 alias(
@@ -461,6 +541,11 @@ alias(
 )
 
 alias(
+    name = "stacktrace",
+    actual = "@boost_stacktrace//:stacktrace",
+)
+
+alias(
     name = "statechart",
     actual = "@boost_statechart//:statechart",
 )
@@ -498,11 +583,6 @@ alias(
 alias(
     name = "tokenizer",
     actual = "@boost_tokenizer//:tokenizer",
-)
-
-alias(
-    name = "tr1",
-    actual = "@boost_tr1//:tr1",
 )
 
 alias(
@@ -561,6 +641,11 @@ alias(
 )
 
 alias(
+    name = "vmd",
+    actual = "@boost_vmd//:vmd",
+)
+
+alias(
     name = "wave",
     actual = "@boost_wave//:wave",
 )
@@ -573,4 +658,9 @@ alias(
 alias(
     name = "xpressive",
     actual = "@boost_xpressive//:xpressive",
+)
+
+alias(
+    name = "yap",
+    actual = "@boost_yap//:yap",
 )

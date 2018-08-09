@@ -49,16 +49,14 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/mpl/bool.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/type_traits/is_void.hpp:
+        # Because of boost/type_traits/conversion_traits.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/detail/iterator.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
     ],

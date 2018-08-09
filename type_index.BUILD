@@ -8,6 +8,13 @@ cc_library(
         "include/boost/type_index/detail/compile_time_type_info.hpp",
         "include/boost/type_index/detail/ctti_register_class.hpp",
         "include/boost/type_index/detail/stl_register_class.hpp",
+        "include/boost/type_index/runtime_cast.hpp",
+        "include/boost/type_index/runtime_cast/boost_shared_ptr_cast.hpp",
+        "include/boost/type_index/runtime_cast/detail/runtime_cast_impl.hpp",
+        "include/boost/type_index/runtime_cast/pointer_cast.hpp",
+        "include/boost/type_index/runtime_cast/reference_cast.hpp",
+        "include/boost/type_index/runtime_cast/register_runtime_class.hpp",
+        "include/boost/type_index/runtime_cast/std_shared_ptr_cast.hpp",
         "include/boost/type_index/stl_type_index.hpp",
         "include/boost/type_index/type_index_facade.hpp",
     ],
@@ -25,29 +32,42 @@ cc_library(
         "include/boost/type_index/detail/compile_time_type_info.hpp",
         "include/boost/type_index/detail/ctti_register_class.hpp",
         "include/boost/type_index/detail/stl_register_class.hpp",
+        "include/boost/type_index/runtime_cast.hpp",
+        "include/boost/type_index/runtime_cast/boost_shared_ptr_cast.hpp",
+        "include/boost/type_index/runtime_cast/detail/runtime_cast_impl.hpp",
+        "include/boost/type_index/runtime_cast/pointer_cast.hpp",
+        "include/boost/type_index/runtime_cast/reference_cast.hpp",
+        "include/boost/type_index/runtime_cast/register_runtime_class.hpp",
+        "include/boost/type_index/runtime_cast/std_shared_ptr_cast.hpp",
         "include/boost/type_index/stl_type_index.hpp",
         "include/boost/type_index/type_index_facade.hpp",
     ],
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/facilities/expand.hpp:
-        "@boost_preprocessor//:headers_only",
+        # Because of boost/type_traits/is_base_and_derived.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/smart_ptr/shared_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/type_traits/make_signed.hpp:
-        "@boost_type_traits//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/container_hash/hash.hpp:
+        "@boost_container_hash//:headers_only",
         # Because of boost/core/demangle.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/current_function.hpp:
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/preprocessor/facilities/expand.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/detail/container_fwd.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/integer/static_log2.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
     ],
 )

@@ -734,6 +734,7 @@ cc_library(
         "include/boost/mpl/front.hpp",
         "include/boost/mpl/front_fwd.hpp",
         "include/boost/mpl/front_inserter.hpp",
+        "include/boost/mpl/get_tag.hpp",
         "include/boost/mpl/greater.hpp",
         "include/boost/mpl/greater_equal.hpp",
         "include/boost/mpl/has_key.hpp",
@@ -830,6 +831,7 @@ cc_library(
         "include/boost/mpl/map/aux_/has_key_impl.hpp",
         "include/boost/mpl/map/aux_/include_preprocessed.hpp",
         "include/boost/mpl/map/aux_/insert_impl.hpp",
+        "include/boost/mpl/map/aux_/insert_range_impl.hpp",
         "include/boost/mpl/map/aux_/item.hpp",
         "include/boost/mpl/map/aux_/iterator.hpp",
         "include/boost/mpl/map/aux_/key_type_impl.hpp",
@@ -923,6 +925,7 @@ cc_library(
         "include/boost/mpl/set/aux_/has_key_impl.hpp",
         "include/boost/mpl/set/aux_/include_preprocessed.hpp",
         "include/boost/mpl/set/aux_/insert_impl.hpp",
+        "include/boost/mpl/set/aux_/insert_range_impl.hpp",
         "include/boost/mpl/set/aux_/item.hpp",
         "include/boost/mpl/set/aux_/iterator.hpp",
         "include/boost/mpl/set/aux_/key_type_impl.hpp",
@@ -1783,6 +1786,7 @@ cc_library(
         "include/boost/mpl/front.hpp",
         "include/boost/mpl/front_fwd.hpp",
         "include/boost/mpl/front_inserter.hpp",
+        "include/boost/mpl/get_tag.hpp",
         "include/boost/mpl/greater.hpp",
         "include/boost/mpl/greater_equal.hpp",
         "include/boost/mpl/has_key.hpp",
@@ -1879,6 +1883,7 @@ cc_library(
         "include/boost/mpl/map/aux_/has_key_impl.hpp",
         "include/boost/mpl/map/aux_/include_preprocessed.hpp",
         "include/boost/mpl/map/aux_/insert_impl.hpp",
+        "include/boost/mpl/map/aux_/insert_range_impl.hpp",
         "include/boost/mpl/map/aux_/item.hpp",
         "include/boost/mpl/map/aux_/iterator.hpp",
         "include/boost/mpl/map/aux_/key_type_impl.hpp",
@@ -1972,6 +1977,7 @@ cc_library(
         "include/boost/mpl/set/aux_/has_key_impl.hpp",
         "include/boost/mpl/set/aux_/include_preprocessed.hpp",
         "include/boost/mpl/set/aux_/insert_impl.hpp",
+        "include/boost/mpl/set/aux_/insert_range_impl.hpp",
         "include/boost/mpl/set/aux_/item.hpp",
         "include/boost/mpl/set/aux_/iterator.hpp",
         "include/boost/mpl/set/aux_/key_type_impl.hpp",
@@ -2095,20 +2101,20 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/preprocessor/arithmetic/sub.hpp:
+        # Because of boost/preprocessor/iterate.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/utility/value_init.hpp:
+        "@boost_utility//:headers_only",
         # Because of boost/detail/lightweight_test.hpp:
         "@boost_core//:headers_only",
         # Because of boost/predef/other/endian.h:
         "@boost_predef//:headers_only",
-        # Because of boost/utility/value_init.hpp:
-        "@boost_utility//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
     ],

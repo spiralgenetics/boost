@@ -8,6 +8,7 @@ cc_library(
         "include/boost/core/checked_delete.hpp",
         "include/boost/core/demangle.hpp",
         "include/boost/core/enable_if.hpp",
+        "include/boost/core/exchange.hpp",
         "include/boost/core/explicit_operator_bool.hpp",
         "include/boost/core/ignore_unused.hpp",
         "include/boost/core/is_same.hpp",
@@ -16,6 +17,7 @@ cc_library(
         "include/boost/core/no_exceptions_support.hpp",
         "include/boost/core/noncopyable.hpp",
         "include/boost/core/null_deleter.hpp",
+        "include/boost/core/pointer_traits.hpp",
         "include/boost/core/ref.hpp",
         "include/boost/core/scoped_enum.hpp",
         "include/boost/core/swap.hpp",
@@ -34,7 +36,6 @@ cc_library(
         "include/boost/swap.hpp",
         "include/boost/type.hpp",
         "include/boost/utility/addressof.hpp",
-        "include/boost/utility/empty_deleter.hpp",
         "include/boost/utility/enable_if.hpp",
         "include/boost/utility/explicit_operator_bool.hpp",
         "include/boost/utility/swap.hpp",
@@ -54,6 +55,7 @@ cc_library(
         "include/boost/core/checked_delete.hpp",
         "include/boost/core/demangle.hpp",
         "include/boost/core/enable_if.hpp",
+        "include/boost/core/exchange.hpp",
         "include/boost/core/explicit_operator_bool.hpp",
         "include/boost/core/ignore_unused.hpp",
         "include/boost/core/is_same.hpp",
@@ -62,6 +64,7 @@ cc_library(
         "include/boost/core/no_exceptions_support.hpp",
         "include/boost/core/noncopyable.hpp",
         "include/boost/core/null_deleter.hpp",
+        "include/boost/core/pointer_traits.hpp",
         "include/boost/core/ref.hpp",
         "include/boost/core/scoped_enum.hpp",
         "include/boost/core/swap.hpp",
@@ -80,7 +83,6 @@ cc_library(
         "include/boost/swap.hpp",
         "include/boost/type.hpp",
         "include/boost/utility/addressof.hpp",
-        "include/boost/utility/empty_deleter.hpp",
         "include/boost/utility/enable_if.hpp",
         "include/boost/utility/explicit_operator_bool.hpp",
         "include/boost/utility/swap.hpp",
@@ -91,7 +93,7 @@ cc_library(
         ":headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/current_function.hpp:
+        # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
     ],
 )

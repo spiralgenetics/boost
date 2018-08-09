@@ -1,4 +1,4 @@
-package(visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "headers_only",
@@ -7,15 +7,18 @@ cc_library(
         "include/boost/coroutine2/coroutine.hpp",
         "include/boost/coroutine2/detail/config.hpp",
         "include/boost/coroutine2/detail/coroutine.hpp",
+        "include/boost/coroutine2/detail/create_control_block.ipp",
         "include/boost/coroutine2/detail/decay_copy.hpp",
         "include/boost/coroutine2/detail/disable_overload.hpp",
         "include/boost/coroutine2/detail/forced_unwind.hpp",
         "include/boost/coroutine2/detail/pull_control_block_cc.hpp",
-        "include/boost/coroutine2/detail/pull_control_block_ecv1.hpp",
+        "include/boost/coroutine2/detail/pull_control_block_cc.ipp",
         "include/boost/coroutine2/detail/pull_coroutine.hpp",
+        "include/boost/coroutine2/detail/pull_coroutine.ipp",
         "include/boost/coroutine2/detail/push_control_block_cc.hpp",
-        "include/boost/coroutine2/detail/push_control_block_ecv1.hpp",
+        "include/boost/coroutine2/detail/push_control_block_cc.ipp",
         "include/boost/coroutine2/detail/push_coroutine.hpp",
+        "include/boost/coroutine2/detail/push_coroutine.ipp",
         "include/boost/coroutine2/detail/state.hpp",
         "include/boost/coroutine2/detail/wrap.hpp",
         "include/boost/coroutine2/fixedsize_stack.hpp",
@@ -36,15 +39,18 @@ cc_library(
         "include/boost/coroutine2/coroutine.hpp",
         "include/boost/coroutine2/detail/config.hpp",
         "include/boost/coroutine2/detail/coroutine.hpp",
+        "include/boost/coroutine2/detail/create_control_block.ipp",
         "include/boost/coroutine2/detail/decay_copy.hpp",
         "include/boost/coroutine2/detail/disable_overload.hpp",
         "include/boost/coroutine2/detail/forced_unwind.hpp",
         "include/boost/coroutine2/detail/pull_control_block_cc.hpp",
-        "include/boost/coroutine2/detail/pull_control_block_ecv1.hpp",
+        "include/boost/coroutine2/detail/pull_control_block_cc.ipp",
         "include/boost/coroutine2/detail/pull_coroutine.hpp",
+        "include/boost/coroutine2/detail/pull_coroutine.ipp",
         "include/boost/coroutine2/detail/push_control_block_cc.hpp",
-        "include/boost/coroutine2/detail/push_control_block_ecv1.hpp",
+        "include/boost/coroutine2/detail/push_control_block_cc.ipp",
         "include/boost/coroutine2/detail/push_coroutine.hpp",
+        "include/boost/coroutine2/detail/push_coroutine.ipp",
         "include/boost/coroutine2/detail/state.hpp",
         "include/boost/coroutine2/detail/wrap.hpp",
         "include/boost/coroutine2/fixedsize_stack.hpp",
@@ -53,35 +59,51 @@ cc_library(
         "include/boost/coroutine2/segmented_stack.hpp",
     ],
     copts = [],
-    visibility = ["//visibility:public"],
     deps = [
-        ":@boost_align//:align",
-        ":@boost_assert//:assert",
-        ":@boost_bind//:bind",
-        ":@boost_concept_check//:concept_check",
-        ":@boost_config//:config",
-        ":@boost_context//:context",
-        ":@boost_conversion//:conversion",
-        ":@boost_core//:core",
-        ":@boost_detail//:detail",
-        ":@boost_fiber//:fiber",
-        ":@boost_function//:function",
-        ":@boost_function_types//:function_types",
-        ":@boost_functional//:functional",
-        ":@boost_integer//:integer",
-        ":@boost_intrusive//:intrusive",
-        ":@boost_iterator//:iterator",
-        ":@boost_move//:move",
-        ":@boost_mpl//:mpl",
-        ":@boost_optional//:optional",
-        ":@boost_preprocessor//:preprocessor",
-        ":@boost_smart_ptr//:smart_ptr",
-        ":@boost_static_assert//:static_assert",
-        ":@boost_throw_exception//:throw_exception",
-        ":@boost_tuple//:tuple",
-        ":@boost_type_traits//:type_traits",
-        ":@boost_typeof//:typeof",
-        ":@boost_utility//:utility",
-        ":coroutine2_hdrs",
+        ":headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/context/detail/config.hpp:
+        "@boost_context//:headers_only",
+        # Because of boost/intrusive_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/pool/pool.hpp:
+        "@boost_pool//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
+        # Because of boost/type_traits/alignment_of.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/integer/common_factor_ct.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/thread/mutex.hpp:
+        "@boost_thread//:headers_only",
+        # Because of boost/chrono/ceil.hpp:
+        "@boost_chrono//:headers_only",
+        # Because of boost/core/ignore_unused.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/system/system_error.hpp:
+        "@boost_system//:headers_only",
+        # Because of boost/date_time/posix_time/conversion.hpp:
+        "@boost_date_time//:headers_only",
+        # Because of boost/mpl/logical.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/ratio/ratio.hpp:
+        "@boost_ratio//:headers_only",
+        # Because of boost/move/traits.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/rational.hpp:
+        "@boost_rational//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
+        # Because of boost/preprocessor/cat.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/call_traits.hpp:
+        "@boost_utility//:headers_only",
     ],
 )

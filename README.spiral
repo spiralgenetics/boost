@@ -1,5 +1,11 @@
 To generate bazel build files for boost:
 
+# Initilize submodules:
+git submodule init
+
+# Change origin of submodules to pull direct from github
+sed -i '/^\[submodule/,/url =/s^git@bitbucket.org:genegnome/^https://github.com/boostorg/^' .git/config
+
 # Get all source files present in the repository.
 git submodule update --recursive
 

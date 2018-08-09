@@ -21,6 +21,7 @@ cc_library(
         "include/boost/multi_index/detail/hash_index_iterator.hpp",
         "include/boost/multi_index/detail/hash_index_node.hpp",
         "include/boost/multi_index/detail/header_holder.hpp",
+        "include/boost/multi_index/detail/ignore_wstrict_aliasing.hpp",
         "include/boost/multi_index/detail/index_base.hpp",
         "include/boost/multi_index/detail/index_loader.hpp",
         "include/boost/multi_index/detail/index_matcher.hpp",
@@ -34,14 +35,19 @@ cc_library(
         "include/boost/multi_index/detail/no_duplicate_tags.hpp",
         "include/boost/multi_index/detail/node_type.hpp",
         "include/boost/multi_index/detail/ord_index_args.hpp",
+        "include/boost/multi_index/detail/ord_index_impl.hpp",
+        "include/boost/multi_index/detail/ord_index_impl_fwd.hpp",
         "include/boost/multi_index/detail/ord_index_node.hpp",
         "include/boost/multi_index/detail/ord_index_ops.hpp",
         "include/boost/multi_index/detail/promotes_arg.hpp",
+        "include/boost/multi_index/detail/raw_ptr.hpp",
+        "include/boost/multi_index/detail/restore_wstrict_aliasing.hpp",
         "include/boost/multi_index/detail/rnd_index_loader.hpp",
         "include/boost/multi_index/detail/rnd_index_node.hpp",
         "include/boost/multi_index/detail/rnd_index_ops.hpp",
         "include/boost/multi_index/detail/rnd_index_ptr_array.hpp",
         "include/boost/multi_index/detail/rnd_node_iterator.hpp",
+        "include/boost/multi_index/detail/rnk_index_ops.hpp",
         "include/boost/multi_index/detail/safe_mode.hpp",
         "include/boost/multi_index/detail/scope_guard.hpp",
         "include/boost/multi_index/detail/seq_index_node.hpp",
@@ -64,6 +70,8 @@ cc_library(
         "include/boost/multi_index/ordered_index_fwd.hpp",
         "include/boost/multi_index/random_access_index.hpp",
         "include/boost/multi_index/random_access_index_fwd.hpp",
+        "include/boost/multi_index/ranked_index.hpp",
+        "include/boost/multi_index/ranked_index_fwd.hpp",
         "include/boost/multi_index/safe_mode_errors.hpp",
         "include/boost/multi_index/sequenced_index.hpp",
         "include/boost/multi_index/sequenced_index_fwd.hpp",
@@ -98,6 +106,7 @@ cc_library(
         "include/boost/multi_index/detail/hash_index_iterator.hpp",
         "include/boost/multi_index/detail/hash_index_node.hpp",
         "include/boost/multi_index/detail/header_holder.hpp",
+        "include/boost/multi_index/detail/ignore_wstrict_aliasing.hpp",
         "include/boost/multi_index/detail/index_base.hpp",
         "include/boost/multi_index/detail/index_loader.hpp",
         "include/boost/multi_index/detail/index_matcher.hpp",
@@ -111,14 +120,19 @@ cc_library(
         "include/boost/multi_index/detail/no_duplicate_tags.hpp",
         "include/boost/multi_index/detail/node_type.hpp",
         "include/boost/multi_index/detail/ord_index_args.hpp",
+        "include/boost/multi_index/detail/ord_index_impl.hpp",
+        "include/boost/multi_index/detail/ord_index_impl_fwd.hpp",
         "include/boost/multi_index/detail/ord_index_node.hpp",
         "include/boost/multi_index/detail/ord_index_ops.hpp",
         "include/boost/multi_index/detail/promotes_arg.hpp",
+        "include/boost/multi_index/detail/raw_ptr.hpp",
+        "include/boost/multi_index/detail/restore_wstrict_aliasing.hpp",
         "include/boost/multi_index/detail/rnd_index_loader.hpp",
         "include/boost/multi_index/detail/rnd_index_node.hpp",
         "include/boost/multi_index/detail/rnd_index_ops.hpp",
         "include/boost/multi_index/detail/rnd_index_ptr_array.hpp",
         "include/boost/multi_index/detail/rnd_node_iterator.hpp",
+        "include/boost/multi_index/detail/rnk_index_ops.hpp",
         "include/boost/multi_index/detail/safe_mode.hpp",
         "include/boost/multi_index/detail/scope_guard.hpp",
         "include/boost/multi_index/detail/seq_index_node.hpp",
@@ -141,6 +155,8 @@ cc_library(
         "include/boost/multi_index/ordered_index_fwd.hpp",
         "include/boost/multi_index/random_access_index.hpp",
         "include/boost/multi_index/random_access_index_fwd.hpp",
+        "include/boost/multi_index/ranked_index.hpp",
+        "include/boost/multi_index/ranked_index_fwd.hpp",
         "include/boost/multi_index/safe_mode_errors.hpp",
         "include/boost/multi_index/sequenced_index.hpp",
         "include/boost/multi_index/sequenced_index_fwd.hpp",
@@ -151,44 +167,44 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/ref.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/mpl/push_front.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
-        "@boost_tuple//:headers_only",
-        # Because of boost/move/core.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/foreach_fwd.hpp:
-        "@boost_foreach//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/archive/archive_exception.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/call_traits.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/iterator/reverse_iterator.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/integer/common_factor_rt.hpp:
-        "@boost_integer//:headers_only",
         # Because of boost/detail/allocator_utilities.hpp:
         "@boost_detail//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/noncopyable.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/serialization/nvp.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/mpl/contains.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/move/core.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/utility/base_from_member.hpp:
+        "@boost_utility//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
-        "@boost_preprocessor//:headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/iterator/reverse_iterator.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/foreach_fwd.hpp:
+        "@boost_foreach//:headers_only",
+        # Because of boost/integer/common_factor_rt.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/preprocessor/seq/enum.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
         # Because of boost/detail/lightweight_mutex.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_functional//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
     ],

@@ -1,4 +1,4 @@
-package(visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "headers_only",
@@ -319,9 +319,9 @@ cc_library(
         "include/boost/vmd/vmd.hpp",
     ],
     copts = [],
-    visibility = ["//visibility:public"],
     deps = [
-        ":@boost_preprocessor//:preprocessor",
-        ":vmd_hdrs",
+        ":headers_only",
+        # Because of boost/preprocessor/tuple/pop_back.hpp:
+        "@boost_preprocessor//:headers_only",
     ],
 )

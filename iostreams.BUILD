@@ -83,9 +83,6 @@ cc_library(
         "include/boost/iostreams/detail/system_failure.hpp",
         "include/boost/iostreams/detail/template_params.hpp",
         "include/boost/iostreams/detail/translate_int_type.hpp",
-        "include/boost/iostreams/detail/vc6/close.hpp",
-        "include/boost/iostreams/detail/vc6/read.hpp",
-        "include/boost/iostreams/detail/vc6/write.hpp",
         "include/boost/iostreams/detail/wrap_unwrap.hpp",
         "include/boost/iostreams/device/array.hpp",
         "include/boost/iostreams/device/back_inserter.hpp",
@@ -99,6 +96,7 @@ cc_library(
         "include/boost/iostreams/filter/grep.hpp",
         "include/boost/iostreams/filter/gzip.hpp",
         "include/boost/iostreams/filter/line.hpp",
+        "include/boost/iostreams/filter/lzma.hpp",
         "include/boost/iostreams/filter/newline.hpp",
         "include/boost/iostreams/filter/regex.hpp",
         "include/boost/iostreams/filter/stdio.hpp",
@@ -143,6 +141,7 @@ cc_library(
         "src/bzip2.cpp",
         "src/file_descriptor.cpp",
         "src/gzip.cpp",
+        "src/lzma.cpp",
         "src/mapped_file.cpp",
         "src/zlib.cpp",
     ],
@@ -227,9 +226,6 @@ cc_library(
         "include/boost/iostreams/detail/system_failure.hpp",
         "include/boost/iostreams/detail/template_params.hpp",
         "include/boost/iostreams/detail/translate_int_type.hpp",
-        "include/boost/iostreams/detail/vc6/close.hpp",
-        "include/boost/iostreams/detail/vc6/read.hpp",
-        "include/boost/iostreams/detail/vc6/write.hpp",
         "include/boost/iostreams/detail/wrap_unwrap.hpp",
         "include/boost/iostreams/device/array.hpp",
         "include/boost/iostreams/device/back_inserter.hpp",
@@ -243,6 +239,7 @@ cc_library(
         "include/boost/iostreams/filter/grep.hpp",
         "include/boost/iostreams/filter/gzip.hpp",
         "include/boost/iostreams/filter/line.hpp",
+        "include/boost/iostreams/filter/lzma.hpp",
         "include/boost/iostreams/filter/newline.hpp",
         "include/boost/iostreams/filter/regex.hpp",
         "include/boost/iostreams/filter/stdio.hpp",
@@ -281,8 +278,8 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_integer//:integer",
         "@boost_config//:config",
+        "@boost_integer//:integer",
         "@boost_throw_exception//:throw_exception",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
@@ -292,40 +289,42 @@ cc_library(
         "@boost_throw_exception//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/preprocessor/repetition/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/detail/iterator.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/range/value_type.hpp:
+        # Because of boost/range/iterator_range.hpp:
         "@boost_range//:headers_only",
         # Because of boost/iterator/iterator_traits.hpp:
         "@boost_iterator//:headers_only",
         # Because of boost/utility.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
         # Because of boost/detail/indirect_traits.hpp:
         "@boost_detail//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
-        # Because of boost/regex.hpp:
-        "@boost_regex//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/random/uniform_smallint.hpp:
-        "@boost_random//:headers_only",
         # Because of boost/function.hpp:
         "@boost_function//:headers_only",
+        # Because of boost/regex.hpp:
+        "@boost_regex//:headers_only",
+        # Because of boost/random/uniform_smallint.hpp:
+        "@boost_random//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/type_index.hpp:
+        "@boost_type_index//:headers_only",
         # Because of boost/functional/hash.hpp:
-        "@boost_functional//:headers_only",
+        "@boost_container_hash//:headers_only",
         # Because of boost/move/utility_core.hpp:
         "@boost_move//:headers_only",
     ],

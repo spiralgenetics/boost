@@ -1,22 +1,21 @@
-package(visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "headers_only",
     hdrs = [
         "include/boost/fiber/algo/algorithm.hpp",
-        "include/boost/fiber/algo/detail/chase_lev_queue.hpp",
         "include/boost/fiber/algo/round_robin.hpp",
         "include/boost/fiber/algo/shared_work.hpp",
         "include/boost/fiber/algo/work_stealing.hpp",
         "include/boost/fiber/all.hpp",
         "include/boost/fiber/barrier.hpp",
-        "include/boost/fiber/bounded_channel.hpp",
         "include/boost/fiber/buffered_channel.hpp",
         "include/boost/fiber/channel_op_status.hpp",
         "include/boost/fiber/condition_variable.hpp",
         "include/boost/fiber/context.hpp",
+        "include/boost/fiber/cuda/waitfor.hpp",
         "include/boost/fiber/detail/config.hpp",
-        "include/boost/fiber/detail/context_mpsc_queue.hpp",
+        "include/boost/fiber/detail/context_spinlock_queue.hpp",
         "include/boost/fiber/detail/context_spmc_queue.hpp",
         "include/boost/fiber/detail/convert.hpp",
         "include/boost/fiber/detail/cpu_relax.hpp",
@@ -25,12 +24,15 @@ cc_library(
         "include/boost/fiber/detail/disable_overload.hpp",
         "include/boost/fiber/detail/fss.hpp",
         "include/boost/fiber/detail/futex.hpp",
+        "include/boost/fiber/detail/is_all_same.hpp",
+        "include/boost/fiber/detail/rtm.hpp",
         "include/boost/fiber/detail/spinlock.hpp",
+        "include/boost/fiber/detail/spinlock_rtm.hpp",
+        "include/boost/fiber/detail/spinlock_status.hpp",
         "include/boost/fiber/detail/spinlock_ttas.hpp",
         "include/boost/fiber/detail/spinlock_ttas_adaptive.hpp",
         "include/boost/fiber/detail/spinlock_ttas_adaptive_futex.hpp",
         "include/boost/fiber/detail/spinlock_ttas_futex.hpp",
-        "include/boost/fiber/detail/wrap.hpp",
         "include/boost/fiber/exceptions.hpp",
         "include/boost/fiber/fiber.hpp",
         "include/boost/fiber/fixedsize_stack.hpp",
@@ -45,7 +47,12 @@ cc_library(
         "include/boost/fiber/future/future_status.hpp",
         "include/boost/fiber/future/packaged_task.hpp",
         "include/boost/fiber/future/promise.hpp",
+        "include/boost/fiber/hip/waitfor.hpp",
         "include/boost/fiber/mutex.hpp",
+        "include/boost/fiber/numa/algo/work_stealing.hpp",
+        "include/boost/fiber/numa/all.hpp",
+        "include/boost/fiber/numa/pin_thread.hpp",
+        "include/boost/fiber/numa/topology.hpp",
         "include/boost/fiber/operations.hpp",
         "include/boost/fiber/policy.hpp",
         "include/boost/fiber/pooled_fixedsize_stack.hpp",
@@ -57,7 +64,6 @@ cc_library(
         "include/boost/fiber/segmented_stack.hpp",
         "include/boost/fiber/timed_mutex.hpp",
         "include/boost/fiber/type.hpp",
-        "include/boost/fiber/unbounded_channel.hpp",
         "include/boost/fiber/unbuffered_channel.hpp",
     ],
     includes = [
@@ -78,6 +84,21 @@ cc_library(
         "src/fiber.cpp",
         "src/future.cpp",
         "src/mutex.cpp",
+        "src/numa/aix/pin_thread.cpp",
+        "src/numa/aix/topology.cpp",
+        "src/numa/algo/work_stealing.cpp",
+        "src/numa/freebsd/pin_thread.cpp",
+        "src/numa/freebsd/topology.cpp",
+        "src/numa/hpux/pin_thread.cpp",
+        "src/numa/hpux/topology.cpp",
+        "src/numa/linux/pin_thread.cpp",
+        "src/numa/linux/topology.cpp",
+        "src/numa/pin_thread.cpp",
+        "src/numa/solaris/pin_thread.cpp",
+        "src/numa/solaris/topology.cpp",
+        "src/numa/topology.cpp",
+        "src/numa/windows/pin_thread.cpp",
+        "src/numa/windows/topology.cpp",
         "src/properties.cpp",
         "src/recursive_mutex.cpp",
         "src/recursive_timed_mutex.cpp",
@@ -86,19 +107,18 @@ cc_library(
     ],
     hdrs = [
         "include/boost/fiber/algo/algorithm.hpp",
-        "include/boost/fiber/algo/detail/chase_lev_queue.hpp",
         "include/boost/fiber/algo/round_robin.hpp",
         "include/boost/fiber/algo/shared_work.hpp",
         "include/boost/fiber/algo/work_stealing.hpp",
         "include/boost/fiber/all.hpp",
         "include/boost/fiber/barrier.hpp",
-        "include/boost/fiber/bounded_channel.hpp",
         "include/boost/fiber/buffered_channel.hpp",
         "include/boost/fiber/channel_op_status.hpp",
         "include/boost/fiber/condition_variable.hpp",
         "include/boost/fiber/context.hpp",
+        "include/boost/fiber/cuda/waitfor.hpp",
         "include/boost/fiber/detail/config.hpp",
-        "include/boost/fiber/detail/context_mpsc_queue.hpp",
+        "include/boost/fiber/detail/context_spinlock_queue.hpp",
         "include/boost/fiber/detail/context_spmc_queue.hpp",
         "include/boost/fiber/detail/convert.hpp",
         "include/boost/fiber/detail/cpu_relax.hpp",
@@ -107,12 +127,15 @@ cc_library(
         "include/boost/fiber/detail/disable_overload.hpp",
         "include/boost/fiber/detail/fss.hpp",
         "include/boost/fiber/detail/futex.hpp",
+        "include/boost/fiber/detail/is_all_same.hpp",
+        "include/boost/fiber/detail/rtm.hpp",
         "include/boost/fiber/detail/spinlock.hpp",
+        "include/boost/fiber/detail/spinlock_rtm.hpp",
+        "include/boost/fiber/detail/spinlock_status.hpp",
         "include/boost/fiber/detail/spinlock_ttas.hpp",
         "include/boost/fiber/detail/spinlock_ttas_adaptive.hpp",
         "include/boost/fiber/detail/spinlock_ttas_adaptive_futex.hpp",
         "include/boost/fiber/detail/spinlock_ttas_futex.hpp",
-        "include/boost/fiber/detail/wrap.hpp",
         "include/boost/fiber/exceptions.hpp",
         "include/boost/fiber/fiber.hpp",
         "include/boost/fiber/fixedsize_stack.hpp",
@@ -127,7 +150,12 @@ cc_library(
         "include/boost/fiber/future/future_status.hpp",
         "include/boost/fiber/future/packaged_task.hpp",
         "include/boost/fiber/future/promise.hpp",
+        "include/boost/fiber/hip/waitfor.hpp",
         "include/boost/fiber/mutex.hpp",
+        "include/boost/fiber/numa/algo/work_stealing.hpp",
+        "include/boost/fiber/numa/all.hpp",
+        "include/boost/fiber/numa/pin_thread.hpp",
+        "include/boost/fiber/numa/topology.hpp",
         "include/boost/fiber/operations.hpp",
         "include/boost/fiber/policy.hpp",
         "include/boost/fiber/pooled_fixedsize_stack.hpp",
@@ -139,40 +167,90 @@ cc_library(
         "include/boost/fiber/segmented_stack.hpp",
         "include/boost/fiber/timed_mutex.hpp",
         "include/boost/fiber/type.hpp",
-        "include/boost/fiber/unbounded_channel.hpp",
         "include/boost/fiber/unbuffered_channel.hpp",
     ],
     copts = [
         "-I./src",
     ],
-    visibility = ["//visibility:public"],
     deps = [
-        ":@boost_align//:align",
-        ":@boost_assert//:assert",
-        ":@boost_bind//:bind",
-        ":@boost_concept_check//:concept_check",
-        ":@boost_config//:config",
-        ":@boost_context//:context",
-        ":@boost_conversion//:conversion",
-        ":@boost_core//:core",
-        ":@boost_detail//:detail",
-        ":@boost_function//:function",
-        ":@boost_function_types//:function_types",
-        ":@boost_functional//:functional",
-        ":@boost_integer//:integer",
-        ":@boost_intrusive//:intrusive",
-        ":@boost_iterator//:iterator",
-        ":@boost_move//:move",
-        ":@boost_mpl//:mpl",
-        ":@boost_optional//:optional",
-        ":@boost_preprocessor//:preprocessor",
-        ":@boost_smart_ptr//:smart_ptr",
-        ":@boost_static_assert//:static_assert",
-        ":@boost_throw_exception//:throw_exception",
-        ":@boost_tuple//:tuple",
-        ":@boost_type_traits//:type_traits",
-        ":@boost_typeof//:typeof",
-        ":@boost_utility//:utility",
-        ":fiber_hdrs",
+        ":headers_only",
+        "@boost_assert//:assert",
+        "@boost_format//:format",
+        "@boost_filesystem//:filesystem",
+        "@boost_config//:config",
+        "@boost_algorithm//:algorithm",
+        "@boost_context//:context",
+        # Because of boost/context/detail/prefetch.hpp:
+        "@boost_context//:headers_only",
+        # Because of boost/filesystem/fstream.hpp:
+        "@boost_filesystem//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/format.hpp:
+        "@boost_format//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/algorithm/string.hpp:
+        "@boost_algorithm//:headers_only",
+        # Because of boost/intrusive_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/intrusive/list.hpp:
+        "@boost_intrusive//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
+        # Because of boost/move/utility_core.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/iterator/iterator_facade.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/io/detail/quoted_manip.hpp:
+        "@boost_io//:headers_only",
+        # Because of boost/system/error_code.hpp:
+        "@boost_system//:headers_only",
+        # Because of boost/type_traits/is_integral.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/core/ignore_unused.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/optional.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/range/mutable_iterator.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/detail/bitmask.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/mpl/apply.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/utility/base_from_member.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/function.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/preprocessor/comma_if.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/mem_fn.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/type_index.hpp:
+        "@boost_type_index//:headers_only",
+        # Because of boost/integer.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/pool/pool.hpp:
+        "@boost_pool//:headers_only",
+        # Because of boost/thread/mutex.hpp:
+        "@boost_thread//:headers_only",
+        # Because of boost/chrono/ceil.hpp:
+        "@boost_chrono//:headers_only",
+        # Because of boost/date_time/posix_time/conversion.hpp:
+        "@boost_date_time//:headers_only",
+        # Because of boost/ratio/ratio.hpp:
+        "@boost_ratio//:headers_only",
+        # Because of boost/rational.hpp:
+        "@boost_rational//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
     ],
 )

@@ -10,8 +10,6 @@ cc_library(
         "include/boost/variant/detail/apply_visitor_delayed.hpp",
         "include/boost/variant/detail/apply_visitor_unary.hpp",
         "include/boost/variant/detail/backup_holder.hpp",
-        "include/boost/variant/detail/bool_trait_def.hpp",
-        "include/boost/variant/detail/bool_trait_undef.hpp",
         "include/boost/variant/detail/cast_storage.hpp",
         "include/boost/variant/detail/config.hpp",
         "include/boost/variant/detail/element_index.hpp",
@@ -59,8 +57,6 @@ cc_library(
         "include/boost/variant/detail/apply_visitor_delayed.hpp",
         "include/boost/variant/detail/apply_visitor_unary.hpp",
         "include/boost/variant/detail/backup_holder.hpp",
-        "include/boost/variant/detail/bool_trait_def.hpp",
-        "include/boost/variant/detail/bool_trait_undef.hpp",
         "include/boost/variant/detail/cast_storage.hpp",
         "include/boost/variant/detail/config.hpp",
         "include/boost/variant/detail/element_index.hpp",
@@ -95,35 +91,35 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/type_traits/detail/bool_trait_undef.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/move/adl_move_swap.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/mpl/distance.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/core/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/preprocessor/punctuation/comma_if.hpp:
+        # Because of boost/preprocessor/arithmetic/sub.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
-        # Because of boost/detail/templated_streams.hpp:
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/type_traits/add_pointer.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/utility/addressof.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/move/utility.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/mpl/aux_/config/ctps.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/blank_fwd.hpp:
         "@boost_detail//:headers_only",
         # Because of boost/call_traits.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/math/common_factor_ct.hpp:
-        "@boost_math//:headers_only",
+        # Because of boost/integer/common_factor_ct.hpp:
+        "@boost_integer//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
     ],
 )

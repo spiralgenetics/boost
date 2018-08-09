@@ -1,4 +1,4 @@
-package(visibility = ["//visibility:public"])
+package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "headers_only",
@@ -71,8 +71,8 @@ cc_library(
         "include/boost/hana/detail/concepts.hpp",
         "include/boost/hana/detail/create.hpp",
         "include/boost/hana/detail/decay.hpp",
-        "include/boost/hana/detail/dependent_on.hpp",
         "include/boost/hana/detail/dispatch_if.hpp",
+        "include/boost/hana/detail/ebo.hpp",
         "include/boost/hana/detail/fast_and.hpp",
         "include/boost/hana/detail/first_unsatisfied_index.hpp",
         "include/boost/hana/detail/has_common_embedding.hpp",
@@ -97,7 +97,6 @@ cc_library(
         "include/boost/hana/detail/operators/searchable.hpp",
         "include/boost/hana/detail/preprocessor.hpp",
         "include/boost/hana/detail/std_common_type.hpp",
-        "include/boost/hana/detail/struct_macros.erb.hpp",
         "include/boost/hana/detail/struct_macros.hpp",
         "include/boost/hana/detail/type_at.hpp",
         "include/boost/hana/detail/type_foldl1.hpp",
@@ -271,6 +270,7 @@ cc_library(
         "include/boost/hana/fwd/group.hpp",
         "include/boost/hana/fwd/hash.hpp",
         "include/boost/hana/fwd/if.hpp",
+        "include/boost/hana/fwd/index_if.hpp",
         "include/boost/hana/fwd/insert.hpp",
         "include/boost/hana/fwd/insert_range.hpp",
         "include/boost/hana/fwd/integral_constant.hpp",
@@ -363,6 +363,7 @@ cc_library(
         "include/boost/hana/group.hpp",
         "include/boost/hana/hash.hpp",
         "include/boost/hana/if.hpp",
+        "include/boost/hana/index_if.hpp",
         "include/boost/hana/insert.hpp",
         "include/boost/hana/insert_range.hpp",
         "include/boost/hana/integral_constant.hpp",
@@ -530,8 +531,8 @@ cc_library(
         "include/boost/hana/detail/concepts.hpp",
         "include/boost/hana/detail/create.hpp",
         "include/boost/hana/detail/decay.hpp",
-        "include/boost/hana/detail/dependent_on.hpp",
         "include/boost/hana/detail/dispatch_if.hpp",
+        "include/boost/hana/detail/ebo.hpp",
         "include/boost/hana/detail/fast_and.hpp",
         "include/boost/hana/detail/first_unsatisfied_index.hpp",
         "include/boost/hana/detail/has_common_embedding.hpp",
@@ -556,7 +557,6 @@ cc_library(
         "include/boost/hana/detail/operators/searchable.hpp",
         "include/boost/hana/detail/preprocessor.hpp",
         "include/boost/hana/detail/std_common_type.hpp",
-        "include/boost/hana/detail/struct_macros.erb.hpp",
         "include/boost/hana/detail/struct_macros.hpp",
         "include/boost/hana/detail/type_at.hpp",
         "include/boost/hana/detail/type_foldl1.hpp",
@@ -730,6 +730,7 @@ cc_library(
         "include/boost/hana/fwd/group.hpp",
         "include/boost/hana/fwd/hash.hpp",
         "include/boost/hana/fwd/if.hpp",
+        "include/boost/hana/fwd/index_if.hpp",
         "include/boost/hana/fwd/insert.hpp",
         "include/boost/hana/fwd/insert_range.hpp",
         "include/boost/hana/fwd/integral_constant.hpp",
@@ -822,6 +823,7 @@ cc_library(
         "include/boost/hana/group.hpp",
         "include/boost/hana/hash.hpp",
         "include/boost/hana/if.hpp",
+        "include/boost/hana/index_if.hpp",
         "include/boost/hana/insert.hpp",
         "include/boost/hana/insert_range.hpp",
         "include/boost/hana/integral_constant.hpp",
@@ -913,33 +915,25 @@ cc_library(
         "include/boost/hana/zip_with.hpp",
     ],
     copts = [],
-    visibility = ["//visibility:public"],
     deps = [
-        ":@boost_align//:align",
-        ":@boost_assert//:assert",
-        ":@boost_bind//:bind",
-        ":@boost_concept_check//:concept_check",
-        ":@boost_config//:config",
-        ":@boost_conversion//:conversion",
-        ":@boost_core//:core",
-        ":@boost_detail//:detail",
-        ":@boost_function//:function",
-        ":@boost_function_types//:function_types",
-        ":@boost_functional//:functional",
-        ":@boost_fusion//:fusion",
-        ":@boost_integer//:integer",
-        ":@boost_iterator//:iterator",
-        ":@boost_move//:move",
-        ":@boost_mpl//:mpl",
-        ":@boost_optional//:optional",
-        ":@boost_preprocessor//:preprocessor",
-        ":@boost_smart_ptr//:smart_ptr",
-        ":@boost_static_assert//:static_assert",
-        ":@boost_throw_exception//:throw_exception",
-        ":@boost_tuple//:tuple",
-        ":@boost_type_traits//:type_traits",
-        ":@boost_typeof//:typeof",
-        ":@boost_utility//:utility",
-        ":hana_hdrs",
+        ":headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
+        # Because of boost/mpl/list.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/core/demangle.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/fusion/container/vector/convert.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/version.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/preprocessor/inc.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
     ],
 )

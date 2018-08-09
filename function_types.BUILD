@@ -169,18 +169,18 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/detail/template_arity_spec.hpp:
+        # Because of boost/type_traits/add_reference.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/aux_/lambda_support.hpp:
+        # Because of boost/mpl/placeholders.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/blank.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/detail/workaround.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_trailing_params.hpp:
+        # Because of boost/preprocessor/facilities/identity.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/type.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/blank.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
     ],

@@ -81,9 +81,24 @@ cc_library(
         "include/boost/math/distributions/triangular.hpp",
         "include/boost/math/distributions/uniform.hpp",
         "include/boost/math/distributions/weibull.hpp",
+        "include/boost/math/interpolators/barycentric_rational.hpp",
+        "include/boost/math/interpolators/cubic_b_spline.hpp",
+        "include/boost/math/interpolators/detail/barycentric_rational_detail.hpp",
+        "include/boost/math/interpolators/detail/cubic_b_spline_detail.hpp",
         "include/boost/math/octonion.hpp",
         "include/boost/math/policies/error_handling.hpp",
         "include/boost/math/policies/policy.hpp",
+        "include/boost/math/quadrature/detail/exp_sinh_detail.hpp",
+        "include/boost/math/quadrature/detail/sinh_sinh_detail.hpp",
+        "include/boost/math/quadrature/detail/tanh_sinh_constants.hpp",
+        "include/boost/math/quadrature/detail/tanh_sinh_detail.hpp",
+        "include/boost/math/quadrature/exp_sinh.hpp",
+        "include/boost/math/quadrature/gauss.hpp",
+        "include/boost/math/quadrature/gauss_kronrod.hpp",
+        "include/boost/math/quadrature/naive_monte_carlo.hpp",
+        "include/boost/math/quadrature/sinh_sinh.hpp",
+        "include/boost/math/quadrature/tanh_sinh.hpp",
+        "include/boost/math/quadrature/trapezoidal.hpp",
         "include/boost/math/quaternion.hpp",
         "include/boost/math/special_functions.hpp",
         "include/boost/math/special_functions/acosh.hpp",
@@ -96,6 +111,8 @@ cc_library(
         "include/boost/math/special_functions/beta.hpp",
         "include/boost/math/special_functions/binomial.hpp",
         "include/boost/math/special_functions/cbrt.hpp",
+        "include/boost/math/special_functions/chebyshev.hpp",
+        "include/boost/math/special_functions/chebyshev_transform.hpp",
         "include/boost/math/special_functions/cos_pi.hpp",
         "include/boost/math/special_functions/detail/airy_ai_bi_zero.hpp",
         "include/boost/math/special_functions/detail/bernoulli_details.hpp",
@@ -158,6 +175,7 @@ cc_library(
         "include/boost/math/special_functions/laguerre.hpp",
         "include/boost/math/special_functions/lanczos.hpp",
         "include/boost/math/special_functions/legendre.hpp",
+        "include/boost/math/special_functions/legendre_stieltjes.hpp",
         "include/boost/math/special_functions/log1p.hpp",
         "include/boost/math/special_functions/math_fwd.hpp",
         "include/boost/math/special_functions/modf.hpp",
@@ -168,6 +186,7 @@ cc_library(
         "include/boost/math/special_functions/pow.hpp",
         "include/boost/math/special_functions/powm1.hpp",
         "include/boost/math/special_functions/prime.hpp",
+        "include/boost/math/special_functions/relative_difference.hpp",
         "include/boost/math/special_functions/round.hpp",
         "include/boost/math/special_functions/sign.hpp",
         "include/boost/math/special_functions/sin_pi.hpp",
@@ -177,9 +196,12 @@ cc_library(
         "include/boost/math/special_functions/sqrt1pm1.hpp",
         "include/boost/math/special_functions/trigamma.hpp",
         "include/boost/math/special_functions/trunc.hpp",
+        "include/boost/math/special_functions/ulp.hpp",
         "include/boost/math/special_functions/zeta.hpp",
+        "include/boost/math/tools/atomic.hpp",
         "include/boost/math/tools/big_constant.hpp",
         "include/boost/math/tools/config.hpp",
+        "include/boost/math/tools/convert_from_string.hpp",
         "include/boost/math/tools/detail/polynomial_horner1_10.hpp",
         "include/boost/math/tools/detail/polynomial_horner1_11.hpp",
         "include/boost/math/tools/detail/polynomial_horner1_12.hpp",
@@ -296,7 +318,9 @@ cc_library(
         "include/boost/math/tools/detail/rational_horner3_9.hpp",
         "include/boost/math/tools/fraction.hpp",
         "include/boost/math/tools/minima.hpp",
+        "include/boost/math/tools/numerical_differentiation.hpp",
         "include/boost/math/tools/polynomial.hpp",
+        "include/boost/math/tools/polynomial_gcd.hpp",
         "include/boost/math/tools/precision.hpp",
         "include/boost/math/tools/promotion.hpp",
         "include/boost/math/tools/rational.hpp",
@@ -529,9 +553,24 @@ cc_library(
         "include/boost/math/distributions/triangular.hpp",
         "include/boost/math/distributions/uniform.hpp",
         "include/boost/math/distributions/weibull.hpp",
+        "include/boost/math/interpolators/barycentric_rational.hpp",
+        "include/boost/math/interpolators/cubic_b_spline.hpp",
+        "include/boost/math/interpolators/detail/barycentric_rational_detail.hpp",
+        "include/boost/math/interpolators/detail/cubic_b_spline_detail.hpp",
         "include/boost/math/octonion.hpp",
         "include/boost/math/policies/error_handling.hpp",
         "include/boost/math/policies/policy.hpp",
+        "include/boost/math/quadrature/detail/exp_sinh_detail.hpp",
+        "include/boost/math/quadrature/detail/sinh_sinh_detail.hpp",
+        "include/boost/math/quadrature/detail/tanh_sinh_constants.hpp",
+        "include/boost/math/quadrature/detail/tanh_sinh_detail.hpp",
+        "include/boost/math/quadrature/exp_sinh.hpp",
+        "include/boost/math/quadrature/gauss.hpp",
+        "include/boost/math/quadrature/gauss_kronrod.hpp",
+        "include/boost/math/quadrature/naive_monte_carlo.hpp",
+        "include/boost/math/quadrature/sinh_sinh.hpp",
+        "include/boost/math/quadrature/tanh_sinh.hpp",
+        "include/boost/math/quadrature/trapezoidal.hpp",
         "include/boost/math/quaternion.hpp",
         "include/boost/math/special_functions.hpp",
         "include/boost/math/special_functions/acosh.hpp",
@@ -544,6 +583,8 @@ cc_library(
         "include/boost/math/special_functions/beta.hpp",
         "include/boost/math/special_functions/binomial.hpp",
         "include/boost/math/special_functions/cbrt.hpp",
+        "include/boost/math/special_functions/chebyshev.hpp",
+        "include/boost/math/special_functions/chebyshev_transform.hpp",
         "include/boost/math/special_functions/cos_pi.hpp",
         "include/boost/math/special_functions/detail/airy_ai_bi_zero.hpp",
         "include/boost/math/special_functions/detail/bernoulli_details.hpp",
@@ -606,6 +647,7 @@ cc_library(
         "include/boost/math/special_functions/laguerre.hpp",
         "include/boost/math/special_functions/lanczos.hpp",
         "include/boost/math/special_functions/legendre.hpp",
+        "include/boost/math/special_functions/legendre_stieltjes.hpp",
         "include/boost/math/special_functions/log1p.hpp",
         "include/boost/math/special_functions/math_fwd.hpp",
         "include/boost/math/special_functions/modf.hpp",
@@ -616,6 +658,7 @@ cc_library(
         "include/boost/math/special_functions/pow.hpp",
         "include/boost/math/special_functions/powm1.hpp",
         "include/boost/math/special_functions/prime.hpp",
+        "include/boost/math/special_functions/relative_difference.hpp",
         "include/boost/math/special_functions/round.hpp",
         "include/boost/math/special_functions/sign.hpp",
         "include/boost/math/special_functions/sin_pi.hpp",
@@ -625,9 +668,12 @@ cc_library(
         "include/boost/math/special_functions/sqrt1pm1.hpp",
         "include/boost/math/special_functions/trigamma.hpp",
         "include/boost/math/special_functions/trunc.hpp",
+        "include/boost/math/special_functions/ulp.hpp",
         "include/boost/math/special_functions/zeta.hpp",
+        "include/boost/math/tools/atomic.hpp",
         "include/boost/math/tools/big_constant.hpp",
         "include/boost/math/tools/config.hpp",
+        "include/boost/math/tools/convert_from_string.hpp",
         "include/boost/math/tools/detail/polynomial_horner1_10.hpp",
         "include/boost/math/tools/detail/polynomial_horner1_11.hpp",
         "include/boost/math/tools/detail/polynomial_horner1_12.hpp",
@@ -744,7 +790,9 @@ cc_library(
         "include/boost/math/tools/detail/rational_horner3_9.hpp",
         "include/boost/math/tools/fraction.hpp",
         "include/boost/math/tools/minima.hpp",
+        "include/boost/math/tools/numerical_differentiation.hpp",
         "include/boost/math/tools/polynomial.hpp",
+        "include/boost/math/tools/polynomial_gcd.hpp",
         "include/boost/math/tools/precision.hpp",
         "include/boost/math/tools/promotion.hpp",
         "include/boost/math/tools/rational.hpp",
@@ -766,61 +814,59 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
         # Because of boost/limits.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/type_traits/is_convertible.hpp:
+        # Because of boost/type_traits/is_floating_point.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/equal_to.hpp:
+        # Because of boost/mpl/comparison.hpp:
         "@boost_mpl//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/format.hpp:
-        "@boost_format//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/detail/endian.hpp:
+        "@boost_predef//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
         # Because of boost/detail/fenv.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/lexical_cast.hpp:
-        "@boost_lexical_cast//:headers_only",
-        # Because of boost/detail/endian.hpp:
-        "@boost_predef//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/preprocessor/inc.hpp:
+        # Because of boost/preprocessor/stringize.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/range/iterator_range_core.hpp:
-        "@boost_range//:headers_only",
-        # Because of boost/atomic.hpp:
-        "@boost_atomic//:headers_only",
-        # Because of boost/detail/lightweight_mutex.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/fusion/include/std_pair.hpp:
-        "@boost_fusion//:headers_only",
+        # Because of boost/lexical_cast.hpp:
+        "@boost_lexical_cast//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
+        # Because of boost/fusion/include/std_pair.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/range/iterator_range_core.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/detail/lightweight_mutex.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/next_prior.hpp:
+        "@boost_iterator//:headers_only",
         # Because of boost/container/container_fwd.hpp:
         "@boost_container//:headers_only",
-        # Because of boost/iterator/iterator_traits.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/utility/base_from_member.hpp:
-        "@boost_utility//:headers_only",
+        # Because of boost/atomic.hpp:
+        "@boost_atomic//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/move/utility.hpp:
+        # Because of boost/utility.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/move/detail/std_ns_end.hpp:
         "@boost_move//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
+        # Because of boost/lambda/lambda.hpp:
+        "@boost_lambda//:headers_only",
+        # Because of boost/is_placeholder.hpp:
+        "@boost_bind//:headers_only",
     ],
 )

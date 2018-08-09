@@ -376,6 +376,7 @@ cc_library(
         "include/boost/spirit/home/qi/detail/construct.hpp",
         "include/boost/spirit/home/qi/detail/enable_lit.hpp",
         "include/boost/spirit/home/qi/detail/expect_function.hpp",
+        "include/boost/spirit/home/qi/detail/expectation_failure.hpp",
         "include/boost/spirit/home/qi/detail/fail_function.hpp",
         "include/boost/spirit/home/qi/detail/parse.hpp",
         "include/boost/spirit/home/qi/detail/parse_auto.hpp",
@@ -387,6 +388,7 @@ cc_library(
         "include/boost/spirit/home/qi/directive.hpp",
         "include/boost/spirit/home/qi/directive/as.hpp",
         "include/boost/spirit/home/qi/directive/encoding.hpp",
+        "include/boost/spirit/home/qi/directive/expect.hpp",
         "include/boost/spirit/home/qi/directive/hold.hpp",
         "include/boost/spirit/home/qi/directive/lexeme.hpp",
         "include/boost/spirit/home/qi/directive/matches.hpp",
@@ -462,7 +464,9 @@ cc_library(
         "include/boost/spirit/home/support/algorithm/any.hpp",
         "include/boost/spirit/home/support/algorithm/any_if.hpp",
         "include/boost/spirit/home/support/algorithm/any_if_ns.hpp",
+        "include/boost/spirit/home/support/algorithm/any_if_ns_so.hpp",
         "include/boost/spirit/home/support/algorithm/any_ns.hpp",
+        "include/boost/spirit/home/support/algorithm/any_ns_so.hpp",
         "include/boost/spirit/home/support/argument.hpp",
         "include/boost/spirit/home/support/argument_expression.hpp",
         "include/boost/spirit/home/support/assert_msg.hpp",
@@ -594,11 +598,15 @@ cc_library(
         "include/boost/spirit/home/x3/auxiliary/eol.hpp",
         "include/boost/spirit/home/x3/auxiliary/eps.hpp",
         "include/boost/spirit/home/x3/auxiliary/guard.hpp",
+        "include/boost/spirit/home/x3/binary.hpp",
+        "include/boost/spirit/home/x3/binary/binary.hpp",
         "include/boost/spirit/home/x3/char.hpp",
         "include/boost/spirit/home/x3/char/any_char.hpp",
         "include/boost/spirit/home/x3/char/char.hpp",
         "include/boost/spirit/home/x3/char/char_class.hpp",
+        "include/boost/spirit/home/x3/char/char_class_tags.hpp",
         "include/boost/spirit/home/x3/char/char_parser.hpp",
+        "include/boost/spirit/home/x3/char/char_set.hpp",
         "include/boost/spirit/home/x3/char/detail/cast_char.hpp",
         "include/boost/spirit/home/x3/char/literal_char.hpp",
         "include/boost/spirit/home/x3/char/negated_char_parser.hpp",
@@ -612,15 +620,18 @@ cc_library(
         "include/boost/spirit/home/x3/core/proxy.hpp",
         "include/boost/spirit/home/x3/core/skip_over.hpp",
         "include/boost/spirit/home/x3/directive.hpp",
+        "include/boost/spirit/home/x3/directive/confix.hpp",
         "include/boost/spirit/home/x3/directive/expect.hpp",
         "include/boost/spirit/home/x3/directive/lexeme.hpp",
+        "include/boost/spirit/home/x3/directive/matches.hpp",
+        "include/boost/spirit/home/x3/directive/no_case.hpp",
         "include/boost/spirit/home/x3/directive/no_skip.hpp",
         "include/boost/spirit/home/x3/directive/omit.hpp",
         "include/boost/spirit/home/x3/directive/raw.hpp",
+        "include/boost/spirit/home/x3/directive/repeat.hpp",
+        "include/boost/spirit/home/x3/directive/seek.hpp",
         "include/boost/spirit/home/x3/directive/skip.hpp",
         "include/boost/spirit/home/x3/directive/with.hpp",
-        "include/boost/spirit/home/x3/extensions.hpp",
-        "include/boost/spirit/home/x3/extensions/seek.hpp",
         "include/boost/spirit/home/x3/nonterminal.hpp",
         "include/boost/spirit/home/x3/nonterminal/debug_handler_state.hpp",
         "include/boost/spirit/home/x3/nonterminal/detail/rule.hpp",
@@ -647,6 +658,7 @@ cc_library(
         "include/boost/spirit/home/x3/operator/plus.hpp",
         "include/boost/spirit/home/x3/operator/sequence.hpp",
         "include/boost/spirit/home/x3/string.hpp",
+        "include/boost/spirit/home/x3/string/detail/no_case_string_parse.hpp",
         "include/boost/spirit/home/x3/string/detail/string_parse.hpp",
         "include/boost/spirit/home/x3/string/detail/tst.hpp",
         "include/boost/spirit/home/x3/string/literal_string.hpp",
@@ -656,6 +668,7 @@ cc_library(
         "include/boost/spirit/home/x3/support/ast/position_tagged.hpp",
         "include/boost/spirit/home/x3/support/ast/variant.hpp",
         "include/boost/spirit/home/x3/support/context.hpp",
+        "include/boost/spirit/home/x3/support/no_case.hpp",
         "include/boost/spirit/home/x3/support/numeric_utils/detail/extract_int.hpp",
         "include/boost/spirit/home/x3/support/numeric_utils/extract_int.hpp",
         "include/boost/spirit/home/x3/support/numeric_utils/extract_real.hpp",
@@ -669,6 +682,7 @@ cc_library(
         "include/boost/spirit/home/x3/support/traits/handles_container.hpp",
         "include/boost/spirit/home/x3/support/traits/has_attribute.hpp",
         "include/boost/spirit/home/x3/support/traits/is_parser.hpp",
+        "include/boost/spirit/home/x3/support/traits/is_range.hpp",
         "include/boost/spirit/home/x3/support/traits/is_substitute.hpp",
         "include/boost/spirit/home/x3/support/traits/is_variant.hpp",
         "include/boost/spirit/home/x3/support/traits/make_attribute.hpp",
@@ -684,15 +698,15 @@ cc_library(
         "include/boost/spirit/home/x3/support/traits/variant_find_substitute.hpp",
         "include/boost/spirit/home/x3/support/traits/variant_has_substitute.hpp",
         "include/boost/spirit/home/x3/support/unused.hpp",
-        "include/boost/spirit/home/x3/support/utility/detail/testing.hpp",
+        "include/boost/spirit/home/x3/support/utility/annotate_on_success.hpp",
         "include/boost/spirit/home/x3/support/utility/error_reporting.hpp",
-        "include/boost/spirit/home/x3/support/utility/integer_sequence.hpp",
         "include/boost/spirit/home/x3/support/utility/is_callable.hpp",
         "include/boost/spirit/home/x3/support/utility/lambda_visitor.hpp",
         "include/boost/spirit/home/x3/support/utility/sfinae.hpp",
         "include/boost/spirit/home/x3/support/utility/testing.hpp",
         "include/boost/spirit/home/x3/support/utility/unrefcv.hpp",
         "include/boost/spirit/home/x3/support/utility/utf8.hpp",
+        "include/boost/spirit/home/x3/version.hpp",
         "include/boost/spirit/include/classic.hpp",
         "include/boost/spirit/include/classic_actions.hpp",
         "include/boost/spirit/include/classic_actor.hpp",
@@ -983,7 +997,9 @@ cc_library(
         "include/boost/spirit/include/support_any.hpp",
         "include/boost/spirit/include/support_any_if.hpp",
         "include/boost/spirit/include/support_any_if_ns.hpp",
+        "include/boost/spirit/include/support_any_if_ns_so.hpp",
         "include/boost/spirit/include/support_any_ns.hpp",
+        "include/boost/spirit/include/support_any_ns_so.hpp",
         "include/boost/spirit/include/support_argument.hpp",
         "include/boost/spirit/include/support_ascii.hpp",
         "include/boost/spirit/include/support_attributes.hpp",
@@ -1438,6 +1454,7 @@ cc_library(
         "include/boost/spirit/home/qi/detail/construct.hpp",
         "include/boost/spirit/home/qi/detail/enable_lit.hpp",
         "include/boost/spirit/home/qi/detail/expect_function.hpp",
+        "include/boost/spirit/home/qi/detail/expectation_failure.hpp",
         "include/boost/spirit/home/qi/detail/fail_function.hpp",
         "include/boost/spirit/home/qi/detail/parse.hpp",
         "include/boost/spirit/home/qi/detail/parse_auto.hpp",
@@ -1449,6 +1466,7 @@ cc_library(
         "include/boost/spirit/home/qi/directive.hpp",
         "include/boost/spirit/home/qi/directive/as.hpp",
         "include/boost/spirit/home/qi/directive/encoding.hpp",
+        "include/boost/spirit/home/qi/directive/expect.hpp",
         "include/boost/spirit/home/qi/directive/hold.hpp",
         "include/boost/spirit/home/qi/directive/lexeme.hpp",
         "include/boost/spirit/home/qi/directive/matches.hpp",
@@ -1524,7 +1542,9 @@ cc_library(
         "include/boost/spirit/home/support/algorithm/any.hpp",
         "include/boost/spirit/home/support/algorithm/any_if.hpp",
         "include/boost/spirit/home/support/algorithm/any_if_ns.hpp",
+        "include/boost/spirit/home/support/algorithm/any_if_ns_so.hpp",
         "include/boost/spirit/home/support/algorithm/any_ns.hpp",
+        "include/boost/spirit/home/support/algorithm/any_ns_so.hpp",
         "include/boost/spirit/home/support/argument.hpp",
         "include/boost/spirit/home/support/argument_expression.hpp",
         "include/boost/spirit/home/support/assert_msg.hpp",
@@ -1656,11 +1676,15 @@ cc_library(
         "include/boost/spirit/home/x3/auxiliary/eol.hpp",
         "include/boost/spirit/home/x3/auxiliary/eps.hpp",
         "include/boost/spirit/home/x3/auxiliary/guard.hpp",
+        "include/boost/spirit/home/x3/binary.hpp",
+        "include/boost/spirit/home/x3/binary/binary.hpp",
         "include/boost/spirit/home/x3/char.hpp",
         "include/boost/spirit/home/x3/char/any_char.hpp",
         "include/boost/spirit/home/x3/char/char.hpp",
         "include/boost/spirit/home/x3/char/char_class.hpp",
+        "include/boost/spirit/home/x3/char/char_class_tags.hpp",
         "include/boost/spirit/home/x3/char/char_parser.hpp",
+        "include/boost/spirit/home/x3/char/char_set.hpp",
         "include/boost/spirit/home/x3/char/detail/cast_char.hpp",
         "include/boost/spirit/home/x3/char/literal_char.hpp",
         "include/boost/spirit/home/x3/char/negated_char_parser.hpp",
@@ -1674,15 +1698,18 @@ cc_library(
         "include/boost/spirit/home/x3/core/proxy.hpp",
         "include/boost/spirit/home/x3/core/skip_over.hpp",
         "include/boost/spirit/home/x3/directive.hpp",
+        "include/boost/spirit/home/x3/directive/confix.hpp",
         "include/boost/spirit/home/x3/directive/expect.hpp",
         "include/boost/spirit/home/x3/directive/lexeme.hpp",
+        "include/boost/spirit/home/x3/directive/matches.hpp",
+        "include/boost/spirit/home/x3/directive/no_case.hpp",
         "include/boost/spirit/home/x3/directive/no_skip.hpp",
         "include/boost/spirit/home/x3/directive/omit.hpp",
         "include/boost/spirit/home/x3/directive/raw.hpp",
+        "include/boost/spirit/home/x3/directive/repeat.hpp",
+        "include/boost/spirit/home/x3/directive/seek.hpp",
         "include/boost/spirit/home/x3/directive/skip.hpp",
         "include/boost/spirit/home/x3/directive/with.hpp",
-        "include/boost/spirit/home/x3/extensions.hpp",
-        "include/boost/spirit/home/x3/extensions/seek.hpp",
         "include/boost/spirit/home/x3/nonterminal.hpp",
         "include/boost/spirit/home/x3/nonterminal/debug_handler_state.hpp",
         "include/boost/spirit/home/x3/nonterminal/detail/rule.hpp",
@@ -1709,6 +1736,7 @@ cc_library(
         "include/boost/spirit/home/x3/operator/plus.hpp",
         "include/boost/spirit/home/x3/operator/sequence.hpp",
         "include/boost/spirit/home/x3/string.hpp",
+        "include/boost/spirit/home/x3/string/detail/no_case_string_parse.hpp",
         "include/boost/spirit/home/x3/string/detail/string_parse.hpp",
         "include/boost/spirit/home/x3/string/detail/tst.hpp",
         "include/boost/spirit/home/x3/string/literal_string.hpp",
@@ -1718,6 +1746,7 @@ cc_library(
         "include/boost/spirit/home/x3/support/ast/position_tagged.hpp",
         "include/boost/spirit/home/x3/support/ast/variant.hpp",
         "include/boost/spirit/home/x3/support/context.hpp",
+        "include/boost/spirit/home/x3/support/no_case.hpp",
         "include/boost/spirit/home/x3/support/numeric_utils/detail/extract_int.hpp",
         "include/boost/spirit/home/x3/support/numeric_utils/extract_int.hpp",
         "include/boost/spirit/home/x3/support/numeric_utils/extract_real.hpp",
@@ -1731,6 +1760,7 @@ cc_library(
         "include/boost/spirit/home/x3/support/traits/handles_container.hpp",
         "include/boost/spirit/home/x3/support/traits/has_attribute.hpp",
         "include/boost/spirit/home/x3/support/traits/is_parser.hpp",
+        "include/boost/spirit/home/x3/support/traits/is_range.hpp",
         "include/boost/spirit/home/x3/support/traits/is_substitute.hpp",
         "include/boost/spirit/home/x3/support/traits/is_variant.hpp",
         "include/boost/spirit/home/x3/support/traits/make_attribute.hpp",
@@ -1746,15 +1776,15 @@ cc_library(
         "include/boost/spirit/home/x3/support/traits/variant_find_substitute.hpp",
         "include/boost/spirit/home/x3/support/traits/variant_has_substitute.hpp",
         "include/boost/spirit/home/x3/support/unused.hpp",
-        "include/boost/spirit/home/x3/support/utility/detail/testing.hpp",
+        "include/boost/spirit/home/x3/support/utility/annotate_on_success.hpp",
         "include/boost/spirit/home/x3/support/utility/error_reporting.hpp",
-        "include/boost/spirit/home/x3/support/utility/integer_sequence.hpp",
         "include/boost/spirit/home/x3/support/utility/is_callable.hpp",
         "include/boost/spirit/home/x3/support/utility/lambda_visitor.hpp",
         "include/boost/spirit/home/x3/support/utility/sfinae.hpp",
         "include/boost/spirit/home/x3/support/utility/testing.hpp",
         "include/boost/spirit/home/x3/support/utility/unrefcv.hpp",
         "include/boost/spirit/home/x3/support/utility/utf8.hpp",
+        "include/boost/spirit/home/x3/version.hpp",
         "include/boost/spirit/include/classic.hpp",
         "include/boost/spirit/include/classic_actions.hpp",
         "include/boost/spirit/include/classic_actor.hpp",
@@ -2045,7 +2075,9 @@ cc_library(
         "include/boost/spirit/include/support_any.hpp",
         "include/boost/spirit/include/support_any_if.hpp",
         "include/boost/spirit/include/support_any_if_ns.hpp",
+        "include/boost/spirit/include/support_any_if_ns_so.hpp",
         "include/boost/spirit/include/support_any_ns.hpp",
+        "include/boost/spirit/include/support_any_ns_so.hpp",
         "include/boost/spirit/include/support_argument.hpp",
         "include/boost/spirit/include/support_ascii.hpp",
         "include/boost/spirit/include/support_attributes.hpp",
@@ -2119,109 +2151,113 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/vector.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/variant.hpp:
-        "@boost_variant//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
+        # Because of boost/noncopyable.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/fusion/include/as_vector.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/preprocessor/enum_params.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/scoped_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/range/iterator_range.hpp:
-        "@boost_range//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/io/ios_state.hpp:
-        "@boost_io//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/iterator_adaptors.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/algorithm/string/predicate.hpp:
-        "@boost_algorithm//:headers_only",
-        # Because of boost/proto/proto.hpp:
-        "@boost_proto//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/lexical_cast.hpp:
-        "@boost_lexical_cast//:headers_only",
-        # Because of boost/utility/result_of.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/phoenix/core/limits.hpp:
-        "@boost_phoenix//:headers_only",
-        # Because of boost/thread/mutex.hpp:
-        "@boost_thread//:headers_only",
-        # Because of boost/foreach.hpp:
-        "@boost_foreach//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/regex.hpp:
-        "@boost_regex//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/phoenix/core.hpp:
+        "@boost_phoenix//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/fusion/include/equal_to.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/optional.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/lexical_cast.hpp:
+        "@boost_lexical_cast//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/range/iterator_range.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/utility/value_init.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/variant.hpp:
+        "@boost_variant//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/function.hpp:
-        "@boost_function//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/iterator/iterator_concepts.hpp:
+        "@boost_iterator//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
-        # Because of boost/function_types/is_function.hpp:
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/shared_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/thread/mutex.hpp:
+        "@boost_thread//:headers_only",
+        # Because of boost/pool/object_pool.hpp:
+        "@boost_pool//:headers_only",
+        # Because of boost/foreach.hpp:
+        "@boost_foreach//:headers_only",
+        # Because of boost/unordered_map.hpp:
+        "@boost_unordered//:headers_only",
+        # Because of boost/proto/proto.hpp:
+        "@boost_proto//:headers_only",
+        # Because of boost/math/special_functions/fpclassify.hpp:
+        "@boost_math//:headers_only",
+        # Because of boost/iostreams/stream.hpp:
+        "@boost_iostreams//:headers_only",
+        # Because of boost/function.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/detail/endian.hpp:
+        "@boost_predef//:headers_only",
+        # Because of boost/function_types/result_type.hpp:
         "@boost_function_types//:headers_only",
         # Because of boost/filesystem/path.hpp:
         "@boost_filesystem//:headers_only",
-        # Because of boost/math/special_functions/fpclassify.hpp:
-        "@boost_math//:headers_only",
-        # Because of boost/pool/object_pool.hpp:
-        "@boost_pool//:headers_only",
-        # Because of boost/detail/endian.hpp:
-        "@boost_predef//:headers_only",
+        # Because of boost/locale/encoding_utf.hpp:
+        "@boost_locale//:headers_only",
+        # Because of boost/tti/has_type.hpp:
+        "@boost_tti//:headers_only",
+        # Because of boost/io/ios_state.hpp:
+        "@boost_io//:headers_only",
+        # Because of boost/regex.hpp:
+        "@boost_regex//:headers_only",
+        # Because of boost/move/unique_ptr.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/endian/arithmetic.hpp:
+        "@boost_endian//:headers_only",
         # Because of boost/serialization/vector.hpp:
         "@boost_serialization//:headers_only",
-        # Because of boost/iostreams/stream.hpp:
-        "@boost_iostreams//:headers_only",
-        # Because of boost/unordered_map.hpp:
-        "@boost_unordered//:headers_only",
+        # Because of boost/algorithm/string/predicate.hpp:
+        "@boost_algorithm//:headers_only",
+        # Because of boost/chrono/duration.hpp:
+        "@boost_chrono//:headers_only",
         # Because of boost/detail/reference_content.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/move/utility.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/system/error_code.hpp:
-        "@boost_system//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
+        # Because of boost/system/error_code.hpp:
+        "@boost_system//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/is_placeholder.hpp:
+        "@boost_bind//:headers_only",
         # Because of boost/container/container_fwd.hpp:
         "@boost_container//:headers_only",
-        # Because of boost/chrono/ceil.hpp:
-        "@boost_chrono//:headers_only",
-        # Because of boost/mem_fn.hpp:
-        "@boost_bind//:headers_only",
+        # Because of boost/date_time/time_clock.hpp:
+        "@boost_date_time//:headers_only",
+        # Because of boost/ratio/ratio.hpp:
+        "@boost_ratio//:headers_only",
         # Because of boost/atomic.hpp:
         "@boost_atomic//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/date_time/posix_time/conversion.hpp:
-        "@boost_date_time//:headers_only",
-        # Because of boost/ratio/ratio.hpp:
-        "@boost_ratio//:headers_only",
         # Because of boost/rational.hpp:
         "@boost_rational//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
-        # Because of boost/align/align.hpp:
-        "@boost_align//:headers_only",
-        # Because of boost/intrusive/detail/mpl.hpp:
+        # Because of boost/intrusive/detail/has_member_function_callable_with.hpp:
         "@boost_intrusive//:headers_only",
     ],
 )

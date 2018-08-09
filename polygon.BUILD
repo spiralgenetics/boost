@@ -145,11 +145,11 @@ cc_library(
         ":headers_only",
         # Because of boost/cstdint.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/mpl/protect.hpp:
+        # Because of boost/mpl/or.hpp:
         "@boost_mpl//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
+        # Because of boost/preprocessor/inc.hpp:
         "@boost_preprocessor//:headers_only",
     ],
 )

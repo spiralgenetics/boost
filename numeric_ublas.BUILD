@@ -121,48 +121,44 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/serialization/array.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/type_traits/remove_cv.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/next_prior.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/iterator/iterator_facade.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/range/iterator_range.hpp:
-        "@boost_range//:headers_only",
         # Because of boost/mpl/has_xxx.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/numeric/interval.hpp:
-        "@boost_numeric_interval//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/next_prior.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/type_traits/remove_cv.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/shared_array.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
+        # Because of boost/config/no_tr1/cmath.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/numeric/interval.hpp:
+        "@boost_numeric_interval//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/array.hpp:
-        "@boost_array//:headers_only",
-        # Because of boost/preprocessor/stringize.hpp:
+        # Because of boost/serialization/collection_size_type.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/shared_array.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/range/iterator_range.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/move/utility_core.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/operators.hpp:
+        "@boost_utility//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
         # Because of boost/detail/indirect_traits.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/align/align.hpp:
-        "@boost_align//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
     ],

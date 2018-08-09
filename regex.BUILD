@@ -156,38 +156,38 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_assert//:assert",
-        "@boost_static_assert//:static_assert",
         "@boost_throw_exception//:throw_exception",
         "@boost_config//:config",
+        "@boost_assert//:assert",
+        "@boost_static_assert//:static_assert",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/mpl/int_fwd.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/shared_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/iterator/iterator_facade.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/type_traits/is_array.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/iterator.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/integer.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/detail/indirect_traits.hpp:
-        "@boost_detail//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
+        # Because of boost/shared_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/mpl/bool_fwd.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/type_traits/make_unsigned.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/iterator/iterator_facade.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/preprocessor/cat.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/integer.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/ref.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/detail/indirect_traits.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/concept_archetype.hpp:
         "@boost_concept_check//:headers_only",
     ],

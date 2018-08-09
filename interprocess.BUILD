@@ -71,7 +71,6 @@ cc_library(
         "include/boost/interprocess/detail/win32_api.hpp",
         "include/boost/interprocess/detail/windows_intermodule_singleton.hpp",
         "include/boost/interprocess/detail/workaround.hpp",
-        "include/boost/interprocess/detail/xsi_shared_memory_device.hpp",
         "include/boost/interprocess/detail/xsi_shared_memory_file_wrapper.hpp",
         "include/boost/interprocess/errors.hpp",
         "include/boost/interprocess/exceptions.hpp",
@@ -174,9 +173,6 @@ cc_library(
         "include/boost/interprocess/sync/windows/winapi_mutex_wrapper.hpp",
         "include/boost/interprocess/sync/windows/winapi_semaphore_wrapper.hpp",
         "include/boost/interprocess/sync/windows/winapi_wrapper_common.hpp",
-        "include/boost/interprocess/sync/xsi/advanced_xsi_semaphore.hpp",
-        "include/boost/interprocess/sync/xsi/simple_xsi_semaphore.hpp",
-        "include/boost/interprocess/sync/xsi/xsi_named_mutex.hpp",
         "include/boost/interprocess/windows_shared_memory.hpp",
         "include/boost/interprocess/xsi_key.hpp",
         "include/boost/interprocess/xsi_shared_memory.hpp",
@@ -258,7 +254,6 @@ cc_library(
         "include/boost/interprocess/detail/win32_api.hpp",
         "include/boost/interprocess/detail/windows_intermodule_singleton.hpp",
         "include/boost/interprocess/detail/workaround.hpp",
-        "include/boost/interprocess/detail/xsi_shared_memory_device.hpp",
         "include/boost/interprocess/detail/xsi_shared_memory_file_wrapper.hpp",
         "include/boost/interprocess/errors.hpp",
         "include/boost/interprocess/exceptions.hpp",
@@ -361,9 +356,6 @@ cc_library(
         "include/boost/interprocess/sync/windows/winapi_mutex_wrapper.hpp",
         "include/boost/interprocess/sync/windows/winapi_semaphore_wrapper.hpp",
         "include/boost/interprocess/sync/windows/winapi_wrapper_common.hpp",
-        "include/boost/interprocess/sync/xsi/advanced_xsi_semaphore.hpp",
-        "include/boost/interprocess/sync/xsi/simple_xsi_semaphore.hpp",
-        "include/boost/interprocess/sync/xsi/xsi_named_mutex.hpp",
         "include/boost/interprocess/windows_shared_memory.hpp",
         "include/boost/interprocess/xsi_key.hpp",
         "include/boost/interprocess/xsi_shared_memory.hpp",
@@ -371,46 +363,46 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/intrusive/pointer_traits.hpp:
+        # Because of boost/intrusive/detail/minimal_less_equal_header.hpp:
         "@boost_intrusive//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/container/flat_map.hpp:
+        "@boost_container//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/move/utility_core.hpp:
+        # Because of boost/utility/addressof.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/date_time/posix_time/ptime.hpp:
+        "@boost_date_time//:headers_only",
+        # Because of boost/move/detail/std_ns_begin.hpp:
         "@boost_move//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/container/detail/multiallocation_chain.hpp:
-        "@boost_container//:headers_only",
-        # Because of boost/utility/addressof.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/date_time/posix_time/posix_time_types.hpp:
-        "@boost_date_time//:headers_only",
-        # Because of boost/unordered_map.hpp:
-        "@boost_unordered//:headers_only",
+        # Because of boost/type_traits/is_integral.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/integer/static_log2.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_functional//:headers_only",
+        # Because of boost/unordered_map.hpp:
+        "@boost_unordered//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
         # Because of boost/operators.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/preprocessor/seq/enum.hpp:
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/type_traits/is_convertible.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/iterator/iterator_categories.hpp:
-        "@boost_iterator//:headers_only",
         # Because of boost/detail/select_type.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/mpl/aux_/lambda_support.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/mpl/integral_c.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
     ],

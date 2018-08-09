@@ -3,6 +3,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "headers_only",
     hdrs = [
+        "include/boost/typeof/decltype.hpp",
         "include/boost/typeof/dmc/typeof_impl.hpp",
         "include/boost/typeof/encode_decode.hpp",
         "include/boost/typeof/encode_decode_params.hpp",
@@ -62,6 +63,7 @@ cc_library(
     name = "typeof",
     srcs = [],
     hdrs = [
+        "include/boost/typeof/decltype.hpp",
         "include/boost/typeof/dmc/typeof_impl.hpp",
         "include/boost/typeof/encode_decode.hpp",
         "include/boost/typeof/encode_decode_params.hpp",
@@ -115,15 +117,15 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/repetition/enum_params.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/mpl/deref.hpp:
+        # Because of boost/mpl/int.hpp:
         "@boost_mpl//:headers_only",
+        # Because of boost/type_traits/is_function.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/type_traits/is_function.hpp:
-        "@boost_type_traits//:headers_only",
+        # Because of boost/preprocessor/repetition/enum.hpp:
+        "@boost_preprocessor//:headers_only",
     ],
 )

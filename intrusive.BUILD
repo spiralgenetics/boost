@@ -50,7 +50,6 @@ cc_library(
         "include/boost/intrusive/detail/node_holder.hpp",
         "include/boost/intrusive/detail/node_to_value.hpp",
         "include/boost/intrusive/detail/parent_from_member.hpp",
-        "include/boost/intrusive/detail/pointer_element.hpp",
         "include/boost/intrusive/detail/rbtree_node.hpp",
         "include/boost/intrusive/detail/reverse_iterator.hpp",
         "include/boost/intrusive/detail/simple_disposers.hpp",
@@ -58,10 +57,10 @@ cc_library(
         "include/boost/intrusive/detail/slist_iterator.hpp",
         "include/boost/intrusive/detail/slist_node.hpp",
         "include/boost/intrusive/detail/std_fwd.hpp",
-        "include/boost/intrusive/detail/to_raw_pointer.hpp",
         "include/boost/intrusive/detail/transform_iterator.hpp",
         "include/boost/intrusive/detail/tree_iterator.hpp",
         "include/boost/intrusive/detail/tree_node.hpp",
+        "include/boost/intrusive/detail/tree_value_compare.hpp",
         "include/boost/intrusive/detail/uncast.hpp",
         "include/boost/intrusive/detail/workaround.hpp",
         "include/boost/intrusive/hashtable.hpp",
@@ -153,7 +152,6 @@ cc_library(
         "include/boost/intrusive/detail/node_holder.hpp",
         "include/boost/intrusive/detail/node_to_value.hpp",
         "include/boost/intrusive/detail/parent_from_member.hpp",
-        "include/boost/intrusive/detail/pointer_element.hpp",
         "include/boost/intrusive/detail/rbtree_node.hpp",
         "include/boost/intrusive/detail/reverse_iterator.hpp",
         "include/boost/intrusive/detail/simple_disposers.hpp",
@@ -161,10 +159,10 @@ cc_library(
         "include/boost/intrusive/detail/slist_iterator.hpp",
         "include/boost/intrusive/detail/slist_node.hpp",
         "include/boost/intrusive/detail/std_fwd.hpp",
-        "include/boost/intrusive/detail/to_raw_pointer.hpp",
         "include/boost/intrusive/detail/transform_iterator.hpp",
         "include/boost/intrusive/detail/tree_iterator.hpp",
         "include/boost/intrusive/detail/tree_node.hpp",
+        "include/boost/intrusive/detail/tree_value_compare.hpp",
         "include/boost/intrusive/detail/uncast.hpp",
         "include/boost/intrusive/detail/workaround.hpp",
         "include/boost/intrusive/hashtable.hpp",
@@ -203,27 +201,23 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/move/utility_core.hpp:
-        "@boost_move//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/core/no_exceptions_support.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/move/utility_core.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
         # Because of boost/functional/hash.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/type_traits/is_integral.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/type_traits/is_pointer.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/integer/static_log2.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_params.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/detail/container_fwd.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/mpl/aux_/lambda_support.hpp:
-        "@boost_mpl//:headers_only",
+        # Because of boost/integer/static_log2.hpp:
+        "@boost_integer//:headers_only",
     ],
 )

@@ -3,7 +3,6 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "headers_only",
     hdrs = [
-        "include/boost/archive/add_facet.hpp",
         "include/boost/archive/archive_exception.hpp",
         "include/boost/archive/basic_archive.hpp",
         "include/boost/archive/basic_binary_iarchive.hpp",
@@ -30,8 +29,6 @@ cc_library(
         "include/boost/archive/detail/archive_serializer_map.hpp",
         "include/boost/archive/detail/auto_link_archive.hpp",
         "include/boost/archive/detail/auto_link_warchive.hpp",
-        "include/boost/archive/detail/basic_archive_impl.hpp",
-        "include/boost/archive/detail/basic_config.hpp",
         "include/boost/archive/detail/basic_iarchive.hpp",
         "include/boost/archive/detail/basic_iserializer.hpp",
         "include/boost/archive/detail/basic_oarchive.hpp",
@@ -80,7 +77,6 @@ cc_library(
         "include/boost/archive/iterators/dataflow.hpp",
         "include/boost/archive/iterators/dataflow_exception.hpp",
         "include/boost/archive/iterators/escape.hpp",
-        "include/boost/archive/iterators/head_iterator.hpp",
         "include/boost/archive/iterators/insert_linebreaks.hpp",
         "include/boost/archive/iterators/istream_iterator.hpp",
         "include/boost/archive/iterators/mb_from_wchar.hpp",
@@ -116,11 +112,18 @@ cc_library(
         "include/boost/archive/xml_wiarchive.hpp",
         "include/boost/archive/xml_woarchive.hpp",
         "include/boost/serialization/access.hpp",
+        "include/boost/serialization/archive_input_unordered_map.hpp",
+        "include/boost/serialization/archive_input_unordered_set.hpp",
         "include/boost/serialization/array.hpp",
+        "include/boost/serialization/array_optimization.hpp",
+        "include/boost/serialization/array_wrapper.hpp",
         "include/boost/serialization/assume_abstract.hpp",
         "include/boost/serialization/base_object.hpp",
         "include/boost/serialization/binary_object.hpp",
         "include/boost/serialization/bitset.hpp",
+        "include/boost/serialization/boost_array.hpp",
+        "include/boost/serialization/boost_unordered_map.hpp",
+        "include/boost/serialization/boost_unordered_set.hpp",
         "include/boost/serialization/collection_size_type.hpp",
         "include/boost/serialization/collection_traits.hpp",
         "include/boost/serialization/collections_load_imp.hpp",
@@ -128,7 +131,6 @@ cc_library(
         "include/boost/serialization/complex.hpp",
         "include/boost/serialization/config.hpp",
         "include/boost/serialization/deque.hpp",
-        "include/boost/serialization/detail/get_data.hpp",
         "include/boost/serialization/detail/is_default_constructible.hpp",
         "include/boost/serialization/detail/shared_count_132.hpp",
         "include/boost/serialization/detail/shared_ptr_132.hpp",
@@ -154,7 +156,6 @@ cc_library(
         "include/boost/serialization/map.hpp",
         "include/boost/serialization/nvp.hpp",
         "include/boost/serialization/optional.hpp",
-        "include/boost/serialization/pfto.hpp",
         "include/boost/serialization/priority_queue.hpp",
         "include/boost/serialization/queue.hpp",
         "include/boost/serialization/scoped_ptr.hpp",
@@ -226,7 +227,6 @@ cc_library(
         "src/extended_type_info_typeid.cpp",
         "src/polymorphic_iarchive.cpp",
         "src/polymorphic_oarchive.cpp",
-        "src/shared_ptr_helper.cpp",
         "src/stl_port.cpp",
         "src/text_iarchive.cpp",
         "src/text_oarchive.cpp",
@@ -243,7 +243,6 @@ cc_library(
         "src/xml_woarchive.cpp",
     ],
     hdrs = [
-        "include/boost/archive/add_facet.hpp",
         "include/boost/archive/archive_exception.hpp",
         "include/boost/archive/basic_archive.hpp",
         "include/boost/archive/basic_binary_iarchive.hpp",
@@ -270,8 +269,6 @@ cc_library(
         "include/boost/archive/detail/archive_serializer_map.hpp",
         "include/boost/archive/detail/auto_link_archive.hpp",
         "include/boost/archive/detail/auto_link_warchive.hpp",
-        "include/boost/archive/detail/basic_archive_impl.hpp",
-        "include/boost/archive/detail/basic_config.hpp",
         "include/boost/archive/detail/basic_iarchive.hpp",
         "include/boost/archive/detail/basic_iserializer.hpp",
         "include/boost/archive/detail/basic_oarchive.hpp",
@@ -320,7 +317,6 @@ cc_library(
         "include/boost/archive/iterators/dataflow.hpp",
         "include/boost/archive/iterators/dataflow_exception.hpp",
         "include/boost/archive/iterators/escape.hpp",
-        "include/boost/archive/iterators/head_iterator.hpp",
         "include/boost/archive/iterators/insert_linebreaks.hpp",
         "include/boost/archive/iterators/istream_iterator.hpp",
         "include/boost/archive/iterators/mb_from_wchar.hpp",
@@ -356,11 +352,18 @@ cc_library(
         "include/boost/archive/xml_wiarchive.hpp",
         "include/boost/archive/xml_woarchive.hpp",
         "include/boost/serialization/access.hpp",
+        "include/boost/serialization/archive_input_unordered_map.hpp",
+        "include/boost/serialization/archive_input_unordered_set.hpp",
         "include/boost/serialization/array.hpp",
+        "include/boost/serialization/array_optimization.hpp",
+        "include/boost/serialization/array_wrapper.hpp",
         "include/boost/serialization/assume_abstract.hpp",
         "include/boost/serialization/base_object.hpp",
         "include/boost/serialization/binary_object.hpp",
         "include/boost/serialization/bitset.hpp",
+        "include/boost/serialization/boost_array.hpp",
+        "include/boost/serialization/boost_unordered_map.hpp",
+        "include/boost/serialization/boost_unordered_set.hpp",
         "include/boost/serialization/collection_size_type.hpp",
         "include/boost/serialization/collection_traits.hpp",
         "include/boost/serialization/collections_load_imp.hpp",
@@ -368,7 +371,6 @@ cc_library(
         "include/boost/serialization/complex.hpp",
         "include/boost/serialization/config.hpp",
         "include/boost/serialization/deque.hpp",
-        "include/boost/serialization/detail/get_data.hpp",
         "include/boost/serialization/detail/is_default_constructible.hpp",
         "include/boost/serialization/detail/shared_count_132.hpp",
         "include/boost/serialization/detail/shared_ptr_132.hpp",
@@ -394,7 +396,6 @@ cc_library(
         "include/boost/serialization/map.hpp",
         "include/boost/serialization/nvp.hpp",
         "include/boost/serialization/optional.hpp",
-        "include/boost/serialization/pfto.hpp",
         "include/boost/serialization/priority_queue.hpp",
         "include/boost/serialization/queue.hpp",
         "include/boost/serialization/scoped_ptr.hpp",
@@ -439,58 +440,62 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_detail//:detail",
+        "@boost_assert//:assert",
         "@boost_config//:config",
         "@boost_core//:core",
-        "@boost_assert//:assert",
+        "@boost_detail//:detail",
         "@boost_integer//:integer",
         # Because of boost/detail/utf8_codecvt_facet.ipp:
         "@boost_detail//:headers_only",
-        # Because of boost/integer_traits.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/limits.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/core/no_exceptions_support.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/preprocessor/empty.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/type_traits/is_polymorphic.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
+        # Because of boost/integer_traits.hpp:
+        "@boost_integer//:headers_only",
         # Because of boost/scoped_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/detail/endian.hpp:
-        "@boost_predef//:headers_only",
-        # Because of boost/spirit/include/classic_rule.hpp:
-        "@boost_spirit//:headers_only",
-        # Because of boost/io/ios_state.hpp:
-        "@boost_io//:headers_only",
+        # Because of boost/type_traits/remove_const.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/call_traits.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/detail/endian.hpp:
+        "@boost_predef//:headers_only",
+        # Because of boost/io/ios_state.hpp:
+        "@boost_io//:headers_only",
+        # Because of boost/spirit/include/classic_chset.hpp:
+        "@boost_spirit//:headers_only",
         # Because of boost/iterator/iterator_facade.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
+        # Because of boost/preprocessor/comparison/greater.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_functional//:headers_only",
-        # Because of boost/align/align.hpp:
-        "@boost_align//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/move/core.hpp:
+        "@boost_move//:headers_only",
         # Because of boost/optional.hpp:
         "@boost_optional//:headers_only",
-        # Because of boost/move/utility.hpp:
-        "@boost_move//:headers_only",
+        # Because of boost/unordered_map.hpp:
+        "@boost_unordered//:headers_only",
         # Because of boost/variant.hpp:
         "@boost_variant//:headers_only",
-        # Because of boost/math/common_factor_ct.hpp:
-        "@boost_math//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
+        # Because of boost/container/allocator_traits.hpp:
+        "@boost_container//:headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
+        # Because of boost/intrusive/detail/has_member_function_callable_with.hpp:
+        "@boost_intrusive//:headers_only",
     ],
 )
