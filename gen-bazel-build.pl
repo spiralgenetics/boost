@@ -51,6 +51,10 @@ sub pathinfo {
 	return undef;
     }
 
+    if ($filename =~ /python.*numpy/) {
+	return undef;
+    }
+
     my $full_filename = $filename;
     next unless $filename =~ s@^libs/@@;
 

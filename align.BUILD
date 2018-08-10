@@ -109,15 +109,15 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/core/addressof.hpp:
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/core/pointer_traits.hpp:
         "@boost_core//:headers_only",
     ],
 )

@@ -228,9 +228,9 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_core//:core",
         "@boost_intrusive//:intrusive",
-        # Because of boost/intrusive/detail/math.hpp:
+        "@boost_core//:core",
+        # Because of boost/intrusive/linear_slist_algorithms.hpp:
         "@boost_intrusive//:headers_only",
         # Because of boost/core/no_exceptions_support.hpp:
         "@boost_core//:headers_only",
@@ -246,9 +246,9 @@ cc_library(
         "@boost_container_hash//:headers_only",
         # Because of boost/type_traits/aligned_storage.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/detail/container_fwd.hpp:
-        "@boost_detail//:headers_only",
         # Because of boost/integer/static_log2.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/detail/container_fwd.hpp:
+        "@boost_detail//:headers_only",
     ],
 )

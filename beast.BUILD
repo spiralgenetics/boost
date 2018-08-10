@@ -344,39 +344,39 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/asio/coroutine.hpp:
+        # Because of boost/asio/buffer.hpp:
         "@boost_asio//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/core/ignore_unused.hpp:
-        "@boost_core//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/make_unique.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/optional.hpp:
         "@boost_optional//:headers_only",
-        # Because of boost/system/system_error.hpp:
-        "@boost_system//:headers_only",
-        # Because of boost/smart_ptr/make_shared_array.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/container/allocator_traits.hpp:
-        "@boost_container//:headers_only",
-        # Because of boost/align/aligned_alloc.hpp:
-        "@boost_align//:headers_only",
-        # Because of boost/endian/buffers.hpp:
-        "@boost_endian//:headers_only",
+        # Because of boost/core/exchange.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/intrusive/set.hpp:
         "@boost_intrusive//:headers_only",
+        # Because of boost/align/aligned_alloc.hpp:
+        "@boost_align//:headers_only",
         # Because of boost/is_placeholder.hpp:
         "@boost_bind//:headers_only",
-        # Because of boost/utility/string_view.hpp:
-        "@boost_utility//:headers_only",
         # Because of boost/type_traits.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/move/utility_core.hpp:
+        # Because of boost/container/allocator_traits.hpp:
+        "@boost_container//:headers_only",
+        # Because of boost/endian/buffers.hpp:
+        "@boost_endian//:headers_only",
+        # Because of boost/system/error_code.hpp:
+        "@boost_system//:headers_only",
+        # Because of boost/utility/string_view.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",
         # Because of boost/predef/detail/endian_compat.h:
         "@boost_predef//:headers_only",
@@ -384,28 +384,28 @@ cc_library(
         "@boost_function//:headers_only",
         # Because of boost/chrono/system_clocks.hpp:
         "@boost_chrono//:headers_only",
-        # Because of boost/preprocessor/facilities/intercept.hpp:
+        # Because of boost/preprocessor/repetition/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/mpl/bool.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/detail/reference_content.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/mpl/not.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/regex/v4/match_flags.hpp:
+        # Because of boost/regex_fwd.hpp:
         "@boost_regex//:headers_only",
         # Because of boost/date_time/posix_time/posix_time_types.hpp:
         "@boost_date_time//:headers_only",
-        # Because of boost/ratio/ratio.hpp:
-        "@boost_ratio//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/ratio/ratio.hpp:
+        "@boost_ratio//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
+        # Because of boost/rational.hpp:
+        "@boost_rational//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/rational.hpp:
-        "@boost_rational//:headers_only",
         # Because of boost/container_hash/hash.hpp:
         "@boost_container_hash//:headers_only",
     ],

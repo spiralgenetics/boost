@@ -43,10 +43,10 @@ cc_library(
         ":headers_only",
         # Because of boost/config/warning_disable.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/noncopyable.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/noncopyable.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/predef/platform.h:
         "@boost_predef//:headers_only",
     ],

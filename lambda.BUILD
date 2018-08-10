@@ -83,22 +83,22 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/indirect_reference.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/type_traits/is_float.hpp:
+        # Because of boost/type_traits/remove_const.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/detail/container_fwd.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/preprocessor/repeat_2nd.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
-        # Because of boost/utility/result_of.hpp:
-        "@boost_utility//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/preprocessor/enum_shifted_params.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/detail/container_fwd.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/indirect_reference.hpp:
+        "@boost_iterator//:headers_only",
         # Because of boost/mpl/has_xxx.hpp:
         "@boost_mpl//:headers_only",
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
         # Because of boost/is_placeholder.hpp:

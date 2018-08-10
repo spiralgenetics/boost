@@ -49,22 +49,22 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/remove_pointer.hpp:
+        # Because of boost/type_traits/remove_reference.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
+        # Because of boost/preprocessor/iteration/local.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/ptr_container/ptr_vector.hpp:
         "@boost_ptr_container//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/range/end.hpp:
-        "@boost_range//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/range/iterator_range.hpp:
+        "@boost_range//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
         # Because of boost/throw_exception.hpp:

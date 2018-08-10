@@ -95,33 +95,33 @@ cc_library(
         ":headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/mpl/identity.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/type_traits/is_convertible.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/core/enable_if.hpp:
+        # Because of boost/mpl/and.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/utility/addressof.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/utility/result_of.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/none.hpp:
-        "@boost_optional//:headers_only",
-        # Because of boost/function_types/result_type.hpp:
+        # Because of boost/fusion/algorithm/iteration/for_each.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/detail/is_incrementable.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/implicit_cast.hpp:
+        "@boost_conversion//:headers_only",
+        # Because of boost/concept_archetype.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/function_types/is_function_pointer.hpp:
         "@boost_function_types//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/fusion/support/tag_of_fwd.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/detail/indirect_traits.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/scoped_ptr.hpp:
+        # Because of boost/none.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/implicit_cast.hpp:
-        "@boost_conversion//:headers_only",
-        # Because of boost/preprocessor/facilities/intercept.hpp:
+        # Because of boost/preprocessor/inc.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",

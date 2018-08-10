@@ -101,40 +101,40 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/alignment_of.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/shared_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/function_output_iterator.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/preprocessor/iteration.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/mpl/bool.hpp:
+        # Because of boost/mpl/identity.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/variant/variant.hpp:
-        "@boost_variant//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/function.hpp:
-        "@boost_function//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
-        # Because of boost/multi_index/detail/scope_guard.hpp:
-        "@boost_multi_index//:headers_only",
+        # Because of boost/ref.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/weak_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
-        # Because of boost/parameter.hpp:
-        "@boost_parameter//:headers_only",
+        # Because of boost/function.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/type_traits/remove_pointer.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/iterator/reverse_iterator.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/multi_index/detail/scope_guard.hpp:
+        "@boost_multi_index//:headers_only",
+        # Because of boost/preprocessor/repetition.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/optional.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/parameter.hpp:
+        "@boost_parameter//:headers_only",
+        # Because of boost/variant/variant.hpp:
+        "@boost_variant//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/detail/reference_content.hpp:
@@ -143,11 +143,11 @@ cc_library(
         "@boost_integer//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
-        # Because of boost/call_traits.hpp:
+        # Because of boost/move/utility.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
         # Because of boost/functional/hash_fwd.hpp:
         "@boost_container_hash//:headers_only",
-        # Because of boost/move/move.hpp:
-        "@boost_move//:headers_only",
     ],
 )

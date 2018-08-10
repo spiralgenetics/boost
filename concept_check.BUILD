@@ -49,9 +49,9 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/mpl/bool.hpp:
+        # Because of boost/mpl/if.hpp:
         "@boost_mpl//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",

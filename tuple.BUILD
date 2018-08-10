@@ -25,13 +25,13 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/ref.hpp:
+        # Because of boost/utility/swap.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/type_traits/cv_traits.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/type_traits/function_traits.hpp:
-        "@boost_type_traits//:headers_only",
     ],
 )

@@ -49,29 +49,29 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/detail/reference_content.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/type_traits/is_reference.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/not.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
+        # Because of boost/type_traits.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/core/swap.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/utility/compare_pointees.hpp:
-        "@boost_utility//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/preprocessor/facilities/intercept.hpp:
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/mpl/bool.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/detail/reference_content.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
     ],
 )

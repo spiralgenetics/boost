@@ -61,30 +61,30 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/context/detail/config.hpp:
         "@boost_context//:headers_only",
-        # Because of boost/intrusive_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/pool/pool.hpp:
         "@boost_pool//:headers_only",
+        # Because of boost/intrusive_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
-        # Because of boost/type_traits/alignment_of.hpp:
-        "@boost_type_traits//:headers_only",
         # Because of boost/integer/common_factor_ct.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/type_traits/alignment_of.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/thread/mutex.hpp:
         "@boost_thread//:headers_only",
-        # Because of boost/chrono/ceil.hpp:
-        "@boost_chrono//:headers_only",
         # Because of boost/core/ignore_unused.hpp:
         "@boost_core//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/chrono/system_clocks.hpp:
+        "@boost_chrono//:headers_only",
         # Because of boost/system/system_error.hpp:
         "@boost_system//:headers_only",
         # Because of boost/date_time/posix_time/conversion.hpp:
@@ -93,7 +93,7 @@ cc_library(
         "@boost_mpl//:headers_only",
         # Because of boost/ratio/ratio.hpp:
         "@boost_ratio//:headers_only",
-        # Because of boost/move/traits.hpp:
+        # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
@@ -103,7 +103,7 @@ cc_library(
         "@boost_numeric_conversion//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/call_traits.hpp:
+        # Because of boost/operators.hpp:
         "@boost_utility//:headers_only",
     ],
 )

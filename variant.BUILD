@@ -91,34 +91,34 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/arithmetic/sub.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/detail/workaround.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/type_traits/add_pointer.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/utility/addressof.hpp:
+        # Because of boost/core/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/move/utility.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/mpl/aux_/config/ctps.hpp:
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/type_traits/remove_reference.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/aux_/template_arity.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/blank_fwd.hpp:
-        "@boost_detail//:headers_only",
+        # Because of boost/preprocessor/cat.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/call_traits.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/detail/reference_content.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/integer/common_factor_ct.hpp:
         "@boost_integer//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
+        # Because of boost/move/move.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/functional/hash_fwd.hpp:
         "@boost_container_hash//:headers_only",
     ],
