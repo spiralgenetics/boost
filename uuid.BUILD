@@ -71,44 +71,44 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
         # Because of boost/core/ignore_unused.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/move/core.hpp:
+        "@boost_move//:headers_only",
         # Because of boost/config/auto_link.hpp:
         "@boost_config//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/move/core.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/serialization/level.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/type_traits/is_integral.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/container_hash/hash.hpp:
-        "@boost_container_hash//:headers_only",
-        # Because of boost/predef/os/bsd/open.h:
+        # Because of boost/predef/library/c/gnu.h:
         "@boost_predef//:headers_only",
         # Because of boost/io/ios_state.hpp:
         "@boost_io//:headers_only",
-        # Because of boost/random/mersenne_twister.hpp:
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/type_traits/is_unsigned.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/random/variate_generator.hpp:
         "@boost_random//:headers_only",
-        # Because of boost/tti/has_member_function.hpp:
-        "@boost_tti//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/polymorphic_cast.hpp:
-        "@boost_conversion//:headers_only",
-        # Because of boost/mpl/integral_c.hpp:
-        "@boost_mpl//:headers_only",
+        # Because of boost/tti/has_member_function.hpp:
+        "@boost_tti//:headers_only",
+        # Because of boost/serialization/level.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/container_hash/hash.hpp:
+        "@boost_container_hash//:headers_only",
         # Because of boost/integer/integer_mask.hpp:
         "@boost_integer//:headers_only",
         # Because of boost/function_types/property_tags.hpp:
         "@boost_function_types//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/mpl/vector.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/polymorphic_cast.hpp:
+        "@boost_conversion//:headers_only",
         # Because of boost/detail/container_fwd.hpp:
         "@boost_detail//:headers_only",
     ],

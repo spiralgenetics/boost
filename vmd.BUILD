@@ -321,7 +321,7 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/tuple/push_back.hpp:
+        # Because of boost/preprocessor/tuple/size.hpp:
         "@boost_preprocessor//:headers_only",
     ],
 )

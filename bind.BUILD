@@ -53,9 +53,9 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/core/is_same.hpp:
+        "@boost_core//:headers_only",
     ],
 )

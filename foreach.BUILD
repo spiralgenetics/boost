@@ -21,18 +21,18 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/range/iterator.hpp:
+        # Because of boost/mpl/assert.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/type_traits/is_rvalue_reference.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/range/begin.hpp:
         "@boost_range//:headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/utility/addressof.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/iterator/iterator_traits.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/type_traits/is_rvalue_reference.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/assert.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/static_assert.hpp:

@@ -225,7 +225,7 @@ cc_library(
         "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/move/utility_core.hpp:
+        # Because of boost/move/core.hpp:
         "@boost_move//:headers_only",
     ],
 )

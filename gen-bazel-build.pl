@@ -179,6 +179,9 @@ cc_library(
 name=\"${lib}\",
 srcs=[";
     print BUILD &quoted_list(keys %{$src_files{$lib}});
+    if ($lib eq 'container') {
+	print BUILD " \"src/alloc_lib.c\",";
+    }
     print BUILD "],
 copts=[";
     for my $dir (keys %{$src_dirs{$lib}}) {
@@ -198,6 +201,9 @@ copts=[";
     print BUILD "
 hdrs=[";
     print BUILD &quoted_list(keys %{$inc_files{$lib}});
+    if ($lib eq 'container') {
+	print BUILD "] + glob([\"src/dlmalloc*.c\"]) + [";
+    }
     print BUILD "],
 deps=[\":headers_only\",\n";
     for my $dep (keys %{$src_direct_deps{$lib}}) {

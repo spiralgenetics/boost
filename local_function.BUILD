@@ -119,32 +119,32 @@ cc_library(
         ":headers_only",
         # Because of boost/preprocessor/control/iif.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/type_traits/function_traits.hpp:
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/type_traits/add_const.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/scope_exit.hpp:
         "@boost_scope_exit//:headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/utility/identity_type.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/typeof/typeof.hpp:
+        "@boost_typeof//:headers_only",
         # Because of boost/mpl/assert.hpp:
         "@boost_mpl//:headers_only",
         # Because of boost/function.hpp:
         "@boost_function//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
         # Because of boost/mem_fn.hpp:
         "@boost_bind//:headers_only",
-        # Because of boost/current_function.hpp:
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/type_index.hpp:
+        "@boost_type_index//:headers_only",
+        # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
         # Because of boost/integer.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/type_index.hpp:
-        "@boost_type_index//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/move/utility_core.hpp:

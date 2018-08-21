@@ -101,53 +101,53 @@ cc_library(
         ":headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/detail/allocator_utilities.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/mpl/if.hpp:
+        # Because of boost/mpl/aux_/na.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/parameter/parameters.hpp:
-        "@boost_parameter//:headers_only",
-        # Because of boost/type_traits/is_base_and_derived.hpp:
+        # Because of boost/type_traits/is_same.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/utility/swap.hpp:
+        # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/detail/atomic_count.hpp:
+        # Because of boost/parameter/binding.hpp:
+        "@boost_parameter//:headers_only",
+        # Because of boost/detail/lightweight_mutex.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/preprocessor/punctuation/comma.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_container_hash//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/multi_index_container.hpp:
-        "@boost_multi_index//:headers_only",
-        # Because of boost/serialization/extended_type_info.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/interprocess/detail/intermodule_singleton.hpp:
-        "@boost_interprocess//:headers_only",
+        # Because of boost/preprocessor/facilities/intercept.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/serialization/split_free.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/multi_index_container.hpp:
+        "@boost_multi_index//:headers_only",
+        # Because of boost/detail/allocator_utilities.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/interprocess/detail/intermodule_singleton.hpp:
+        "@boost_interprocess//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/utility/base_from_member.hpp:
-        "@boost_utility//:headers_only",
         # Because of boost/move/core.hpp:
         "@boost_move//:headers_only",
+        # Because of boost/utility/base_from_member.hpp:
+        "@boost_utility//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/foreach_fwd.hpp:
         "@boost_foreach//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
         # Because of boost/iterator/reverse_iterator.hpp:
         "@boost_iterator//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/container/string.hpp:
+        "@boost_container//:headers_only",
         # Because of boost/integer/common_factor_rt.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/container/map.hpp:
-        "@boost_container//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
-        # Because of boost/intrusive/detail/minimal_less_equal_header.hpp:
+        # Because of boost/intrusive/pointer_traits.hpp:
         "@boost_intrusive//:headers_only",
         # Because of boost/date_time/filetime_functions.hpp:
         "@boost_date_time//:headers_only",

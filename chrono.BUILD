@@ -176,19 +176,19 @@ cc_library(
         ":headers_only",
         # Because of boost/system/system_error.hpp:
         "@boost_system//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
         # Because of boost/version.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
         # Because of boost/operators.hpp:
         "@boost_utility//:headers_only",
         # Because of boost/type_traits/common_type.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/core/addressof.hpp:
         "@boost_core//:headers_only",
         # Because of boost/mpl/logical.hpp:
         "@boost_mpl//:headers_only",
@@ -202,24 +202,24 @@ cc_library(
         "@boost_rational//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
-        # Because of boost/format/group.hpp:
-        "@boost_format//:headers_only",
         # Because of boost/move/unique_ptr.hpp:
         "@boost_move//:headers_only",
+        # Because of boost/format/group.hpp:
+        "@boost_format//:headers_only",
         # Because of boost/accumulators/statistics/count.hpp:
         "@boost_accumulators//:headers_only",
-        # Because of boost/fusion/include/filter_view.hpp:
+        # Because of boost/typeof/typeof.hpp:
+        "@boost_typeof//:headers_only",
+        # Because of boost/fusion/include/find_if.hpp:
         "@boost_fusion//:headers_only",
         # Because of boost/parameter/parameters.hpp:
         "@boost_parameter//:headers_only",
         # Because of boost/optional.hpp:
         "@boost_optional//:headers_only",
-        # Because of boost/detail/is_xxx.hpp:
-        "@boost_detail//:headers_only",
         # Because of boost/concept_check.hpp:
         "@boost_concept_check//:headers_only",
+        # Because of boost/detail/is_xxx.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
     ],

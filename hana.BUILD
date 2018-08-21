@@ -917,22 +917,22 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/fusion/sequence/intrinsic/size.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/mpl/size.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/version.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/core/demangle.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/mpl/integral_c_tag.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/fusion/sequence/intrinsic/at.hpp:
+        "@boost_fusion//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/version.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/type_traits/is_const.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/preprocessor/stringize.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
     ],

@@ -101,15 +101,15 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/type_traits/remove_const.hpp:
-        "@boost_type_traits//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/mpl/eval_if.hpp:
+        # Because of boost/mpl/has_xxx.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/function_types/function_type.hpp:
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/function_types/property_tags.hpp:
         "@boost_function_types//:headers_only",
         # Because of boost/blank.hpp:
         "@boost_detail//:headers_only",

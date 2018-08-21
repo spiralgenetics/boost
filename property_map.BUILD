@@ -57,68 +57,68 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/iterator/iterator_adaptor.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/shared_ptr.hpp:
+        # Because of boost/smart_ptr/shared_array.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/multi_index_container.hpp:
-        "@boost_multi_index//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/function/function1.hpp:
         "@boost_function//:headers_only",
-        # Because of boost/serialization/utility.hpp:
-        "@boost_serialization//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/multi_index/sequenced_index.hpp:
+        "@boost_multi_index//:headers_only",
         # Because of boost/version.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/type.hpp:
-        "@boost_core//:headers_only",
+        # Because of boost/optional.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/serialization/utility.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/mpl/not.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/mpi/datatype.hpp:
+        "@boost_mpi//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/iterator/iterator_adaptor.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/type.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/any.hpp:
         "@boost_any//:headers_only",
         # Because of boost/lexical_cast.hpp:
         "@boost_lexical_cast//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/mpi/datatype.hpp:
-        "@boost_mpi//:headers_only",
-        # Because of boost/concept_check.hpp:
+        # Because of boost/concept_archetype.hpp:
         "@boost_concept_check//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/utility/result_of.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/detail/allocator_utilities.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/move/core.hpp:
+        # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
-        "@boost_tuple//:headers_only",
         # Because of boost/foreach_fwd.hpp:
         "@boost_foreach//:headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
+        # Because of boost/detail/allocator_utilities.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
         # Because of boost/range/iterator_range_core.hpp:
         "@boost_range//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/container/container_fwd.hpp:
-        "@boost_container//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/container/container_fwd.hpp:
+        "@boost_container//:headers_only",
         # Because of boost/functional/hash.hpp:
         "@boost_container_hash//:headers_only",
-        # Because of boost/array.hpp:
-        "@boost_array//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
+        # Because of boost/array.hpp:
+        "@boost_array//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
         # Because of boost/math/special_functions/fpclassify.hpp:

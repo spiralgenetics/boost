@@ -2101,21 +2101,21 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/iterate.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/type_traits/is_reference.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/preprocessor/cat.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/predef/other/endian.h:
+        "@boost_predef//:headers_only",
         # Because of boost/ref.hpp:
         "@boost_core//:headers_only",
         # Because of boost/utility/value_init.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/predef/other/endian.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/current_function.hpp:
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
     ],
 )

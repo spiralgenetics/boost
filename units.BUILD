@@ -665,32 +665,32 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/math/special_functions/next.hpp:
-        "@boost_math//:headers_only",
         # Because of boost/config/no_tr1/cmath.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
+        # Because of boost/mpl/negate.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/type_traits/is_same.hpp:
         "@boost_type_traits//:headers_only",
+        # Because of boost/integer/common_factor_ct.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/math/special_functions/next.hpp:
+        "@boost_math//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/serialization/nvp.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/core/demangle.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/lambda/lambda.hpp:
         "@boost_lambda//:headers_only",
         # Because of boost/io/ios_state.hpp:
         "@boost_io//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/preprocessor/seq/enum.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/integer/common_factor_ct.hpp:
-        "@boost_integer//:headers_only",
+        # Because of boost/serialization/nvp.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/detail/fenv.hpp:

@@ -73,11 +73,11 @@ cc_library(
         "@boost_type_traits//:headers_only",
         # Because of boost/detail/lightweight_test.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
         # Because of boost/preprocessor/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/current_function.hpp:
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
     ],
 )

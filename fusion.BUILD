@@ -2048,26 +2048,26 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/is_sequence.hpp:
+        # Because of boost/mpl/insert_range.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/is_convertible.hpp:
+        # Because of boost/type_traits/remove_reference.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/utility/result_of.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/preprocessor/arithmetic/inc.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/config/no_tr1/utility.hpp:
+        # Because of boost/preprocessor/iteration/iterate.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/function_types/is_function.hpp:
+        "@boost_function_types//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/function_types/is_member_function_pointer.hpp:
-        "@boost_function_types//:headers_only",
         # Because of boost/functional/hash.hpp:
         "@boost_container_hash//:headers_only",
         # Because of boost/blank.hpp:
