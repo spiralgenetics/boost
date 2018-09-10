@@ -55,7 +55,7 @@ cc_library(
         ":headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/core/is_same.hpp:
+        # Because of boost/get_pointer.hpp:
         "@boost_core//:headers_only",
     ],
 )

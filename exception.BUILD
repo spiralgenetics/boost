@@ -78,17 +78,17 @@ cc_library(
         "@boost_throw_exception//:throw_exception",
         "@boost_config//:config",
         "@boost_smart_ptr//:smart_ptr",
-        # Because of boost/shared_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
         # Because of boost/exception/exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/shared_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/checked_delete.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/type_traits/alignment_of.hpp:
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/type_traits/type_with_alignment.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",

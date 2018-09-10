@@ -121,31 +121,31 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/serialization/nvp.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
+        # Because of boost/type_traits.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/mpl/and.hpp:
+        # Because of boost/mpl/vector/vector20.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/noncopyable.hpp:
+        # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/iterator/iterator_facade.hpp:
+        # Because of boost/next_prior.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/range/iterator_range.hpp:
-        "@boost_range//:headers_only",
-        # Because of boost/shared_array.hpp:
-        "@boost_smart_ptr//:headers_only",
         # Because of boost/numeric/interval.hpp:
         "@boost_numeric_interval//:headers_only",
+        # Because of boost/config/no_tr1/cmath.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/preprocessor/stringize.hpp:
+        # Because of boost/serialization/nvp.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/range/iterator_range.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/shared_array.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/preprocessor/iterate.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/move/utility_core.hpp:
         "@boost_move//:headers_only",

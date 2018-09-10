@@ -117,15 +117,15 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
+        # Because of boost/type_traits/remove_reference.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/preprocessor/seq/enum.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/mpl/size_t.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/mpl/int.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/is_function.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/detail/workaround.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/preprocessor/tuple/eat.hpp:
-        "@boost_preprocessor//:headers_only",
     ],
 )

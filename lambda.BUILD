@@ -83,26 +83,26 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/or.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/type_traits/is_array.hpp:
         "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/or.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/is_placeholder.hpp:
-        "@boost_bind//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/is_placeholder.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/preprocessor/repeat_2nd.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
-        # Because of boost/preprocessor/enum_shifted_params.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/detail/container_fwd.hpp:
-        "@boost_detail//:headers_only",
         # Because of boost/indirect_reference.hpp:
         "@boost_iterator//:headers_only",
+        # Because of boost/detail/container_fwd.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
     ],

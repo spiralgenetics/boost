@@ -101,49 +101,49 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/shared_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/noncopyable.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
-        # Because of boost/preprocessor/repetition.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/function.hpp:
-        "@boost_function//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/function_output_iterator.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/type_traits/type_with_alignment.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/parameter.hpp:
-        "@boost_parameter//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/multi_index/detail/scope_guard.hpp:
-        "@boost_multi_index//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/optional.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/core/no_exceptions_support.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/scoped_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/aligned_storage.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/function.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/mpl/identity.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/multi_index/detail/scope_guard.hpp:
+        "@boost_multi_index//:headers_only",
+        # Because of boost/parameter.hpp:
+        "@boost_parameter//:headers_only",
+        # Because of boost/preprocessor/repetition.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/variant/variant.hpp:
         "@boost_variant//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/detail/reference_content.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/integer/common_factor_ct.hpp:
-        "@boost_integer//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
-        # Because of boost/utility/compare_pointees.hpp:
+        # Because of boost/integer/common_factor_ct.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
         # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",

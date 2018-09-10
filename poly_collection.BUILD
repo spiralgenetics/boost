@@ -89,25 +89,25 @@ cc_library(
         ":headers_only",
         # Because of boost/iterator/iterator_adaptor.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/core/addressof.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/type_traits/has_equal_to.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/mp11/integer_sequence.hpp:
-        "@boost_mp11//:headers_only",
         # Because of boost/type_erasure/any_cast.hpp:
         "@boost_type_erasure//:headers_only",
-        # Because of boost/mpl/map/map10.hpp:
+        # Because of boost/mp11/integer_sequence.hpp:
+        "@boost_mp11//:headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/core/addressof.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/mpl/pair.hpp:
         "@boost_mpl//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/type_traits/has_equal_to.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/preprocessor/iterate.hpp:
+        # Because of boost/preprocessor/repetition/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/make_shared.hpp:
         "@boost_smart_ptr//:headers_only",

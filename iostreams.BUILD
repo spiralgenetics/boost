@@ -279,48 +279,48 @@ cc_library(
     deps = [
         ":headers_only",
         "@boost_throw_exception//:throw_exception",
-        "@boost_integer//:integer",
         "@boost_config//:config",
+        "@boost_integer//:integer",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/type_traits/is_same.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/preprocessor/punctuation/comma_if.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/range/value_type.hpp:
+        # Because of boost/mpl/bool.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/detail/iterator.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/range/iterator_range.hpp:
         "@boost_range//:headers_only",
         # Because of boost/iterator/iterator_traits.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/detail/indirect_traits.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
         # Because of boost/utility.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/detail/indirect_traits.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/random/linear_congruential.hpp:
+        "@boost_random//:headers_only",
         # Because of boost/regex.hpp:
         "@boost_regex//:headers_only",
         # Because of boost/function.hpp:
         "@boost_function//:headers_only",
-        # Because of boost/random/linear_congruential.hpp:
-        "@boost_random//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
         # Because of boost/functional/hash.hpp:
         "@boost_container_hash//:headers_only",
         # Because of boost/type_index.hpp:

@@ -195,7 +195,7 @@ cc_library(
         "@boost_assert//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/type_traits/make_signed.hpp:
+        # Because of boost/type_traits/conditional.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",

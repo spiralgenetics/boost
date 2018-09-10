@@ -171,11 +171,11 @@ cc_library(
         ":headers_only",
         # Because of boost/mpl/aux_/lambda_support.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/preprocessor/facilities/empty.hpp:
+        # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/blank.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/type_traits/integral_constant.hpp:
+        # Because of boost/type_traits/remove_cv.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",

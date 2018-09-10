@@ -611,17 +611,17 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/if.hpp:
+        # Because of boost/mpl/int.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_params.hpp:
+        # Because of boost/preprocessor/arithmetic/dec.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/predef/version_number.h:
         "@boost_predef//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
     ],
 )

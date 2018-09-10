@@ -187,13 +187,7 @@ copts=[";
     for my $dir (keys %{$src_dirs{$lib}}) {
 	print BUILD "\"-I./$dir\",\n";
     }
-    if ($lib eq 'python') {
-	print BUILD "\"-I/usr/include/python2.7\",\n";
-    }
     print BUILD "],\n";
-    if ($lib eq 'python') {
-	print BUILD "linkopts=[\"-lpython2.7\"],\n";
-    }
     if ($lib eq 'thread') {
 	print BUILD "linkopts=[\"-lpthread\"],\n";
     }
@@ -212,6 +206,9 @@ deps=[\":headers_only\",\n";
     my %tdeps = ( $lib => 1 );
     &output_tdeps(\%tdeps, keys %{$src_includes{$lib}});
     &output_tdeps(\%tdeps, keys %{$inc_has_inc_file{$lib}});
+    if ($lib eq 'python') {
+	print BUILD "\"\@spiral//tools:libpython\",\n";
+    }
     print BUILD "],\n";
     print BUILD "
 )";

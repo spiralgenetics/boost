@@ -103,35 +103,35 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/identity.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/unordered_map.hpp:
-        "@boost_unordered//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/type_traits/remove_bounds.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/circular_buffer.hpp:
-        "@boost_circular_buffer//:headers_only",
-        # Because of boost/next_prior.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/range/iterator_range.hpp:
-        "@boost_range//:headers_only",
-        # Because of boost/serialization/nvp.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/scoped_array.hpp:
-        "@boost_smart_ptr//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/compressed_pair.hpp:
+        # Because of boost/range/iterator_range.hpp:
+        "@boost_range//:headers_only",
+        # Because of boost/unordered_set.hpp:
+        "@boost_unordered//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/type_traits/remove_bounds.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/checked_delete.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/pointee.hpp:
+        "@boost_iterator//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/scoped_array.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
+        # Because of boost/serialization/split_free.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/circular_buffer.hpp:
+        "@boost_circular_buffer//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/detail/is_incrementable.hpp:
         "@boost_detail//:headers_only",
@@ -145,13 +145,13 @@ cc_library(
         "@boost_container//:headers_only",
         # Because of boost/concept_check.hpp:
         "@boost_concept_check//:headers_only",
-        # Because of boost/intrusive/detail/mpl.hpp:
+        # Because of boost/intrusive/pointer_traits.hpp:
         "@boost_intrusive//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
-        # Because of boost/integer/static_log2.hpp:
-        "@boost_integer//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
+        # Because of boost/integer/static_log2.hpp:
+        "@boost_integer//:headers_only",
     ],
 )

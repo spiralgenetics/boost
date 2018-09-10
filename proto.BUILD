@@ -317,26 +317,26 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/fusion/include/next.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
+        # Because of boost/preprocessor/repetition/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/mpl/eval_if.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/ref.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
-        # Because of boost/range/empty.hpp:
+        # Because of boost/mpl/aux_/config/ttp.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/type_traits/remove_const.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/fusion/include/fold.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/range/rbegin.hpp:
         "@boost_range//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/typeof/typeof.hpp:
+        "@boost_typeof//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
         # Because of boost/iterator/reverse_iterator.hpp:

@@ -2048,33 +2048,33 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/insert_range.hpp:
+        # Because of boost/mpl/int.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/remove_reference.hpp:
+        # Because of boost/type_traits/is_const.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/preprocessor/iteration/iterate.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/utility/result_of.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/function_types/is_function.hpp:
-        "@boost_function_types//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_params_with_a_default.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
         # Because of boost/functional/hash.hpp:
         "@boost_container_hash//:headers_only",
+        # Because of boost/function_types/is_callable_builtin.hpp:
+        "@boost_function_types//:headers_only",
         # Because of boost/blank.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/integer/static_log2.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
     ],
 )

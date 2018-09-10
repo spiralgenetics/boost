@@ -37,34 +37,34 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/integer/common_factor_ct.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/type_traits/alignment_of.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/limits.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/thread/mutex.hpp:
-        "@boost_thread//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/type_traits/alignment_of.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/integer/common_factor_ct.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/thread/mutex.hpp:
+        "@boost_thread//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/chrono/ceil.hpp:
+        # Because of boost/chrono/system_clocks.hpp:
         "@boost_chrono//:headers_only",
         # Because of boost/core/ignore_unused.hpp:
         "@boost_core//:headers_only",
         # Because of boost/date_time/posix_time/conversion.hpp:
         "@boost_date_time//:headers_only",
-        # Because of boost/system/error_code.hpp:
+        # Because of boost/system/system_error.hpp:
         "@boost_system//:headers_only",
-        # Because of boost/mpl/logical.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/ratio/ratio.hpp:
-        "@boost_ratio//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
+        # Because of boost/ratio/ratio.hpp:
+        "@boost_ratio//:headers_only",
+        # Because of boost/mpl/logical.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
         # Because of boost/move/utility.hpp:

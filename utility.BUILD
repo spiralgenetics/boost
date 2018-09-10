@@ -65,16 +65,16 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/cstdint.hpp:
+        # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/core/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_binary_params.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/type_traits/is_enum.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/core/addressof.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_params.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/current_function.hpp:
