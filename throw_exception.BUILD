@@ -23,7 +23,7 @@ cc_library(
         ":headers_only",
         # Because of boost/current_function.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
     ],
 )

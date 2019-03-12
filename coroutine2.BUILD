@@ -61,22 +61,22 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/context/detail/config.hpp:
-        "@boost_context//:headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/context/pooled_fixedsize_stack.hpp:
+        "@boost_context//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/intrusive_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
         # Because of boost/pool/pool.hpp:
         "@boost_pool//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/type_traits/alignment_of.hpp:
-        "@boost_type_traits//:headers_only",
+        # Because of boost/intrusive_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/integer/common_factor_ct.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/type_traits/alignment_of.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
         # Because of boost/thread/mutex.hpp:
         "@boost_thread//:headers_only",
         # Because of boost/throw_exception.hpp:
@@ -85,15 +85,15 @@ cc_library(
         "@boost_chrono//:headers_only",
         # Because of boost/core/ignore_unused.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/date_time/posix_time/conversion.hpp:
-        "@boost_date_time//:headers_only",
         # Because of boost/system/system_error.hpp:
         "@boost_system//:headers_only",
-        # Because of boost/ratio/ratio.hpp:
-        "@boost_ratio//:headers_only",
+        # Because of boost/date_time/posix_time/posix_time_types.hpp:
+        "@boost_date_time//:headers_only",
         # Because of boost/mpl/logical.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/move/utility.hpp:
+        # Because of boost/ratio/ratio.hpp:
+        "@boost_ratio//:headers_only",
+        # Because of boost/move/traits.hpp:
         "@boost_move//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",

@@ -30,41 +30,41 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_system//:system",
-        "@boost_chrono//:chrono",
         "@boost_io//:io",
+        "@boost_chrono//:chrono",
+        "@boost_system//:system",
         "@boost_throw_exception//:throw_exception",
-        # Because of boost/io/ios_state.hpp:
-        "@boost_io//:headers_only",
-        # Because of boost/cerrno.hpp:
-        "@boost_system//:headers_only",
         # Because of boost/chrono/chrono.hpp:
         "@boost_chrono//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/io/ios_state.hpp:
+        "@boost_io//:headers_only",
+        # Because of boost/cerrno.hpp:
+        "@boost_system//:headers_only",
+        # Because of boost/config/abi_prefix.hpp:
         "@boost_config//:headers_only",
         # Because of boost/current_function.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/type_traits/is_convertible.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/integer_traits.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/ratio/ratio.hpp:
-        "@boost_ratio//:headers_only",
         # Because of boost/mpl/logical.hpp:
         "@boost_mpl//:headers_only",
+        # Because of boost/type_traits/is_arithmetic.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
+        # Because of boost/ratio/ratio.hpp:
+        "@boost_ratio//:headers_only",
+        # Because of boost/integer_traits.hpp:
+        "@boost_integer//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/predef.h:
+        "@boost_predef//:headers_only",
         # Because of boost/rational.hpp:
         "@boost_rational//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/operators.hpp:
+        # Because of boost/call_traits.hpp:
         "@boost_utility//:headers_only",
     ],
 )

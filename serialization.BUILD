@@ -440,43 +440,43 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_integer//:integer",
         "@boost_assert//:assert",
         "@boost_config//:config",
-        "@boost_core//:core",
+        "@boost_integer//:integer",
         "@boost_detail//:detail",
+        "@boost_core//:core",
         # Because of boost/detail/utf8_codecvt_facet.ipp:
         "@boost_detail//:headers_only",
-        # Because of boost/limits.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/integer_traits.hpp:
-        "@boost_integer//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
+        # Because of boost/integer_traits.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/core/no_exceptions_support.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/io/ios_state.hpp:
-        "@boost_io//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
+        # Because of boost/spirit/include/classic_chset.hpp:
+        "@boost_spirit//:headers_only",
         # Because of boost/type_traits/remove_const.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/mpl/if.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/io/ios_state.hpp:
+        "@boost_io//:headers_only",
         # Because of boost/scoped_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
         # Because of boost/call_traits.hpp:
         "@boost_utility//:headers_only",
         # Because of boost/detail/endian.hpp:
         "@boost_predef//:headers_only",
-        # Because of boost/spirit/include/classic_chset.hpp:
-        "@boost_spirit//:headers_only",
+        # Because of boost/preprocessor/control/if.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/iterator/iterator_adaptor.hpp:
         "@boost_iterator//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
-        # Because of boost/preprocessor/control/if.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/move/core.hpp:

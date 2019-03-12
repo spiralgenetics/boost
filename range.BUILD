@@ -343,50 +343,50 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/remove_pointer.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/eval_if.hpp:
+        # Because of boost/mpl/has_xxx.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/detail/iterator.hpp:
+        # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/type_traits/remove_reference.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/concept_check.hpp:
         "@boost_concept_check//:headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/iterator/iterator_categories.hpp:
+        # Because of boost/preprocessor/repetition/repeat.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/next_prior.hpp:
         "@boost_iterator//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/regex.hpp:
-        "@boost_regex//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_container_hash//:headers_only",
-        # Because of boost/preprocessor/cat.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/optional/optional.hpp:
         "@boost_optional//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
-        "@boost_tuple//:headers_only",
-        # Because of boost/detail/is_sorted.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/algorithm/minmax_element.hpp:
-        "@boost_algorithm//:headers_only",
+        # Because of boost/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/algorithm/minmax_element.hpp:
+        "@boost_algorithm//:headers_only",
+        # Because of boost/regex.hpp:
+        "@boost_regex//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/cast.hpp:
-        "@boost_numeric_conversion//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/detail/is_sorted.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/scoped_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/fusion/sequence/convert.hpp:
-        "@boost_fusion//:headers_only",
         # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
+        # Because of boost/fusion/algorithm/iteration/for_each.hpp:
+        "@boost_fusion//:headers_only",
         # Because of boost/polymorphic_cast.hpp:
         "@boost_conversion//:headers_only",
         # Because of boost/predef.h:

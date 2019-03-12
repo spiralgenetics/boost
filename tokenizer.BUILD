@@ -33,13 +33,13 @@ cc_library(
         "@boost_throw_exception//:headers_only",
         # Because of boost/mpl/if.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/remove_reference.hpp:
+        # Because of boost/type_traits/add_reference.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
         # Because of boost/utility/addressof.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/preprocessor/list/for_each_i.hpp:
+        # Because of boost/preprocessor/iterate.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/detail/indirect_traits.hpp:
         "@boost_detail//:headers_only",

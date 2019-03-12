@@ -19,18 +19,18 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/is_class.hpp:
-        "@boost_type_traits//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/call_traits.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/operators.hpp:
-        "@boost_utility//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/integer/common_factor_rt.hpp:
         "@boost_integer//:headers_only",
         # Because of boost/throw_exception.hpp:

@@ -23,8 +23,6 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
         # Because of boost/utility/declval.hpp:
@@ -35,9 +33,11 @@ cc_library(
         "@boost_throw_exception//:headers_only",
         # Because of boost/pointer_cast.hpp:
         "@boost_smart_ptr//:headers_only",
+        # Because of boost/typeof/typeof.hpp:
+        "@boost_typeof//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_trailing.hpp:
+        # Because of boost/preprocessor/facilities/identity.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",

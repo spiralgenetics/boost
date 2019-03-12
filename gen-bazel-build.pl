@@ -8,6 +8,7 @@ open(SUBMODULE_STATUS, "git submodule status|") || die "submodule status: $!";
 open(SUBMODULES, ">submodules.bzl") || die "submodules.bzl: $!";
 open(MASTER_BUILD, ">BUILD") || die "BUILD: $!";
 print MASTER_BUILD "package(default_visibility=[\"//visibility:public\"])\n";
+print SUBMODULES "load(\"\@bazel_tools//tools/build_defs/repo:git.bzl\", \"new_git_repository\")\n\n";
 print SUBMODULES "def add_boost_submodules(base):\n";
 while (<SUBMODULE_STATUS>) {
     chop;
@@ -23,7 +24,7 @@ while (<SUBMODULE_STATUS>) {
     $submodule_lib{$dir} = $lib;
 #    print "$dir -> $lib\n";
     print SUBMODULES "
-    native.new_git_repository(name=\"boost_${lib}\",
+    new_git_repository(name=\"boost_${lib}\",
 commit=\"${git_commit}\",
 remote=\"https://github.com/boostorg/${repo_name}.git\",
 build_file=base+\"//:${lib}.BUILD\"

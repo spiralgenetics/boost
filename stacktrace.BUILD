@@ -80,10 +80,10 @@ cc_library(
         "@boost_config//:headers_only",
         # Because of boost/core/demangle.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
         # Because of boost/type_traits/make_unsigned.hpp:
         "@boost_type_traits//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
         # Because of boost/assert.hpp:

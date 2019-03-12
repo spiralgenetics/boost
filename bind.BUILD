@@ -53,9 +53,9 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/get_pointer.hpp:
+        # Because of boost/visit_each.hpp:
         "@boost_core//:headers_only",
     ],
 )

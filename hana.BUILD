@@ -917,19 +917,19 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/fusion/support/tag_of.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/core/demangle.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/mpl/at.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
-        "@boost_tuple//:headers_only",
         # Because of boost/version.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/fusion/container/list.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/mpl/empty.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/core/demangle.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
         # Because of boost/type_traits/remove_const.hpp:
         "@boost_type_traits//:headers_only",
-        # Because of boost/preprocessor/inc.hpp:
+        # Because of boost/preprocessor/stringize.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",

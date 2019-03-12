@@ -137,64 +137,64 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/random.hpp:
-        "@boost_random//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
-        "@boost_container_hash//:headers_only",
-        # Because of boost/math/special_functions/acosh.hpp:
-        "@boost_math//:headers_only",
         # Because of boost/cstdint.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/array.hpp:
-        "@boost_array//:headers_only",
-        # Because of boost/mpl/list.hpp:
+        # Because of boost/random.hpp:
+        "@boost_random//:headers_only",
+        # Because of boost/detail/endian.hpp:
+        "@boost_predef//:headers_only",
+        # Because of boost/functional/hash_fwd.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/mpl/plus.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/decay.hpp:
+        # Because of boost/type_traits/is_signed.hpp:
         "@boost_type_traits//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/scoped_array.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/rational.hpp:
+        "@boost_rational//:headers_only",
+        # Because of boost/math/constants/constants.hpp:
+        "@boost_math//:headers_only",
+        # Because of boost/integer/common_factor_rt.hpp:
+        "@boost_integer//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
         # Because of boost/lexical_cast.hpp:
         "@boost_lexical_cast//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/detail/endian.hpp:
-        "@boost_predef//:headers_only",
-        # Because of boost/integer/static_min_max.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/scoped_array.hpp:
-        "@boost_smart_ptr//:headers_only",
+        # Because of boost/array.hpp:
+        "@boost_array//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/rational.hpp:
-        "@boost_rational//:headers_only",
-        # Because of boost/preprocessor/inc.hpp:
-        "@boost_preprocessor//:headers_only",
+        # Because of boost/call_traits.hpp:
+        "@boost_utility//:headers_only",
         # Because of boost/range/iterator_range_core.hpp:
         "@boost_range//:headers_only",
-        # Because of boost/operators.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/detail/fenv.hpp:
+        # Because of boost/preprocessor/array/elem.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/detail/container_fwd.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/iterator/iterator_facade.hpp:
-        "@boost_iterator//:headers_only",
         # Because of boost/container/container_fwd.hpp:
         "@boost_container//:headers_only",
+        # Because of boost/iterator/iterator_facade.hpp:
+        "@boost_iterator//:headers_only",
         # Because of boost/io/ios_state.hpp:
         "@boost_io//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
+        # Because of boost/tuple/tuple_comparison.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/fusion/include/tuple.hpp:
         "@boost_fusion//:headers_only",
-        # Because of boost/numeric/conversion/cast.hpp:
-        "@boost_numeric_conversion//:headers_only",
-        # Because of boost/atomic.hpp:
-        "@boost_atomic//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
         # Because of boost/move/detail/std_ns_end.hpp:
         "@boost_move//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/atomic.hpp:
+        "@boost_atomic//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
     ],

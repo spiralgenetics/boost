@@ -93,35 +93,35 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/operators.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/type_traits/is_convertible.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/scoped_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/detail/indirect_traits.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/core/enable_if.hpp:
+        # Because of boost/ref.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/type_traits/is_class.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/fusion/sequence/convert.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/concept/detail/concept_def.hpp:
+        # Because of boost/mpl/not.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/utility/result_of.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/detail/is_incrementable.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/concept_archetype.hpp:
         "@boost_concept_check//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/function_types/is_function_pointer.hpp:
-        "@boost_function_types//:headers_only",
-        # Because of boost/optional/optional.hpp:
-        "@boost_optional//:headers_only",
+        # Because of boost/fusion/algorithm/iteration/for_each.hpp:
+        "@boost_fusion//:headers_only",
         # Because of boost/implicit_cast.hpp:
         "@boost_conversion//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_params.hpp:
+        # Because of boost/scoped_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/function_types/is_function_pointer.hpp:
+        "@boost_function_types//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/optional/optional.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/preprocessor/repetition/enum_trailing_params.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/move/utility.hpp:
         "@boost_move//:headers_only",

@@ -321,7 +321,7 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/variadic/elem.hpp:
+        # Because of boost/preprocessor/tuple/to_seq.hpp:
         "@boost_preprocessor//:headers_only",
     ],
 )

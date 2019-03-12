@@ -49,31 +49,31 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
+        # Because of boost/iterator/iterator_adaptor.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/cstdint.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/type_traits/is_nothrow_move_constructible.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mem_fn.hpp:
+        "@boost_bind//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/array.hpp:
-        "@boost_array//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
         # Because of boost/mpl/if.hpp:
         "@boost_mpl//:headers_only",
         # Because of boost/intrusive/list.hpp:
         "@boost_intrusive//:headers_only",
-        # Because of boost/mem_fn.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/iterator/iterator_adaptor.hpp:
-        "@boost_iterator//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/concept/assert.hpp:
         "@boost_concept_check//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
+        # Because of boost/array.hpp:
+        "@boost_array//:headers_only",
         # Because of boost/parameter.hpp:
         "@boost_parameter//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/cstdint.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/swap.hpp:
+        # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
         # Because of boost/move/utility_core.hpp:
         "@boost_move//:headers_only",

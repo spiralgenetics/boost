@@ -45,22 +45,22 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/smart_ptr/shared_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/type_traits/is_base_and_derived.hpp:
+        # Because of boost/type_traits/integral_constant.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/preprocessor/facilities/expand.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/container_hash/hash.hpp:
         "@boost_container_hash//:headers_only",
+        # Because of boost/smart_ptr/shared_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/core/addressof.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/preprocessor/seq/for_each.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
         # Because of boost/integer/static_log2.hpp:

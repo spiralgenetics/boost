@@ -173,14 +173,14 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/exception/error_info.hpp:
         "@boost_exception//:headers_only",
         # Because of boost/exception/exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
         # Because of boost/detail/workaround.hpp:
