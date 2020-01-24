@@ -9,8 +9,9 @@ branches:
   only:
     - master
     - develop
+    - /feature\/.*/
 
-dist: trusty
+dist: xenial
 
 language: cpp
 
@@ -22,6 +23,7 @@ addons:
       - p7zip-full
       - docutils-common
       - docutils-doc
+      - python-docutils
       - docbook
       - docbook-xml
       - docbook-xsl
@@ -48,6 +50,9 @@ matrix:
     # Simple integrated status tests check.
     - env: SCRIPT=ci_boost_status
 
+    # Same, but using release layout
+    - env: SCRIPT=ci_boost_status RELEASE=1
+
     # Run 'quick' tests.
     - env: SCRIPT=ci_boost_status TARGET=quick TOOLSET=gcc CXXSTD=03,11
       compiler: g++
@@ -59,13 +64,17 @@ matrix:
     - env: SCRIPT=ci_boost_build TOOLSET=gcc CXXSTD=11
       compiler: g++
 
-    # Run tests for the library updated by this commit.
-    - env: SCRIPT=ci_boost_test_library TOOLSET=gcc CXXSTD=11
+    # Build Boost with release layout
+    - env: SCRIPT=ci_boost_build TOOLSET=gcc CXXSTD=11 RELEASE=1
       compiler: g++
 
-    - env: SCRIPT=ci_boost_test_library TOOLSET=clang CXXSTD=11
-      compiler: clang++
-
+#    # Run tests for the library updated by this commit.
+#    - env: SCRIPT=ci_boost_test_library TOOLSET=gcc CXXSTD=11
+#      compiler: g++
+#
+#    - env: SCRIPT=ci_boost_test_library TOOLSET=clang CXXSTD=11
+#      compiler: clang++
+#
 #    # Library requirements tests.
 #    - env: SCRIPT=ci_boost_library_check
 #
