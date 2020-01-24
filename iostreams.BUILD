@@ -103,6 +103,7 @@ cc_library(
         "include/boost/iostreams/filter/symmetric.hpp",
         "include/boost/iostreams/filter/test.hpp",
         "include/boost/iostreams/filter/zlib.hpp",
+        "include/boost/iostreams/filter/zstd.hpp",
         "include/boost/iostreams/filtering_stream.hpp",
         "include/boost/iostreams/filtering_streambuf.hpp",
         "include/boost/iostreams/flush.hpp",
@@ -144,6 +145,7 @@ cc_library(
         "src/lzma.cpp",
         "src/mapped_file.cpp",
         "src/zlib.cpp",
+        "src/zstd.cpp",
     ],
     hdrs = [
         "include/boost/iostreams/categories.hpp",
@@ -246,6 +248,7 @@ cc_library(
         "include/boost/iostreams/filter/symmetric.hpp",
         "include/boost/iostreams/filter/test.hpp",
         "include/boost/iostreams/filter/zlib.hpp",
+        "include/boost/iostreams/filter/zstd.hpp",
         "include/boost/iostreams/filtering_stream.hpp",
         "include/boost/iostreams/filtering_streambuf.hpp",
         "include/boost/iostreams/flush.hpp",
@@ -280,52 +283,53 @@ cc_library(
         ":headers_only",
         "@boost_throw_exception//:throw_exception",
         "@boost_config//:config",
+        "@boost_numeric_conversion//:numeric_conversion",
         "@boost_integer//:integer",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
+        # Because of boost/numeric/conversion/cast.hpp:
+        "@boost_numeric_conversion//:headers_only",
         # Because of boost/type_traits/is_same.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/current_function.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/type.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/preprocessor/repetition/enum_params.hpp:
+        # Because of boost/mpl/identity.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/preprocessor/iteration/local.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/range/value_type.hpp:
+        # Because of boost/range/iterator_range.hpp:
         "@boost_range//:headers_only",
         # Because of boost/iterator/iterator_traits.hpp:
         "@boost_iterator//:headers_only",
-        # Because of boost/detail/indirect_traits.hpp:
-        "@boost_detail//:headers_only",
         # Because of boost/concept_check.hpp:
         "@boost_concept_check//:headers_only",
         # Because of boost/utility.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/predef.h:
+        # Because of boost/detail/indirect_traits.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/predef/platform/windows_runtime.h:
         "@boost_predef//:headers_only",
         # Because of boost/regex.hpp:
         "@boost_regex//:headers_only",
         # Because of boost/function.hpp:
         "@boost_function//:headers_only",
-        # Because of boost/random/linear_congruential.hpp:
+        # Because of boost/random/uniform_smallint.hpp:
         "@boost_random//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
-        # Because of boost/functional/hash.hpp:
+        # Because of boost/container_hash/hash.hpp:
         "@boost_container_hash//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
-        # Because of boost/move/utility_core.hpp:
-        "@boost_move//:headers_only",
     ],
 )

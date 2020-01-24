@@ -43,6 +43,7 @@ cc_library(
         "include/boost/graph/detail/connected_components.hpp",
         "include/boost/graph/detail/d_ary_heap.hpp",
         "include/boost/graph/detail/edge.hpp",
+        "include/boost/graph/detail/empty_header.hpp",
         "include/boost/graph/detail/geodesic.hpp",
         "include/boost/graph/detail/histogram_sort.hpp",
         "include/boost/graph/detail/incidence_iterator.hpp",
@@ -52,6 +53,7 @@ cc_library(
         "include/boost/graph/detail/is_distributed_selector.hpp",
         "include/boost/graph/detail/labeled_graph_traits.hpp",
         "include/boost/graph/detail/list_base.hpp",
+        "include/boost/graph/detail/mpi_include.hpp",
         "include/boost/graph/detail/permutation.hpp",
         "include/boost/graph/detail/read_graphviz_new.hpp",
         "include/boost/graph/detail/read_graphviz_spirit.hpp",
@@ -85,7 +87,6 @@ cc_library(
         "include/boost/graph/graph_mutability_traits.hpp",
         "include/boost/graph/graph_selectors.hpp",
         "include/boost/graph/graph_stats.hpp",
-        "include/boost/graph/graph_test.hpp",
         "include/boost/graph/graph_traits.hpp",
         "include/boost/graph/graph_utility.hpp",
         "include/boost/graph/graphml.hpp",
@@ -114,6 +115,7 @@ cc_library(
         "include/boost/graph/matrix_as_graph.hpp",
         "include/boost/graph/max_cardinality_matching.hpp",
         "include/boost/graph/maximum_adjacency_search.hpp",
+        "include/boost/graph/maximum_weighted_matching.hpp",
         "include/boost/graph/mcgregor_common_subgraphs.hpp",
         "include/boost/graph/mesh_graph_generator.hpp",
         "include/boost/graph/metis.hpp",
@@ -192,6 +194,7 @@ cc_library(
         "include/boost/pending/mutable_heap.hpp",
         "include/boost/pending/mutable_queue.hpp",
         "include/boost/pending/property.hpp",
+        "include/boost/pending/property_serialize.hpp",
         "include/boost/pending/queue.hpp",
         "include/boost/pending/relaxed_heap.hpp",
         "include/boost/pending/stringtok.hpp",
@@ -248,6 +251,7 @@ cc_library(
         "include/boost/graph/detail/connected_components.hpp",
         "include/boost/graph/detail/d_ary_heap.hpp",
         "include/boost/graph/detail/edge.hpp",
+        "include/boost/graph/detail/empty_header.hpp",
         "include/boost/graph/detail/geodesic.hpp",
         "include/boost/graph/detail/histogram_sort.hpp",
         "include/boost/graph/detail/incidence_iterator.hpp",
@@ -257,6 +261,7 @@ cc_library(
         "include/boost/graph/detail/is_distributed_selector.hpp",
         "include/boost/graph/detail/labeled_graph_traits.hpp",
         "include/boost/graph/detail/list_base.hpp",
+        "include/boost/graph/detail/mpi_include.hpp",
         "include/boost/graph/detail/permutation.hpp",
         "include/boost/graph/detail/read_graphviz_new.hpp",
         "include/boost/graph/detail/read_graphviz_spirit.hpp",
@@ -290,7 +295,6 @@ cc_library(
         "include/boost/graph/graph_mutability_traits.hpp",
         "include/boost/graph/graph_selectors.hpp",
         "include/boost/graph/graph_stats.hpp",
-        "include/boost/graph/graph_test.hpp",
         "include/boost/graph/graph_traits.hpp",
         "include/boost/graph/graph_utility.hpp",
         "include/boost/graph/graphml.hpp",
@@ -319,6 +323,7 @@ cc_library(
         "include/boost/graph/matrix_as_graph.hpp",
         "include/boost/graph/max_cardinality_matching.hpp",
         "include/boost/graph/maximum_adjacency_search.hpp",
+        "include/boost/graph/maximum_weighted_matching.hpp",
         "include/boost/graph/mcgregor_common_subgraphs.hpp",
         "include/boost/graph/mesh_graph_generator.hpp",
         "include/boost/graph/metis.hpp",
@@ -397,6 +402,7 @@ cc_library(
         "include/boost/pending/mutable_heap.hpp",
         "include/boost/pending/mutable_queue.hpp",
         "include/boost/pending/property.hpp",
+        "include/boost/pending/property_serialize.hpp",
         "include/boost/pending/queue.hpp",
         "include/boost/pending/relaxed_heap.hpp",
         "include/boost/pending/stringtok.hpp",
@@ -406,108 +412,106 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_function//:function",
-        "@boost_foreach//:foreach",
-        "@boost_core//:core",
-        "@boost_bind//:bind",
-        "@boost_optional//:optional",
         "@boost_config//:config",
+        "@boost_core//:core",
         "@boost_throw_exception//:throw_exception",
+        "@boost_foreach//:foreach",
+        "@boost_assert//:assert",
+        "@boost_function//:function",
+        "@boost_property_map//:property_map",
+        "@boost_bind//:bind",
+        "@boost_property_tree//:property_tree",
+        "@boost_optional//:optional",
         "@boost_algorithm//:algorithm",
         "@boost_regex//:regex",
-        "@boost_assert//:assert",
-        "@boost_property_tree//:property_tree",
-        "@boost_property_map//:property_map",
-        # Because of boost/ref.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/foreach.hpp:
-        "@boost_foreach//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/property_tree/ptree.hpp:
-        "@boost_property_tree//:headers_only",
-        # Because of boost/function.hpp:
-        "@boost_function//:headers_only",
-        # Because of boost/algorithm/string/case_conv.hpp:
-        "@boost_algorithm//:headers_only",
-        # Because of boost/property_map/dynamic_property_map.hpp:
-        "@boost_property_map//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
-        # Because of boost/detail/workaround.hpp:
-        "@boost_config//:headers_only",
+        # Because of boost/foreach.hpp:
+        "@boost_foreach//:headers_only",
         # Because of boost/regex.hpp:
         "@boost_regex//:headers_only",
-        # Because of boost/mpl/assert.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/is_base_and_derived.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/range/rend.hpp:
+        # Because of boost/ref.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/optional.hpp:
+        "@boost_optional//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/algorithm/string/case_conv.hpp:
+        "@boost_algorithm//:headers_only",
+        # Because of boost/property_tree/ptree.hpp:
+        "@boost_property_tree//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/function/function2.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/property_map/dynamic_property_map.hpp:
+        "@boost_property_map//:headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/range/end.hpp:
         "@boost_range//:headers_only",
+        # Because of boost/type_traits/is_rvalue_reference.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/logical.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/iterator/iterator_traits.hpp:
         "@boost_iterator//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
-        # Because of boost/multi_index/indexed_by.hpp:
-        "@boost_multi_index//:headers_only",
-        # Because of boost/preprocessor/iterate.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/smart_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
         # Because of boost/any.hpp:
         "@boost_any//:headers_only",
         # Because of boost/lexical_cast.hpp:
         "@boost_lexical_cast//:headers_only",
-        # Because of boost/graph/distributed/graphviz.hpp:
-        "@boost_graph_parallel//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
+        # Because of boost/multi_index_container.hpp:
+        "@boost_multi_index//:headers_only",
         # Because of boost/spirit/include/classic_multi_pass.hpp:
         "@boost_spirit//:headers_only",
         # Because of boost/xpressive/xpressive_static.hpp:
         "@boost_xpressive//:headers_only",
-        # Because of boost/detail/allocator_utilities.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/call_traits.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/move/core.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/serialization/version.hpp:
-        "@boost_serialization//:headers_only",
-        # Because of boost/concept/assert.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/type_index.hpp:
-        "@boost_type_index//:headers_only",
-        # Because of boost/unordered_set.hpp:
-        "@boost_unordered//:headers_only",
-        # Because of boost/integer.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_container_hash//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/preprocessor/iterate.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/smart_ptr.hpp:
+        "@boost_smart_ptr//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
+        # Because of boost/utility/value_init.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/type_index.hpp:
+        "@boost_type_index//:headers_only",
+        # Because of boost/move/utility.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/serialization/collection_size_type.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/concept_archetype.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
+        # Because of boost/integer.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/unordered_set.hpp:
+        "@boost_unordered//:headers_only",
         # Because of boost/container/container_fwd.hpp:
         "@boost_container//:headers_only",
-        # Because of boost/fusion/algorithm/iteration/for_each.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/proto/proto_fwd.hpp:
+        # Because of boost/detail/reference_content.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/proto/core.hpp:
         "@boost_proto//:headers_only",
         # Because of boost/numeric/conversion/converter.hpp:
         "@boost_numeric_conversion//:headers_only",
+        # Because of boost/fusion/sequence/comparison/equal_to.hpp:
+        "@boost_fusion//:headers_only",
         # Because of boost/array.hpp:
         "@boost_array//:headers_only",
+        # Because of boost/implicit_cast.hpp:
+        "@boost_conversion//:headers_only",
         # Because of boost/mpi/datatype.hpp:
         "@boost_mpi//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/thread/tss.hpp:
+        # Because of boost/thread/once.hpp:
         "@boost_thread//:headers_only",
-        # Because of boost/implicit_cast.hpp:
-        "@boost_conversion//:headers_only",
         # Because of boost/math/special_functions/fpclassify.hpp:
         "@boost_math//:headers_only",
         # Because of boost/exception/info.hpp:
@@ -518,33 +522,27 @@ cc_library(
         "@boost_atomic//:headers_only",
         # Because of boost/chrono/duration.hpp:
         "@boost_chrono//:headers_only",
+        # Because of boost/date_time/microsec_time_clock.hpp:
+        "@boost_date_time//:headers_only",
+        # Because of boost/system/error_code.hpp:
+        "@boost_system//:headers_only",
         # Because of boost/ratio/ratio.hpp:
         "@boost_ratio//:headers_only",
-        # Because of boost/system/system_error.hpp:
-        "@boost_system//:headers_only",
-        # Because of boost/date_time/posix_time/posix_time_types.hpp:
-        "@boost_date_time//:headers_only",
         # Because of boost/rational.hpp:
         "@boost_rational//:headers_only",
-        # Because of boost/random/uniform_int.hpp:
+        # Because of boost/pending/disjoint_sets.hpp:
+        "@boost_disjoint_sets//:headers_only",
+        # Because of boost/random/uniform_01.hpp:
         "@boost_random//:headers_only",
-        # Because of boost/parameter.hpp:
+        # Because of boost/parameter/binding.hpp:
         "@boost_parameter//:headers_only",
         # Because of boost/bimap.hpp:
         "@boost_bimap//:headers_only",
-        # Because of boost/pending/disjoint_sets.hpp:
-        "@boost_disjoint_sets//:headers_only",
         # Because of boost/tti/has_member_function.hpp:
         "@boost_tti//:headers_only",
-        # Because of boost/dynamic_bitset.hpp:
-        "@boost_dynamic_bitset//:headers_only",
+        # Because of boost/mp11/integral.hpp:
+        "@boost_mp11//:headers_only",
         # Because of boost/function_types/property_tags.hpp:
         "@boost_function_types//:headers_only",
-        # Because of boost/filesystem/path.hpp:
-        "@boost_filesystem//:headers_only",
-        # Because of boost/variant.hpp:
-        "@boost_variant//:headers_only",
-        # Because of boost/io/detail/quoted_manip.hpp:
-        "@boost_io//:headers_only",
     ],
 )

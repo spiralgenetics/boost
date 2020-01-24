@@ -3,91 +3,91 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
 def add_boost_submodules(base):
 
     new_git_repository(name="boost_accumulators",
-commit="bfcbfe3c58064cd1ffabbce49a95c6c20351c96e",
+commit="b12a189fefd17ff3a6a68fc24b4135f0e0c498f6",
 remote="https://github.com/boostorg/accumulators.git",
 build_file=base+"//:accumulators.BUILD"
 )
 
     new_git_repository(name="boost_algorithm",
-commit="badf1b3f0c7d75ad1f688ed373459e386832cac9",
+commit="e59958cc4d7559e70047f7ff3e467bdc9a670e63",
 remote="https://github.com/boostorg/algorithm.git",
 build_file=base+"//:algorithm.BUILD"
 )
 
     new_git_repository(name="boost_align",
-commit="596f6ee1aa890bd803c1e9f60ae243425568ee01",
+commit="71101b0dfc884a785a072773ae5a8e9e55e50a95",
 remote="https://github.com/boostorg/align.git",
 build_file=base+"//:align.BUILD"
 )
 
     new_git_repository(name="boost_any",
-commit="d962e210f8fc0cfb99f475627563193ba09cbf16",
+commit="e0e7e8d42ea609f6d866524f8f8b3d35af9a1eb5",
 remote="https://github.com/boostorg/any.git",
 build_file=base+"//:any.BUILD"
 )
 
     new_git_repository(name="boost_array",
-commit="8f3aea2200fa45ed4c1829b3d3148432867dda87",
+commit="32b074c9ae44ba0a34d6ea8ada65971191e675ee",
 remote="https://github.com/boostorg/array.git",
 build_file=base+"//:array.BUILD"
 )
 
     new_git_repository(name="boost_asio",
-commit="25dc6780c2c73dd6a4d74e65e854fc0f705cbb60",
+commit="2f38e7ab8706368f6d980158442b313388746fd4",
 remote="https://github.com/boostorg/asio.git",
 build_file=base+"//:asio.BUILD"
 )
 
     new_git_repository(name="boost_assert",
-commit="4bd93cd4141b5d48e090495551e3bce931321f62",
+commit="b45979a319f28784db8924943abe8774efd13cf9",
 remote="https://github.com/boostorg/assert.git",
 build_file=base+"//:assert.BUILD"
 )
 
     new_git_repository(name="boost_assign",
-commit="743c3f3c57254a93982cc1ecdae8e518f24c651a",
+commit="d30e5c2d3796740445e992230eb7e4d7712d219b",
 remote="https://github.com/boostorg/assign.git",
 build_file=base+"//:assign.BUILD"
 )
 
     new_git_repository(name="boost_atomic",
-commit="19eecf893c665410de63ab6ebb8549f405703e80",
+commit="5c519b0611e3de81ae6aa081b7323a7458071480",
 remote="https://github.com/boostorg/atomic.git",
 build_file=base+"//:atomic.BUILD"
 )
 
     new_git_repository(name="boost_beast",
-commit="1da229a27c6f0539d422bcedbcf47cfe2517164a",
+commit="0b68ed651b6bc7b681cf440ed6a220089e21473f",
 remote="https://github.com/boostorg/beast.git",
 build_file=base+"//:beast.BUILD"
 )
 
     new_git_repository(name="boost_bimap",
-commit="223b2cf3a5d633c5a4f11e07ce242f51bcf61a06",
+commit="216282251428aa07a11151c012387144ac6a0f5c",
 remote="https://github.com/boostorg/bimap.git",
 build_file=base+"//:bimap.BUILD"
 )
 
     new_git_repository(name="boost_bind",
-commit="d67200bd2a1f67135a4c677636546ec9615e21ea",
+commit="d6ac20c4fdfb9103a4a5d15f2499c339e525e2a4",
 remote="https://github.com/boostorg/bind.git",
 build_file=base+"//:bind.BUILD"
 )
 
     new_git_repository(name="boost_callable_traits",
-commit="04a469afe15cf09ce5ac4b78cd9574e067631c60",
+commit="454b8ade9c8356f27fb0b3c6cbbb9bd8b9477af3",
 remote="https://github.com/boostorg/callable_traits.git",
 build_file=base+"//:callable_traits.BUILD"
 )
 
     new_git_repository(name="boost_chrono",
-commit="15d3e2af0e06ae4ae40bd003007040896fc72e97",
+commit="5df12496f52e00b1ea324df176a4a3199d3d8bfd",
 remote="https://github.com/boostorg/chrono.git",
 build_file=base+"//:chrono.BUILD"
 )
 
     new_git_repository(name="boost_circular_buffer",
-commit="4ef6e8d1f6e709ddc8fb07af082f04aac920ab0c",
+commit="7808ab19dcc2c801747eec52689c179681f3d125",
 remote="https://github.com/boostorg/circular_buffer.git",
 build_file=base+"//:circular_buffer.BUILD"
 )
@@ -99,25 +99,25 @@ build_file=base+"//:compatibility.BUILD"
 )
 
     new_git_repository(name="boost_compute",
-commit="9189a761b79fcd4be2f38158b9cad164bac22fa2",
+commit="36c89134d4013b2e5e45bc55656a18bd6141995a",
 remote="https://github.com/boostorg/compute.git",
 build_file=base+"//:compute.BUILD"
 )
 
     new_git_repository(name="boost_concept_check",
-commit="ed0a0ebd72f778cfa4931e0538ea34c28db3a42b",
+commit="db1f9c73a43fc527a43a66bd77d8981b845c8712",
 remote="https://github.com/boostorg/concept_check.git",
 build_file=base+"//:concept_check.BUILD"
 )
 
     new_git_repository(name="boost_config",
-commit="bb3c8a20dcb3a97e0c999a5869305398fa6d8a11",
+commit="dc67f3ea657dc70fdd27af8c0c866feb6c335dfc",
 remote="https://github.com/boostorg/config.git",
 build_file=base+"//:config.BUILD"
 )
 
     new_git_repository(name="boost_container",
-commit="1ad64316a432a7f021b4956acf88abc6aaa8a77e",
+commit="e3f6dc44ad751e4c49a8776fd20d76aa3809bac1",
 remote="https://github.com/boostorg/container.git",
 build_file=base+"//:container.BUILD"
 )
@@ -129,61 +129,61 @@ build_file=base+"//:container_hash.BUILD"
 )
 
     new_git_repository(name="boost_context",
-commit="e7d92e75d1573a545eaf70e6ba3090e006db6e83",
+commit="bd493f77d8b65f794117ea333a9c9f19964fbd9f",
 remote="https://github.com/boostorg/context.git",
 build_file=base+"//:context.BUILD"
 )
 
     new_git_repository(name="boost_contract",
-commit="27dba1d8e9b9d7521ef3802ae73a07d5357f1773",
+commit="3c77288d52fd19ef8c317bbecc7b08362251ff3e",
 remote="https://github.com/boostorg/contract.git",
 build_file=base+"//:contract.BUILD"
 )
 
     new_git_repository(name="boost_conversion",
-commit="2a0a2a59f593fb1545468b43b022e921ab20c8e3",
+commit="9d4a518e74acd9f3ca6b0716ba5dc8bead28d253",
 remote="https://github.com/boostorg/conversion.git",
 build_file=base+"//:conversion.BUILD"
 )
 
     new_git_repository(name="boost_convert",
-commit="0d7f18d689e9661865c4db2d166eac329d4ad9e0",
+commit="2e3386ff0f5ee4728696fb0d9853feb844cae993",
 remote="https://github.com/boostorg/convert.git",
 build_file=base+"//:convert.BUILD"
 )
 
     new_git_repository(name="boost_core",
-commit="e128f4e1b8904d47561700892843f07d5d1160db",
+commit="259587da7f36421e271826bf0b9efc87520cf491",
 remote="https://github.com/boostorg/core.git",
 build_file=base+"//:core.BUILD"
 )
 
     new_git_repository(name="boost_coroutine",
-commit="8df277dc820701e6a62f5ae4018e7b7190490eb8",
+commit="143edd3d2a654d82c66ea9fb53922e998a918eff",
 remote="https://github.com/boostorg/coroutine.git",
 build_file=base+"//:coroutine.BUILD"
 )
 
     new_git_repository(name="boost_coroutine2",
-commit="e1b3ca3179f3daecc5fab6ffeb35ae321e6b138f",
+commit="18bcccf34dcd80f4be1cd1c897778a2c9536c11f",
 remote="https://github.com/boostorg/coroutine2.git",
 build_file=base+"//:coroutine2.BUILD"
 )
 
     new_git_repository(name="boost_crc",
-commit="e77694d0acb1ce9c1fa38d0965f13b53a9949ca3",
+commit="7002d9850d78c279c28724b2e58227d9b8bf7422",
 remote="https://github.com/boostorg/crc.git",
 build_file=base+"//:crc.BUILD"
 )
 
     new_git_repository(name="boost_date_time",
-commit="66ee8bf48fbec95ae4dfa59a128b3b3305261455",
+commit="e26fd2ed98c96a192de4dbd6358ebd6764eb2836",
 remote="https://github.com/boostorg/date_time.git",
 build_file=base+"//:date_time.BUILD"
 )
 
     new_git_repository(name="boost_detail",
-commit="824721a7533de893338ed5bbc8e8d9f4fb1ad716",
+commit="8dbbfe372b83f7ff32d545bad1c779348bfe3eea",
 remote="https://github.com/boostorg/detail.git",
 build_file=base+"//:detail.BUILD"
 )
@@ -195,61 +195,61 @@ build_file=base+"//:disjoint_sets.BUILD"
 )
 
     new_git_repository(name="boost_dll",
-commit="89f887e8a3a4ce8dd5618b7c2d22ad1d737291fa",
+commit="8f39a38a3188a510054d86ee15bc523494676cdc",
 remote="https://github.com/boostorg/dll.git",
 build_file=base+"//:dll.BUILD"
 )
 
     new_git_repository(name="boost_dynamic_bitset",
-commit="4f54d83981e0661071cb54a3bfde16fde3c350e6",
+commit="db5da12bcd7f321d735b77654290ff7e7329ec17",
 remote="https://github.com/boostorg/dynamic_bitset.git",
 build_file=base+"//:dynamic_bitset.BUILD"
 )
 
     new_git_repository(name="boost_endian",
-commit="f6998d2406be7b5d7a03cae93c72bb097bfbc87a",
+commit="3de20eb340d27792b736d0d2d356e4ac3b52b8c4",
 remote="https://github.com/boostorg/endian.git",
 build_file=base+"//:endian.BUILD"
 )
 
     new_git_repository(name="boost_exception",
-commit="dcd2d83b34458fef1b3b836d13fa4ee9429a8bec",
+commit="c44bdae6acf7a4bf06421e44e2938a0f130e2031",
 remote="https://github.com/boostorg/exception.git",
 build_file=base+"//:exception.BUILD"
 )
 
     new_git_repository(name="boost_fiber",
-commit="2112ee33c8f8cfbea492d9c6286f48a48eb5247c",
+commit="6d74aab51f6c2150db0a0fd09ef33f1aa8668695",
 remote="https://github.com/boostorg/fiber.git",
 build_file=base+"//:fiber.BUILD"
 )
 
     new_git_repository(name="boost_filesystem",
-commit="5a93351bfdf859ee47245e0429739226767ef0d7",
+commit="93f0c76869c8a7a04b79f0719393f31b878284a2",
 remote="https://github.com/boostorg/filesystem.git",
 build_file=base+"//:filesystem.BUILD"
 )
 
     new_git_repository(name="boost_flyweight",
-commit="0c41920a354cee27cf86a7f75569c70fb8900c78",
+commit="86347695b5c9ab834fab12d6a58347c0cad4ef70",
 remote="https://github.com/boostorg/flyweight.git",
 build_file=base+"//:flyweight.BUILD"
 )
 
     new_git_repository(name="boost_foreach",
-commit="4240a1d095cf4a5e04093a1b91b1f0c791a58da9",
+commit="88c8eae6759f1984dd7e22629660f0e39c5907ee",
 remote="https://github.com/boostorg/foreach.git",
 build_file=base+"//:foreach.BUILD"
 )
 
     new_git_repository(name="boost_format",
-commit="a1c613764dd96f97749e1e059c80f0f3515fcf0b",
+commit="894f465d843d999b5c024a49f90a5a1013edd368",
 remote="https://github.com/boostorg/format.git",
 build_file=base+"//:format.BUILD"
 )
 
     new_git_repository(name="boost_function",
-commit="feea19660bcac246fc054f0a890415d01e884c4b",
+commit="8ec9323003f66bf5733f3ac8f6ccb25f79f2762b",
 remote="https://github.com/boostorg/function.git",
 build_file=base+"//:function.BUILD"
 )
@@ -261,55 +261,67 @@ build_file=base+"//:function_types.BUILD"
 )
 
     new_git_repository(name="boost_functional",
-commit="7516442815900430cc9c4a6190354e11bcbe72dd",
+commit="28b1b25b9464abb3fd5783e10f49df40d6aac2ff",
 remote="https://github.com/boostorg/functional.git",
 build_file=base+"//:functional.BUILD"
 )
 
     new_git_repository(name="boost_fusion",
-commit="c740a4dbadb5daf836f2f8ab024e6ae5fa331dde",
+commit="81a1c2c99a06d35852a3686d6d461c3290fbccd5",
 remote="https://github.com/boostorg/fusion.git",
 build_file=base+"//:fusion.BUILD"
 )
 
     new_git_repository(name="boost_geometry",
-commit="21362e7cb27e6d535d591e7e8447af3dd66cd82d",
+commit="667e83701fb14e66390bd9499112ee1bd4b2e081",
 remote="https://github.com/boostorg/geometry.git",
 build_file=base+"//:geometry.BUILD"
 )
 
     new_git_repository(name="boost_gil",
-commit="56c23895002bef72a7a74324d81c584a2fae667a",
+commit="4325be7f7dbf3f3a26ad5025390943ca199dc030",
 remote="https://github.com/boostorg/gil.git",
 build_file=base+"//:gil.BUILD"
 )
 
     new_git_repository(name="boost_graph",
-commit="815268534fc04adf00c9f5bd6803328e20fe14c1",
+commit="8f5e1f1bf91c7302b8448bdc899dc68312e3acd5",
 remote="https://github.com/boostorg/graph.git",
 build_file=base+"//:graph.BUILD"
 )
 
     new_git_repository(name="boost_graph_parallel",
-commit="6d4757c56f8d3d5bb2efa4c5d46119af305ef441",
+commit="22385ccb6c35fcb07971f295807519bd031ed57d",
 remote="https://github.com/boostorg/graph_parallel.git",
 build_file=base+"//:graph_parallel.BUILD"
 )
 
     new_git_repository(name="boost_hana",
-commit="6187d448df49db085d4d7ad63d3a5f479594c5cf",
+commit="07b42492765f7384e053c4761f4d0eda32b75834",
 remote="https://github.com/boostorg/hana.git",
 build_file=base+"//:hana.BUILD"
 )
 
+    new_git_repository(name="boost_headers",
+commit="017c3cd1338b5437f28506cd14119b7dcfb1a86d",
+remote="https://github.com/boostorg/headers.git",
+build_file=base+"//:headers.BUILD"
+)
+
     new_git_repository(name="boost_heap",
-commit="173349cee1942992f322f26fff2b6243319e7d65",
+commit="48d96def311bf170b8e3ab410ea0f170ba1d460c",
 remote="https://github.com/boostorg/heap.git",
 build_file=base+"//:heap.BUILD"
 )
 
+    new_git_repository(name="boost_histogram",
+commit="e415be10cd8df9d2ba386449f846f7197f7d5459",
+remote="https://github.com/boostorg/histogram.git",
+build_file=base+"//:histogram.BUILD"
+)
+
     new_git_repository(name="boost_hof",
-commit="7e7610854ecec699af8503e44c48383828c44734",
+commit="a5fcba3ae4410d217a7a80a782238bb18fa7925a",
 remote="https://github.com/boostorg/hof.git",
 build_file=base+"//:hof.BUILD"
 )
@@ -321,19 +333,19 @@ build_file=base+"//:icl.BUILD"
 )
 
     new_git_repository(name="boost_integer",
-commit="66dbc2c70aecc47d5a711b5dac6da6237721a644",
+commit="bee5818e18cf33f06f776556fdacec694c0259d1",
 remote="https://github.com/boostorg/integer.git",
 build_file=base+"//:integer.BUILD"
 )
 
     new_git_repository(name="boost_interprocess",
-commit="6fbaf9bc6a2469dabd4ca9c2faa94272bbbb79ed",
+commit="d2cb6e6f0f6cfd1362a5f5750756f94f76fc13d3",
 remote="https://github.com/boostorg/interprocess.git",
 build_file=base+"//:interprocess.BUILD"
 )
 
     new_git_repository(name="boost_intrusive",
-commit="785797ffab4f1d4ab3e01f53b0381e49629ea8fd",
+commit="3b5001f22f342e62a6f732b0bc58817a608a752f",
 remote="https://github.com/boostorg/intrusive.git",
 build_file=base+"//:intrusive.BUILD"
 )
@@ -345,25 +357,25 @@ build_file=base+"//:io.BUILD"
 )
 
     new_git_repository(name="boost_iostreams",
-commit="1680ef8b7692a77ee2abf385d87f64076332a595",
+commit="601244b26aba14a2524ab1307243d0c5ea566206",
 remote="https://github.com/boostorg/iostreams.git",
 build_file=base+"//:iostreams.BUILD"
 )
 
     new_git_repository(name="boost_iterator",
-commit="b2adecb951af025698618f19a3c838bd314966dc",
+commit="d528fc0b11c91eec8851878e1aaac159d1131020",
 remote="https://github.com/boostorg/iterator.git",
 build_file=base+"//:iterator.BUILD"
 )
 
     new_git_repository(name="boost_lambda",
-commit="b8a2f400acceb3f1bc399287837499bfecd57cf5",
+commit="8824e81d52489be9c8cb21d8f8477b03e675ce66",
 remote="https://github.com/boostorg/lambda.git",
 build_file=base+"//:lambda.BUILD"
 )
 
     new_git_repository(name="boost_lexical_cast",
-commit="5bfe6672d467ebd8de5d911c07b2a931b43156de",
+commit="87ce72192836787ff7bc8628abf0f0a68d56001d",
 remote="https://github.com/boostorg/lexical_cast.git",
 build_file=base+"//:lexical_cast.BUILD"
 )
@@ -375,163 +387,175 @@ build_file=base+"//:local_function.BUILD"
 )
 
     new_git_repository(name="boost_locale",
-commit="07eb6bcbee80c8acaa202dbd433c674a7591ade9",
+commit="ccb8fbb9a1a0dbdffb1054ffa34e4aba1e425642",
 remote="https://github.com/boostorg/locale.git",
 build_file=base+"//:locale.BUILD"
 )
 
     new_git_repository(name="boost_lockfree",
-commit="38f0cfc28d984cba8b368695491f9cc45bca2363",
+commit="fbea9be049f101e35ad12e169ce84d79a8664ba2",
 remote="https://github.com/boostorg/lockfree.git",
 build_file=base+"//:lockfree.BUILD"
 )
 
     new_git_repository(name="boost_log",
-commit="cf8b4a3238ce27e3abd2fba662c5118de4c6493c",
+commit="959a97c38b436ddfe6afe2906d255a6b32458fc9",
 remote="https://github.com/boostorg/log.git",
 build_file=base+"//:log.BUILD"
 )
 
     new_git_repository(name="boost_logic",
-commit="e824ad54e0443e9531d9b8111a0e361aca0a2aed",
+commit="832731f5ab57a9b9cb03847fcd31b001fa9314bc",
 remote="https://github.com/boostorg/logic.git",
 build_file=base+"//:logic.BUILD"
 )
 
     new_git_repository(name="boost_math",
-commit="0e9549ff2f854e6edafaf4627d65026f2f533a18",
+commit="d75659faf9d941492987957e0e34a3ff98d1dc05",
 remote="https://github.com/boostorg/math.git",
 build_file=base+"//:math.BUILD"
 )
 
     new_git_repository(name="boost_metaparse",
-commit="1cb74cdbe1b989a576b0b8f7fe34151562840797",
+commit="e0350c0bfe92a257bf0be2083f2a003f237b5dd8",
 remote="https://github.com/boostorg/metaparse.git",
 build_file=base+"//:metaparse.BUILD"
 )
 
     new_git_repository(name="boost_move",
-commit="d503fbe1c8334fa8885e67cb83c96aeaf3938555",
+commit="0304ee7581dda870dbb66c6bd0556a58a1002ca4",
 remote="https://github.com/boostorg/move.git",
 build_file=base+"//:move.BUILD"
 )
 
     new_git_repository(name="boost_mp11",
-commit="05a366e8ba929ad60dd51e02e5165665a98a2531",
+commit="f64bc319c0c37fdd02c2a736be77bdf682cab6d2",
 remote="https://github.com/boostorg/mp11.git",
 build_file=base+"//:mp11.BUILD"
 )
 
     new_git_repository(name="boost_mpi",
-commit="30f32d531932809e3122fdeebbea629023854eeb",
+commit="c6769cae3bc7f0bf1ad922dad9a7db2e77a669b1",
 remote="https://github.com/boostorg/mpi.git",
 build_file=base+"//:mpi.BUILD"
 )
 
     new_git_repository(name="boost_mpl",
-commit="270f33f67998ffaac6afdae25fe06be2ee744d6e",
+commit="e01a10925db285b31d0d73929178edd9279142df",
 remote="https://github.com/boostorg/mpl.git",
 build_file=base+"//:mpl.BUILD"
 )
 
     new_git_repository(name="boost_msm",
-commit="fc3671a41c583aefd6b40c15673b83589e4f4220",
+commit="2286d12deb237e8325c00fcb28c666190daca2ac",
 remote="https://github.com/boostorg/msm.git",
 build_file=base+"//:msm.BUILD"
 )
 
     new_git_repository(name="boost_multi_array",
-commit="abcb2839d56669d1b5bb8a240ec644f47c66beb2",
+commit="74cbc0f659b565404f9a7edcd2438a074f1db902",
 remote="https://github.com/boostorg/multi_array.git",
 build_file=base+"//:multi_array.BUILD"
 )
 
     new_git_repository(name="boost_multi_index",
-commit="d95a94942b918140e565feb99ed36ea97c30084e",
+commit="27dd13278095357aadfe4a3a5455f587cac87648",
 remote="https://github.com/boostorg/multi_index.git",
 build_file=base+"//:multi_index.BUILD"
 )
 
     new_git_repository(name="boost_multiprecision",
-commit="beb1f790c3c652cae8e31b11ae8d1e5f251c6b2e",
+commit="08fc0ae371a84101445f6a64cfd5cd3f6c4b0ca4",
 remote="https://github.com/boostorg/multiprecision.git",
 build_file=base+"//:multiprecision.BUILD"
 )
 
     new_git_repository(name="boost_numeric_conversion",
-commit="36f969a4c5129d11a8913fcbd8d2732ba957315b",
+commit="de922921408bc7116a3c7c67b2fcfbe3e3214f3b",
 remote="https://github.com/boostorg/numeric_conversion.git",
 build_file=base+"//:numeric_conversion.BUILD"
 )
 
     new_git_repository(name="boost_numeric_interval",
-commit="268c316586d970bad146340d21d747adfc370712",
+commit="6db1ad0d2027d812bcbb26802196c5444c59e585",
 remote="https://github.com/boostorg/interval.git",
 build_file=base+"//:numeric_interval.BUILD"
 )
 
     new_git_repository(name="boost_numeric_odeint",
-commit="6ff2719b6907b86596c3d43e88c1bcfdf29df560",
+commit="db8f91a51da630957d6bfa1ff87be760b0be97a6",
 remote="https://github.com/boostorg/numeric_odeint.git",
 build_file=base+"//:numeric_odeint.BUILD"
 )
 
     new_git_repository(name="boost_numeric_ublas",
-commit="e8607b3eea238e590eca93bfe498c21f470155c1",
+commit="53361d7f42e7d88661c147a2490e10ee32324e48",
 remote="https://github.com/boostorg/numeric_ublas.git",
 build_file=base+"//:numeric_ublas.BUILD"
 )
 
     new_git_repository(name="boost_optional",
-commit="155ad5911e5683cc87d34363f8304b60a30a8345",
+commit="a192204b41bd9744d85f202849f860b66fd1c2bc",
 remote="https://github.com/boostorg/optional.git",
 build_file=base+"//:optional.BUILD"
 )
 
+    new_git_repository(name="boost_outcome",
+commit="3b77d322c127ddec13faedb98c21c40742f97893",
+remote="https://github.com/boostorg/outcome.git",
+build_file=base+"//:outcome.BUILD"
+)
+
     new_git_repository(name="boost_parameter",
-commit="672ae1c0cec1eb16cf2613d53c483554244a251b",
+commit="ba78e65f931b9e57820950215326785ac6794b71",
 remote="https://github.com/boostorg/parameter.git",
 build_file=base+"//:parameter.BUILD"
 )
 
+    new_git_repository(name="boost_parameter_python",
+commit="787d8d38d9fd49c34a757b20361f8042dd5ac820",
+remote="https://github.com/boostorg/parameter_python.git",
+build_file=base+"//:parameter_python.BUILD"
+)
+
     new_git_repository(name="boost_phoenix",
-commit="faffaf8e59a7e6c9aaeeb9d033e2bd5f06775c9f",
+commit="99fba04b40cbd2a191382b58402472662e2ad6e1",
 remote="https://github.com/boostorg/phoenix.git",
 build_file=base+"//:phoenix.BUILD"
 )
 
     new_git_repository(name="boost_poly_collection",
-commit="0d7b1374f1450932933b3475d00bbb593b7b3c7f",
+commit="1f5655001db14a101af61d3e9e4af5444a646bc9",
 remote="https://github.com/boostorg/poly_collection.git",
 build_file=base+"//:poly_collection.BUILD"
 )
 
     new_git_repository(name="boost_polygon",
-commit="8ffe9e08615dc9f56e4058fb51fe3254cb7443e0",
+commit="97a024b34545218ed1039a9d2fd1604facda5880",
 remote="https://github.com/boostorg/polygon.git",
 build_file=base+"//:polygon.BUILD"
 )
 
     new_git_repository(name="boost_pool",
-commit="9daab9f821d4d047f50fea75a62b4f3130ad6a03",
+commit="8edafbec99cefa00b84b1c95e5b3cbbf9a6a5498",
 remote="https://github.com/boostorg/pool.git",
 build_file=base+"//:pool.BUILD"
 )
 
     new_git_repository(name="boost_predef",
-commit="560ff5298ead78276872604f1ee6523e63a4fa90",
+commit="fe62325d9fe171028a1beb61082a72972a3e93b0",
 remote="https://github.com/boostorg/predef.git",
 build_file=base+"//:predef.BUILD"
 )
 
     new_git_repository(name="boost_preprocessor",
-commit="56090c56b5c78418b6dbe8c3c2ba576395152f83",
+commit="ffb27a1d5661cb4828b7569f65000a30a1b2c163",
 remote="https://github.com/boostorg/preprocessor.git",
 build_file=base+"//:preprocessor.BUILD"
 )
 
     new_git_repository(name="boost_process",
-commit="44162ecf2243c7cbea412830eddb43d041469eae",
+commit="0a554c92b589428d21e6e263350a1c0c866331ac",
 remote="https://github.com/boostorg/process.git",
 build_file=base+"//:process.BUILD"
 )
@@ -543,7 +567,7 @@ build_file=base+"//:program_options.BUILD"
 )
 
     new_git_repository(name="boost_property_map",
-commit="2f56dce3ffab40bd67b8807ecc6916a84c6d09ef",
+commit="df0bbaafad699c7ce1b0f593cdde9b3e3da3b5b1",
 remote="https://github.com/boostorg/property_map.git",
 build_file=base+"//:property_map.BUILD"
 )
@@ -555,157 +579,157 @@ build_file=base+"//:property_tree.BUILD"
 )
 
     new_git_repository(name="boost_proto",
-commit="d70c74c3a8d2abe746fe017edee564e6e8ae0efc",
+commit="c45e6c41322e222802afa035e89b71cead939388",
 remote="https://github.com/boostorg/proto.git",
 build_file=base+"//:proto.BUILD"
 )
 
     new_git_repository(name="boost_ptr_container",
-commit="67915a7f8610247b7bac4ca41b03702b54f4933a",
+commit="c7b6a7ee5b41d378c4c95d6f6edb25c98dfffed7",
 remote="https://github.com/boostorg/ptr_container.git",
 build_file=base+"//:ptr_container.BUILD"
 )
 
     new_git_repository(name="boost_python",
-commit="6f72675bff276599ffdccb9681018d8b2e367bc2",
+commit="102acf1d34ff91e67fe9aae401edc6edd68be89e",
 remote="https://github.com/boostorg/python.git",
 build_file=base+"//:python.BUILD"
 )
 
     new_git_repository(name="boost_qvm",
-commit="364708ff20900d5d6d1aa249d142a481e68e9c26",
+commit="3914976fc9fca6aebaceb14820f6ed36e6be94e6",
 remote="https://github.com/boostorg/qvm.git",
 build_file=base+"//:qvm.BUILD"
 )
 
     new_git_repository(name="boost_random",
-commit="1559df6b194cbba86653a2e2fefc2ea15e2cecd2",
+commit="5d9ba8578ac1d78525488077dafb99b536a399d3",
 remote="https://github.com/boostorg/random.git",
 build_file=base+"//:random.BUILD"
 )
 
     new_git_repository(name="boost_range",
-commit="4cfd4d8287ca949d7f29256adf3e796a0d1775ec",
+commit="77a4dd51242f1ef446acb1a476ae1c760c206b1d",
 remote="https://github.com/boostorg/range.git",
 build_file=base+"//:range.BUILD"
 )
 
     new_git_repository(name="boost_ratio",
-commit="ee45b0666f89e2703d8496d243c297082bfc668c",
+commit="96888514780dbe8d1729a8248fbafdeda79bcdc4",
 remote="https://github.com/boostorg/ratio.git",
 build_file=base+"//:ratio.BUILD"
 )
 
     new_git_repository(name="boost_rational",
-commit="2c7fe1aae7fdb72458754d76aa2d0d57542264b7",
+commit="47c1b26964b06a99200769474d58a309267c50f1",
 remote="https://github.com/boostorg/rational.git",
 build_file=base+"//:rational.BUILD"
 )
 
     new_git_repository(name="boost_regex",
-commit="a9fc8fb5de8262cdf100ff2af06d2c819f251b4e",
+commit="c21b52d87cd368505f77d6b69bb97ad581e4e7eb",
 remote="https://github.com/boostorg/regex.git",
 build_file=base+"//:regex.BUILD"
 )
 
+    new_git_repository(name="boost_safe_numerics",
+commit="8ff0f8538c43f67c653fa037f969c66915e37326",
+remote="https://github.com/boostorg/safe_numerics.git",
+build_file=base+"//:safe_numerics.BUILD"
+)
+
     new_git_repository(name="boost_scope_exit",
-commit="3c093a0b862a7246c47b0f3894d91d710e25c747",
+commit="3a2c1d7da44af2bb4bf47a4dc051998a80d3194f",
 remote="https://github.com/boostorg/scope_exit.git",
 build_file=base+"//:scope_exit.BUILD"
 )
 
     new_git_repository(name="boost_serialization",
-commit="738695b70733f9d592a570fb17a505d6a029b48a",
+commit="f04a8cbe908d577220c1ca1a6a612ae93249ff08",
 remote="https://github.com/boostorg/serialization.git",
 build_file=base+"//:serialization.BUILD"
 )
 
-    new_git_repository(name="boost_signals",
-commit="613b2a55b602501bf6dfe3da8fb2218e1ffc2862",
-remote="https://github.com/boostorg/signals.git",
-build_file=base+"//:signals.BUILD"
-)
-
     new_git_repository(name="boost_signals2",
-commit="0c51b5dcbf5961054447ce83f467e6e99db16c54",
+commit="77df30b97cb2a97adbd1d1e511e2b8b54ab92940",
 remote="https://github.com/boostorg/signals2.git",
 build_file=base+"//:signals2.BUILD"
 )
 
     new_git_repository(name="boost_smart_ptr",
-commit="e37cd4154f492b3cd2ea8e87806614ffddf1163a",
+commit="274ec17836bfbfd85159ef3c358031b31fc3c6ea",
 remote="https://github.com/boostorg/smart_ptr.git",
 build_file=base+"//:smart_ptr.BUILD"
 )
 
     new_git_repository(name="boost_sort",
-commit="524289041099f521a6d69f8858d384d537ffa6af",
+commit="62dbaee9779b6f3e84c20e66c20861ecc6d98749",
 remote="https://github.com/boostorg/sort.git",
 build_file=base+"//:sort.BUILD"
 )
 
     new_git_repository(name="boost_spirit",
-commit="80ac3212a33c2921cef2212138da751da64852b9",
+commit="877c778ed960cc2fbef8c845628495b196591334",
 remote="https://github.com/boostorg/spirit.git",
 build_file=base+"//:spirit.BUILD"
 )
 
     new_git_repository(name="boost_stacktrace",
-commit="7fedfa12654d18a9fa695de258763e93699c4636",
+commit="7c7271d9bca2ab6e4abbff2e8ab19cd8027ea7a1",
 remote="https://github.com/boostorg/stacktrace.git",
 build_file=base+"//:stacktrace.BUILD"
 )
 
     new_git_repository(name="boost_statechart",
-commit="066189ef5560ec847eb74ec2df6ec5f18b92373f",
+commit="798d77087ecc144f36f8f5873dd1e9a4f4926344",
 remote="https://github.com/boostorg/statechart.git",
 build_file=base+"//:statechart.BUILD"
 )
 
     new_git_repository(name="boost_static_assert",
-commit="afe9e9d7864e23d50077115d51fa8ce17fc2e8be",
+commit="233ef6bedd1868437a1c7fb7e7f77c6a1b6e3495",
 remote="https://github.com/boostorg/static_assert.git",
 build_file=base+"//:static_assert.BUILD"
 )
 
     new_git_repository(name="boost_system",
-commit="13199e504c0cacb428b58819f5a3d7ccf8911a8b",
+commit="455946faacd0552c7222d5ab59dad4289e164211",
 remote="https://github.com/boostorg/system.git",
 build_file=base+"//:system.BUILD"
 )
 
     new_git_repository(name="boost_test",
-commit="cd93cf5a692e51a060c283fd7bd178c7f0cd5d28",
+commit="ef61be4b6db7357c6ae2294f5be55f4089301699",
 remote="https://github.com/boostorg/test.git",
 build_file=base+"//:test.BUILD"
 )
 
     new_git_repository(name="boost_thread",
-commit="377bb87ad5875ddf357cbcf8aee51659d979f916",
+commit="042ce47e777cf44b11fe6baba02c3531222117f1",
 remote="https://github.com/boostorg/thread.git",
 build_file=base+"//:thread.BUILD"
 )
 
     new_git_repository(name="boost_throw_exception",
-commit="c548923b32735fcbc6cdf34c8e9b382d58b4b407",
+commit="43a57d518cf99fc693eebedefcbaa91074674f54",
 remote="https://github.com/boostorg/throw_exception.git",
 build_file=base+"//:throw_exception.BUILD"
 )
 
     new_git_repository(name="boost_timer",
-commit="cb59c5cff1d044d875b4c5984a46efcffa6c9df5",
+commit="7e252144c199b0b620e306d894cea545965cc1fb",
 remote="https://github.com/boostorg/timer.git",
 build_file=base+"//:timer.BUILD"
 )
 
     new_git_repository(name="boost_tokenizer",
-commit="fbb3cd559a81d0b3ce9203dce4d80083b3422853",
+commit="667a8229bd87f1986a49d844582c396dec408d14",
 remote="https://github.com/boostorg/tokenizer.git",
 build_file=base+"//:tokenizer.BUILD"
 )
 
     new_git_repository(name="boost_tti",
-commit="31736e3dff24934430b038b85f794432eb949a29",
+commit="d7b8e0ed57162cdebef326386099b57d1467486c",
 remote="https://github.com/boostorg/tti.git",
 build_file=base+"//:tti.BUILD"
 )
@@ -717,25 +741,25 @@ build_file=base+"//:tuple.BUILD"
 )
 
     new_git_repository(name="boost_type_erasure",
-commit="4afdf7ea52018be41e0c41abeab43fc5d2764573",
+commit="46a8945bfbc1b691112500b4e07865e9090b1274",
 remote="https://github.com/boostorg/type_erasure.git",
 build_file=base+"//:type_erasure.BUILD"
 )
 
     new_git_repository(name="boost_type_index",
-commit="c2caa340ab9d9d834c5ffafb3f267b3c46c8c821",
+commit="afd1b6cdc88c516d72a6a2f7a7dd3585f7a8f20c",
 remote="https://github.com/boostorg/type_index.git",
 build_file=base+"//:type_index.BUILD"
 )
 
     new_git_repository(name="boost_type_traits",
-commit="059ed8839da3fecd1e8b62cdc11be006f6346b5e",
+commit="d91381b8f2f041e139b8e7e689921f5aca0d2574",
 remote="https://github.com/boostorg/type_traits.git",
 build_file=base+"//:type_traits.BUILD"
 )
 
     new_git_repository(name="boost_typeof",
-commit="080f05ea46271c745f7a748815a64210deb0a880",
+commit="e35962f3f07f9eca1efb1e816348bb42794b8a51",
 remote="https://github.com/boostorg/typeof.git",
 build_file=base+"//:typeof.BUILD"
 )
@@ -753,37 +777,43 @@ build_file=base+"//:unordered.BUILD"
 )
 
     new_git_repository(name="boost_utility",
-commit="ebe44296ca698e333a09e8268ea8ccedb3886c4d",
+commit="75276a055d3d8f88be1c50dc18ce8ffacc81d458",
 remote="https://github.com/boostorg/utility.git",
 build_file=base+"//:utility.BUILD"
 )
 
     new_git_repository(name="boost_uuid",
-commit="9522a13919c75ceade063c7e8d6bc785f2814416",
+commit="ca0185f9f2f1c8d58af8c54ce24579e1c6ebf348",
 remote="https://github.com/boostorg/uuid.git",
 build_file=base+"//:uuid.BUILD"
 )
 
     new_git_repository(name="boost_variant",
-commit="98b5d42e6d8fc188c40a56aa3a558bed595ee643",
+commit="f34376e115329a3196dd19101398500423b72a21",
 remote="https://github.com/boostorg/variant.git",
 build_file=base+"//:variant.BUILD"
 )
 
+    new_git_repository(name="boost_variant2",
+commit="a15364bd8148b147e0ba7d27197a36b33dac63b8",
+remote="https://github.com/boostorg/variant2.git",
+build_file=base+"//:variant2.BUILD"
+)
+
     new_git_repository(name="boost_vmd",
-commit="9a31758d1b46995c72058d082302092b0adaaabb",
+commit="92524f090343bcb980ebda7ba10bbf5f5f28365b",
 remote="https://github.com/boostorg/vmd.git",
 build_file=base+"//:vmd.BUILD"
 )
 
     new_git_repository(name="boost_wave",
-commit="5699f9a4edd86e84c237cd968e8fb6e29db8fc21",
+commit="ac64abce4a3492a18aee3450d180c1d8ae5b490d",
 remote="https://github.com/boostorg/wave.git",
 build_file=base+"//:wave.BUILD"
 )
 
     new_git_repository(name="boost_winapi",
-commit="3f56c2348fe1eee510da9ed1fb7763d74ea304d3",
+commit="65b9c99a6772add56a24272d0b76b611fd92caf4",
 remote="https://github.com/boostorg/winapi.git",
 build_file=base+"//:winapi.BUILD"
 )
@@ -795,7 +825,7 @@ build_file=base+"//:xpressive.BUILD"
 )
 
     new_git_repository(name="boost_yap",
-commit="2e8e2020ec242b1c6e7649f4828811f3df6ae14c",
+commit="f06a3d9361ef41eca27abae13a533b80cf1b7462",
 remote="https://github.com/boostorg/yap.git",
 build_file=base+"//:yap.BUILD"
 )

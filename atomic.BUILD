@@ -189,13 +189,13 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_assert//:assert",
         "@boost_config//:config",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
+        "@boost_assert//:assert",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/type_traits/make_signed.hpp:
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/type_traits/has_trivial_constructor.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",

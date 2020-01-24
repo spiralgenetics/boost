@@ -51,37 +51,9 @@ cc_library(
         "include/boost/chrono/time_point.hpp",
         "include/boost/chrono/typeof/boost/chrono/chrono.hpp",
         "include/boost/chrono/typeof/boost/ratio.hpp",
-        "stopwatches/include/boost/chrono/stopwatches.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/laps_accumulator_set.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/laps_sequence_container.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/last_lap.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/no_memory.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/dont_start.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/accumulator_set_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/base_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/elapsed_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/times_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/laps_stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/clock_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/laps_accumulator_set_stopwatch_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/laps_stopclock.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/laps_stopwatch_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/process_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/stopclock.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/stopwatch_reporter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/stopwatch_reporter_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/strict_stopclock.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/system_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/thread_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/simple_stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/stopwatch_scoped.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/strict_stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/suspendable_stopwatch.hpp",
     ],
     includes = [
         "include",
-        "stopwatches/include",
     ],
 )
 
@@ -141,33 +113,6 @@ cc_library(
         "include/boost/chrono/time_point.hpp",
         "include/boost/chrono/typeof/boost/chrono/chrono.hpp",
         "include/boost/chrono/typeof/boost/ratio.hpp",
-        "stopwatches/include/boost/chrono/stopwatches.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/laps_accumulator_set.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/laps_sequence_container.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/last_lap.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/collectors/no_memory.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/dont_start.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/accumulator_set_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/base_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/elapsed_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/formatters/times_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/laps_stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/clock_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/laps_accumulator_set_stopwatch_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/laps_stopclock.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/laps_stopwatch_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/process_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/stopclock.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/stopwatch_reporter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/stopwatch_reporter_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/strict_stopclock.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/system_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/reporters/thread_default_formatter.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/simple_stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/stopwatch_scoped.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/strict_stopwatch.hpp",
-        "stopwatches/include/boost/chrono/stopwatches/suspendable_stopwatch.hpp",
     ],
     copts = [
         "-I./src",
@@ -180,10 +125,10 @@ cc_library(
         "@boost_config//:headers_only",
         # Because of boost/system/system_error.hpp:
         "@boost_system//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/type_traits/common_type.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/operators.hpp:
@@ -192,35 +137,19 @@ cc_library(
         "@boost_static_assert//:headers_only",
         # Because of boost/core/addressof.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/mpl/logical.hpp:
-        "@boost_mpl//:headers_only",
         # Because of boost/ratio/ratio.hpp:
         "@boost_ratio//:headers_only",
+        # Because of boost/mpl/logical.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/integer_traits.hpp:
         "@boost_integer//:headers_only",
         # Because of boost/rational.hpp:
         "@boost_rational//:headers_only",
         # Because of boost/preprocessor/cat.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/accumulators/framework/features.hpp:
-        "@boost_accumulators//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
-        # Because of boost/format/group.hpp:
-        "@boost_format//:headers_only",
         # Because of boost/move/unique_ptr.hpp:
         "@boost_move//:headers_only",
-        # Because of boost/fusion/include/find_if.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/parameter/parameters.hpp:
-        "@boost_parameter//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/detail/is_xxx.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/optional.hpp:
-        "@boost_optional//:headers_only",
-        # Because of boost/shared_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
     ],
 )

@@ -13,18 +13,40 @@ cc_library(
         "include/boost/gil/color_base.hpp",
         "include/boost/gil/color_base_algorithm.hpp",
         "include/boost/gil/color_convert.hpp",
+        "include/boost/gil/concepts.hpp",
+        "include/boost/gil/concepts/basic.hpp",
+        "include/boost/gil/concepts/channel.hpp",
+        "include/boost/gil/concepts/color.hpp",
+        "include/boost/gil/concepts/color_base.hpp",
+        "include/boost/gil/concepts/concept_check.hpp",
+        "include/boost/gil/concepts/detail/type_traits.hpp",
+        "include/boost/gil/concepts/detail/utility.hpp",
+        "include/boost/gil/concepts/dynamic_step.hpp",
+        "include/boost/gil/concepts/fwd.hpp",
+        "include/boost/gil/concepts/image.hpp",
+        "include/boost/gil/concepts/image_view.hpp",
+        "include/boost/gil/concepts/pixel.hpp",
+        "include/boost/gil/concepts/pixel_based.hpp",
+        "include/boost/gil/concepts/pixel_dereference.hpp",
+        "include/boost/gil/concepts/pixel_iterator.hpp",
+        "include/boost/gil/concepts/pixel_locator.hpp",
+        "include/boost/gil/concepts/point.hpp",
         "include/boost/gil/deprecated.hpp",
+        "include/boost/gil/detail/is_channel_integral.hpp",
+        "include/boost/gil/detail/math.hpp",
+        "include/boost/gil/detail/mp11.hpp",
+        "include/boost/gil/detail/std_common_type.hpp",
+        "include/boost/gil/detail/type_traits.hpp",
         "include/boost/gil/device_n.hpp",
+        "include/boost/gil/dynamic_step.hpp",
         "include/boost/gil/extension/dynamic_image/algorithm.hpp",
         "include/boost/gil/extension/dynamic_image/any_image.hpp",
         "include/boost/gil/extension/dynamic_image/any_image_view.hpp",
         "include/boost/gil/extension/dynamic_image/apply_operation.hpp",
-        "include/boost/gil/extension/dynamic_image/apply_operation_base.hpp",
         "include/boost/gil/extension/dynamic_image/dynamic_at_c.hpp",
         "include/boost/gil/extension/dynamic_image/dynamic_image_all.hpp",
         "include/boost/gil/extension/dynamic_image/image_view_factory.hpp",
         "include/boost/gil/extension/dynamic_image/reduce.hpp",
-        "include/boost/gil/extension/dynamic_image/variant.hpp",
         "include/boost/gil/extension/io/bmp.hpp",
         "include/boost/gil/extension/io/bmp/detail/is_allowed.hpp",
         "include/boost/gil/extension/io/bmp/detail/read.hpp",
@@ -137,17 +159,19 @@ cc_library(
         "include/boost/gil/extension/toolbox/metafunctions/channel_view.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/get_num_bits.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/get_pixel_type.hpp",
-        "include/boost/gil/extension/toolbox/metafunctions/gil_extensions.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/is_bit_aligned.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/is_homogeneous.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/is_similar.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/pixel_bit_size.hpp",
         "include/boost/gil/extension/toolbox/toolbox.hpp",
-        "include/boost/gil/gil_all.hpp",
-        "include/boost/gil/gil_concept.hpp",
-        "include/boost/gil/gil_config.hpp",
         "include/boost/gil/gray.hpp",
         "include/boost/gil/image.hpp",
+        "include/boost/gil/image_processing/filter.hpp",
+        "include/boost/gil/image_processing/harris.hpp",
+        "include/boost/gil/image_processing/hessian.hpp",
+        "include/boost/gil/image_processing/numeric.hpp",
+        "include/boost/gil/image_processing/scaling.hpp",
+        "include/boost/gil/image_processing/threshold.hpp",
         "include/boost/gil/image_view.hpp",
         "include/boost/gil/image_view_factory.hpp",
         "include/boost/gil/io/base.hpp",
@@ -187,6 +211,7 @@ cc_library(
         "include/boost/gil/pixel_iterator_adaptor.hpp",
         "include/boost/gil/planar_pixel_iterator.hpp",
         "include/boost/gil/planar_pixel_reference.hpp",
+        "include/boost/gil/point.hpp",
         "include/boost/gil/position_iterator.hpp",
         "include/boost/gil/premultiply.hpp",
         "include/boost/gil/promote_integral.hpp",
@@ -195,7 +220,6 @@ cc_library(
         "include/boost/gil/step_iterator.hpp",
         "include/boost/gil/typedefs.hpp",
         "include/boost/gil/utilities.hpp",
-        "include/boost/gil/version.hpp",
         "include/boost/gil/virtual_locator.hpp",
     ],
     includes = [
@@ -217,18 +241,40 @@ cc_library(
         "include/boost/gil/color_base.hpp",
         "include/boost/gil/color_base_algorithm.hpp",
         "include/boost/gil/color_convert.hpp",
+        "include/boost/gil/concepts.hpp",
+        "include/boost/gil/concepts/basic.hpp",
+        "include/boost/gil/concepts/channel.hpp",
+        "include/boost/gil/concepts/color.hpp",
+        "include/boost/gil/concepts/color_base.hpp",
+        "include/boost/gil/concepts/concept_check.hpp",
+        "include/boost/gil/concepts/detail/type_traits.hpp",
+        "include/boost/gil/concepts/detail/utility.hpp",
+        "include/boost/gil/concepts/dynamic_step.hpp",
+        "include/boost/gil/concepts/fwd.hpp",
+        "include/boost/gil/concepts/image.hpp",
+        "include/boost/gil/concepts/image_view.hpp",
+        "include/boost/gil/concepts/pixel.hpp",
+        "include/boost/gil/concepts/pixel_based.hpp",
+        "include/boost/gil/concepts/pixel_dereference.hpp",
+        "include/boost/gil/concepts/pixel_iterator.hpp",
+        "include/boost/gil/concepts/pixel_locator.hpp",
+        "include/boost/gil/concepts/point.hpp",
         "include/boost/gil/deprecated.hpp",
+        "include/boost/gil/detail/is_channel_integral.hpp",
+        "include/boost/gil/detail/math.hpp",
+        "include/boost/gil/detail/mp11.hpp",
+        "include/boost/gil/detail/std_common_type.hpp",
+        "include/boost/gil/detail/type_traits.hpp",
         "include/boost/gil/device_n.hpp",
+        "include/boost/gil/dynamic_step.hpp",
         "include/boost/gil/extension/dynamic_image/algorithm.hpp",
         "include/boost/gil/extension/dynamic_image/any_image.hpp",
         "include/boost/gil/extension/dynamic_image/any_image_view.hpp",
         "include/boost/gil/extension/dynamic_image/apply_operation.hpp",
-        "include/boost/gil/extension/dynamic_image/apply_operation_base.hpp",
         "include/boost/gil/extension/dynamic_image/dynamic_at_c.hpp",
         "include/boost/gil/extension/dynamic_image/dynamic_image_all.hpp",
         "include/boost/gil/extension/dynamic_image/image_view_factory.hpp",
         "include/boost/gil/extension/dynamic_image/reduce.hpp",
-        "include/boost/gil/extension/dynamic_image/variant.hpp",
         "include/boost/gil/extension/io/bmp.hpp",
         "include/boost/gil/extension/io/bmp/detail/is_allowed.hpp",
         "include/boost/gil/extension/io/bmp/detail/read.hpp",
@@ -341,17 +387,19 @@ cc_library(
         "include/boost/gil/extension/toolbox/metafunctions/channel_view.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/get_num_bits.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/get_pixel_type.hpp",
-        "include/boost/gil/extension/toolbox/metafunctions/gil_extensions.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/is_bit_aligned.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/is_homogeneous.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/is_similar.hpp",
         "include/boost/gil/extension/toolbox/metafunctions/pixel_bit_size.hpp",
         "include/boost/gil/extension/toolbox/toolbox.hpp",
-        "include/boost/gil/gil_all.hpp",
-        "include/boost/gil/gil_concept.hpp",
-        "include/boost/gil/gil_config.hpp",
         "include/boost/gil/gray.hpp",
         "include/boost/gil/image.hpp",
+        "include/boost/gil/image_processing/filter.hpp",
+        "include/boost/gil/image_processing/harris.hpp",
+        "include/boost/gil/image_processing/hessian.hpp",
+        "include/boost/gil/image_processing/numeric.hpp",
+        "include/boost/gil/image_processing/scaling.hpp",
+        "include/boost/gil/image_processing/threshold.hpp",
         "include/boost/gil/image_view.hpp",
         "include/boost/gil/image_view_factory.hpp",
         "include/boost/gil/io/base.hpp",
@@ -391,6 +439,7 @@ cc_library(
         "include/boost/gil/pixel_iterator_adaptor.hpp",
         "include/boost/gil/planar_pixel_iterator.hpp",
         "include/boost/gil/planar_pixel_reference.hpp",
+        "include/boost/gil/point.hpp",
         "include/boost/gil/position_iterator.hpp",
         "include/boost/gil/premultiply.hpp",
         "include/boost/gil/promote_integral.hpp",
@@ -399,67 +448,54 @@ cc_library(
         "include/boost/gil/step_iterator.hpp",
         "include/boost/gil/typedefs.hpp",
         "include/boost/gil/utilities.hpp",
-        "include/boost/gil/version.hpp",
         "include/boost/gil/virtual_locator.hpp",
     ],
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/mpl/not.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/iterator/iterator_concepts.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/concept_check.hpp:
-        "@boost_concept_check//:headers_only",
-        # Because of boost/lambda/lambda.hpp:
-        "@boost_lambda//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/integer/integer_mask.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/function.hpp:
-        "@boost_function//:headers_only",
-        # Because of boost/algorithm/string.hpp:
-        "@boost_algorithm//:headers_only",
-        # Because of boost/preprocessor/repeat.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/filesystem/path.hpp:
-        "@boost_filesystem//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/utility/value_init.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/system/system_error.hpp:
-        "@boost_system//:headers_only",
-        # Because of boost/shared_ptr.hpp:
-        "@boost_smart_ptr//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/preprocessor/facilities/empty.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/iterator/iterator_facade.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/integer/integer_mask.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/concept_check.hpp:
+        "@boost_concept_check//:headers_only",
+        # Because of boost/filesystem/path.hpp:
+        "@boost_filesystem//:headers_only",
+        # Because of boost/core/ignore_unused.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/mpl/list.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/mp11.hpp:
+        "@boost_mp11//:headers_only",
+        # Because of boost/variant/apply_visitor.hpp:
+        "@boost_variant//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/io/detail/quoted_manip.hpp:
         "@boost_io//:headers_only",
         # Because of boost/functional/hash_fwd.hpp:
         "@boost_container_hash//:headers_only",
-        # Because of boost/range/begin.hpp:
-        "@boost_range//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
-        "@boost_tuple//:headers_only",
-        # Because of boost/detail/container_fwd.hpp:
+        # Because of boost/system/system_error.hpp:
+        "@boost_system//:headers_only",
+        # Because of boost/detail/indirect_traits.hpp:
         "@boost_detail//:headers_only",
+        # Because of boost/move/utility.hpp:
+        "@boost_move//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
-        # Because of boost/predef/platform.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/move/utility_core.hpp:
-        "@boost_move//:headers_only",
+        # Because of boost/call_traits.hpp:
+        "@boost_utility//:headers_only",
     ],
 )

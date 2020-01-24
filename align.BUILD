@@ -17,7 +17,7 @@ cc_library(
         "include/boost/align/alignment_of.hpp",
         "include/boost/align/alignment_of_forward.hpp",
         "include/boost/align/assume_aligned.hpp",
-        "include/boost/align/detail/addressof.hpp",
+        "include/boost/align/detail/add_reference.hpp",
         "include/boost/align/detail/align.hpp",
         "include/boost/align/detail/align_cxx11.hpp",
         "include/boost/align/detail/align_down.hpp",
@@ -48,6 +48,8 @@ cc_library(
         "include/boost/align/detail/max_objects.hpp",
         "include/boost/align/detail/max_size.hpp",
         "include/boost/align/detail/min_size.hpp",
+        "include/boost/align/detail/not_pointer.hpp",
+        "include/boost/align/detail/throw_exception.hpp",
         "include/boost/align/is_aligned.hpp",
     ],
     includes = [
@@ -73,7 +75,7 @@ cc_library(
         "include/boost/align/alignment_of.hpp",
         "include/boost/align/alignment_of_forward.hpp",
         "include/boost/align/assume_aligned.hpp",
-        "include/boost/align/detail/addressof.hpp",
+        "include/boost/align/detail/add_reference.hpp",
         "include/boost/align/detail/align.hpp",
         "include/boost/align/detail/align_cxx11.hpp",
         "include/boost/align/detail/align_down.hpp",
@@ -104,20 +106,20 @@ cc_library(
         "include/boost/align/detail/max_objects.hpp",
         "include/boost/align/detail/max_size.hpp",
         "include/boost/align/detail/min_size.hpp",
+        "include/boost/align/detail/not_pointer.hpp",
+        "include/boost/align/detail/throw_exception.hpp",
         "include/boost/align/is_aligned.hpp",
     ],
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/core/addressof.hpp:
-        "@boost_core//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
+        # Because of boost/core/pointer_traits.hpp:
+        "@boost_core//:headers_only",
     ],
 )

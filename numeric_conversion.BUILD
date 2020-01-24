@@ -69,18 +69,18 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/mpl/equal_to.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/polymorphic_cast.hpp:
-        "@boost_conversion//:headers_only",
         # Because of boost/type.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/detail/workaround.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/type_traits/is_same.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/mpl/integral_c.hpp:
+        "@boost_mpl//:headers_only",
         # Because of boost/preprocessor/seq/size.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/polymorphic_cast.hpp:
+        "@boost_conversion//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/assert.hpp:

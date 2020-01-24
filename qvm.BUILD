@@ -17,6 +17,7 @@ cc_library(
         "include/boost/qvm/detail/swizzle_traits.hpp",
         "include/boost/qvm/detail/transp_impl.hpp",
         "include/boost/qvm/detail/vec_assign.hpp",
+        "include/boost/qvm/detail/vec_register_impl.hpp",
         "include/boost/qvm/enable_if.hpp",
         "include/boost/qvm/error.hpp",
         "include/boost/qvm/gen/mat_assign2.hpp",
@@ -78,6 +79,10 @@ cc_library(
         "include/boost/qvm/vec_operations2.hpp",
         "include/boost/qvm/vec_operations3.hpp",
         "include/boost/qvm/vec_operations4.hpp",
+        "include/boost/qvm/vec_register.hpp",
+        "include/boost/qvm/vec_register2.hpp",
+        "include/boost/qvm/vec_register3.hpp",
+        "include/boost/qvm/vec_register4.hpp",
         "include/boost/qvm/vec_traits.hpp",
         "include/boost/qvm/vec_traits_array.hpp",
         "include/boost/qvm/vec_traits_defaults.hpp",
@@ -105,6 +110,7 @@ cc_library(
         "include/boost/qvm/detail/swizzle_traits.hpp",
         "include/boost/qvm/detail/transp_impl.hpp",
         "include/boost/qvm/detail/vec_assign.hpp",
+        "include/boost/qvm/detail/vec_register_impl.hpp",
         "include/boost/qvm/enable_if.hpp",
         "include/boost/qvm/error.hpp",
         "include/boost/qvm/gen/mat_assign2.hpp",
@@ -166,6 +172,10 @@ cc_library(
         "include/boost/qvm/vec_operations2.hpp",
         "include/boost/qvm/vec_operations3.hpp",
         "include/boost/qvm/vec_operations4.hpp",
+        "include/boost/qvm/vec_register.hpp",
+        "include/boost/qvm/vec_register2.hpp",
+        "include/boost/qvm/vec_register3.hpp",
+        "include/boost/qvm/vec_register4.hpp",
         "include/boost/qvm/vec_traits.hpp",
         "include/boost/qvm/vec_traits_array.hpp",
         "include/boost/qvm/vec_traits_defaults.hpp",
@@ -173,17 +183,17 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/exception/error_info.hpp:
+        # Because of boost/exception/to_string.hpp:
         "@boost_exception//:headers_only",
-        # Because of boost/exception/exception.hpp:
-        "@boost_throw_exception//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/detail/workaround.hpp:
+        # Because of boost/utility/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/config.hpp:
         "@boost_config//:headers_only",
     ],
 )

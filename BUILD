@@ -251,8 +251,18 @@ alias(
 )
 
 alias(
+    name = "headers",
+    actual = "@boost_headers//:headers",
+)
+
+alias(
     name = "heap",
     actual = "@boost_heap//:heap",
+)
+
+alias(
+    name = "histogram",
+    actual = "@boost_histogram//:histogram",
 )
 
 alias(
@@ -406,8 +416,18 @@ alias(
 )
 
 alias(
+    name = "outcome",
+    actual = "@boost_outcome//:outcome",
+)
+
+alias(
     name = "parameter",
     actual = "@boost_parameter//:parameter",
+)
+
+alias(
+    name = "parameter_python",
+    actual = "@boost_parameter_python//:parameter_python",
 )
 
 alias(
@@ -506,6 +526,11 @@ alias(
 )
 
 alias(
+    name = "safe_numerics",
+    actual = "@boost_safe_numerics//:safe_numerics",
+)
+
+alias(
     name = "scope_exit",
     actual = "@boost_scope_exit//:scope_exit",
 )
@@ -513,11 +538,6 @@ alias(
 alias(
     name = "serialization",
     actual = "@boost_serialization//:serialization",
-)
-
-alias(
-    name = "signals",
-    actual = "@boost_signals//:signals",
 )
 
 alias(
@@ -638,6 +658,11 @@ alias(
 alias(
     name = "variant",
     actual = "@boost_variant//:variant",
+)
+
+alias(
+    name = "variant2",
+    actual = "@boost_variant2//:variant2",
 )
 
 alias(

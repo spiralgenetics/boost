@@ -2050,26 +2050,26 @@ cc_library(
         ":headers_only",
         # Because of boost/mpl/identity.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/config/no_tr1/utility.hpp:
+        # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/type_traits/is_const.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/preprocessor/seq/for_each.hpp:
+        # Because of boost/preprocessor/repetition/repeat.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/function_types/parameter_types.hpp:
+        "@boost_function_types//:headers_only",
         # Because of boost/typeof/typeof.hpp:
         "@boost_typeof//:headers_only",
         # Because of boost/utility/result_of.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_container_hash//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/function_types/result_type.hpp:
-        "@boost_function_types//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
         # Because of boost/blank.hpp:
         "@boost_detail//:headers_only",
         # Because of boost/assert.hpp:

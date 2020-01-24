@@ -365,42 +365,42 @@ cc_library(
         ":headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/container/detail/variadic_templates_tools.hpp:
+        "@boost_container//:headers_only",
+        # Because of boost/move/utility_core.hpp:
+        "@boost_move//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/container/detail/placement_new.hpp:
-        "@boost_container//:headers_only",
-        # Because of boost/intrusive/pointer_traits.hpp:
-        "@boost_intrusive//:headers_only",
         # Because of boost/utility/addressof.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/move/adl_move_swap.hpp:
-        "@boost_move//:headers_only",
+        # Because of boost/intrusive/pointer_traits.hpp:
+        "@boost_intrusive//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/unordered/unordered_map.hpp:
-        "@boost_unordered//:headers_only",
-        # Because of boost/date_time/microsec_time_clock.hpp:
-        "@boost_date_time//:headers_only",
         # Because of boost/integer/static_log2.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/type_traits/is_convertible.hpp:
+        # Because of boost/date_time/posix_time/ptime.hpp:
+        "@boost_date_time//:headers_only",
+        # Because of boost/type_traits/is_integral.hpp:
         "@boost_type_traits//:headers_only",
+        # Because of boost/unordered/unordered_map.hpp:
+        "@boost_unordered//:headers_only",
         # Because of boost/functional/hash.hpp:
         "@boost_container_hash//:headers_only",
         # Because of boost/shared_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
         # Because of boost/operators.hpp:
         "@boost_utility//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/preprocessor/repetition/enum.hpp:
+        "@boost_preprocessor//:headers_only",
         # Because of boost/detail/select_type.hpp:
         "@boost_detail//:headers_only",
-        # Because of boost/preprocessor/repetition/repeat_from_to.hpp:
-        "@boost_preprocessor//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
         # Because of boost/mpl/integral_c.hpp:

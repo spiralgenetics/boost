@@ -106,6 +106,7 @@ cc_library(
         "include/boost/numeric/odeint/stepper/adams_bashforth.hpp",
         "include/boost/numeric/odeint/stepper/adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/adams_moulton.hpp",
+        "include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/base/algebra_stepper_base.hpp",
         "include/boost/numeric/odeint/stepper/base/explicit_error_stepper_base.hpp",
         "include/boost/numeric/odeint/stepper/base/explicit_error_stepper_fsal_base.hpp",
@@ -113,6 +114,7 @@ cc_library(
         "include/boost/numeric/odeint/stepper/base/symplectic_rkn_stepper_base.hpp",
         "include/boost/numeric/odeint/stepper/bulirsch_stoer.hpp",
         "include/boost/numeric/odeint/stepper/bulirsch_stoer_dense_out.hpp",
+        "include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/controlled_runge_kutta.hpp",
         "include/boost/numeric/odeint/stepper/controlled_step_result.hpp",
         "include/boost/numeric/odeint/stepper/dense_output_runge_kutta.hpp",
@@ -120,15 +122,19 @@ cc_library(
         "include/boost/numeric/odeint/stepper/detail/adams_bashforth_coefficients.hpp",
         "include/boost/numeric/odeint/stepper/detail/adams_moulton_call_algebra.hpp",
         "include/boost/numeric/odeint/stepper/detail/adams_moulton_coefficients.hpp",
+        "include/boost/numeric/odeint/stepper/detail/adaptive_adams_coefficients.hpp",
         "include/boost/numeric/odeint/stepper/detail/generic_rk_algorithm.hpp",
         "include/boost/numeric/odeint/stepper/detail/generic_rk_call_algebra.hpp",
         "include/boost/numeric/odeint/stepper/detail/generic_rk_operations.hpp",
+        "include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp",
+        "include/boost/numeric/odeint/stepper/detail/pid_step_adjuster_coefficients.hpp",
         "include/boost/numeric/odeint/stepper/detail/rotating_buffer.hpp",
         "include/boost/numeric/odeint/stepper/euler.hpp",
         "include/boost/numeric/odeint/stepper/explicit_error_generic_rk.hpp",
         "include/boost/numeric/odeint/stepper/explicit_generic_rk.hpp",
         "include/boost/numeric/odeint/stepper/extrapolation_stepper.hpp",
         "include/boost/numeric/odeint/stepper/generation.hpp",
+        "include/boost/numeric/odeint/stepper/generation/generation_controlled_adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/generation/generation_controlled_runge_kutta.hpp",
         "include/boost/numeric/odeint/stepper/generation/generation_dense_output_runge_kutta.hpp",
         "include/boost/numeric/odeint/stepper/generation/generation_rosenbrock4.hpp",
@@ -288,6 +294,7 @@ cc_library(
         "include/boost/numeric/odeint/stepper/adams_bashforth.hpp",
         "include/boost/numeric/odeint/stepper/adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/adams_moulton.hpp",
+        "include/boost/numeric/odeint/stepper/adaptive_adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/base/algebra_stepper_base.hpp",
         "include/boost/numeric/odeint/stepper/base/explicit_error_stepper_base.hpp",
         "include/boost/numeric/odeint/stepper/base/explicit_error_stepper_fsal_base.hpp",
@@ -295,6 +302,7 @@ cc_library(
         "include/boost/numeric/odeint/stepper/base/symplectic_rkn_stepper_base.hpp",
         "include/boost/numeric/odeint/stepper/bulirsch_stoer.hpp",
         "include/boost/numeric/odeint/stepper/bulirsch_stoer_dense_out.hpp",
+        "include/boost/numeric/odeint/stepper/controlled_adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/controlled_runge_kutta.hpp",
         "include/boost/numeric/odeint/stepper/controlled_step_result.hpp",
         "include/boost/numeric/odeint/stepper/dense_output_runge_kutta.hpp",
@@ -302,15 +310,19 @@ cc_library(
         "include/boost/numeric/odeint/stepper/detail/adams_bashforth_coefficients.hpp",
         "include/boost/numeric/odeint/stepper/detail/adams_moulton_call_algebra.hpp",
         "include/boost/numeric/odeint/stepper/detail/adams_moulton_coefficients.hpp",
+        "include/boost/numeric/odeint/stepper/detail/adaptive_adams_coefficients.hpp",
         "include/boost/numeric/odeint/stepper/detail/generic_rk_algorithm.hpp",
         "include/boost/numeric/odeint/stepper/detail/generic_rk_call_algebra.hpp",
         "include/boost/numeric/odeint/stepper/detail/generic_rk_operations.hpp",
+        "include/boost/numeric/odeint/stepper/detail/pid_step_adjuster.hpp",
+        "include/boost/numeric/odeint/stepper/detail/pid_step_adjuster_coefficients.hpp",
         "include/boost/numeric/odeint/stepper/detail/rotating_buffer.hpp",
         "include/boost/numeric/odeint/stepper/euler.hpp",
         "include/boost/numeric/odeint/stepper/explicit_error_generic_rk.hpp",
         "include/boost/numeric/odeint/stepper/explicit_generic_rk.hpp",
         "include/boost/numeric/odeint/stepper/extrapolation_stepper.hpp",
         "include/boost/numeric/odeint/stepper/generation.hpp",
+        "include/boost/numeric/odeint/stepper/generation/generation_controlled_adams_bashforth_moulton.hpp",
         "include/boost/numeric/odeint/stepper/generation/generation_controlled_runge_kutta.hpp",
         "include/boost/numeric/odeint/stepper/generation/generation_dense_output_runge_kutta.hpp",
         "include/boost/numeric/odeint/stepper/generation/generation_rosenbrock4.hpp",
@@ -361,119 +373,119 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/function.hpp:
-        "@boost_function//:headers_only",
-        # Because of boost/array.hpp:
-        "@boost_array//:headers_only",
-        # Because of boost/fusion/container/vector.hpp:
-        "@boost_fusion//:headers_only",
-        # Because of boost/range.hpp:
+        # Because of boost/range/algorithm/for_each.hpp:
         "@boost_range//:headers_only",
-        # Because of boost/iterator/iterator_facade.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/numeric/ublas/matrix.hpp:
-        "@boost_numeric_ublas//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
         # Because of boost/type_traits/is_same.hpp:
         "@boost_type_traits//:headers_only",
+        # Because of boost/compute/container/vector.hpp:
+        "@boost_compute//:headers_only",
         # Because of boost/utility/enable_if.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/fusion/include/is_sequence.hpp:
+        "@boost_fusion//:headers_only",
+        # Because of boost/mpl/size_t.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/array.hpp:
+        "@boost_array//:headers_only",
+        # Because of boost/mpi.hpp:
+        "@boost_mpi//:headers_only",
+        # Because of boost/preprocessor/repetition.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/function.hpp:
+        "@boost_function//:headers_only",
+        # Because of boost/iterator/iterator_facade.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/multi_array.hpp:
+        "@boost_multi_array//:headers_only",
+        # Because of boost/numeric/ublas/matrix.hpp:
+        "@boost_numeric_ublas//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/utility.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/units/get_dimension.hpp:
+        "@boost_units//:headers_only",
         # Because of boost/bind.hpp:
         "@boost_bind//:headers_only",
         # Because of boost/math/special_functions/binomial.hpp:
         "@boost_math//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
-        # Because of boost/utility.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
-        # Because of boost/compute.hpp:
-        "@boost_compute//:headers_only",
-        # Because of boost/preprocessor/repetition.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/multi_array.hpp:
-        "@boost_multi_array//:headers_only",
-        # Because of boost/units/quantity.hpp:
-        "@boost_units//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/mpi.hpp:
-        "@boost_mpi//:headers_only",
-        # Because of boost/serialization/nvp.hpp:
-        "@boost_serialization//:headers_only",
         # Because of boost/concept_check.hpp:
         "@boost_concept_check//:headers_only",
-        # Because of boost/detail/indirect_traits.hpp:
-        "@boost_detail//:headers_only",
+        # Because of boost/serialization/collection_size_type.hpp:
+        "@boost_serialization//:headers_only",
+        # Because of boost/algorithm/string/classification.hpp:
+        "@boost_algorithm//:headers_only",
+        # Because of boost/graph/iteration_macros.hpp:
+        "@boost_graph//:headers_only",
         # Because of boost/shared_array.hpp:
         "@boost_smart_ptr//:headers_only",
-        # Because of boost/algorithm/string/split.hpp:
-        "@boost_algorithm//:headers_only",
         # Because of boost/optional.hpp:
         "@boost_optional//:headers_only",
+        # Because of boost/detail/indirect_traits.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/functional.hpp:
         "@boost_functional//:headers_only",
         # Because of boost/integer/common_factor_ct.hpp:
         "@boost_integer//:headers_only",
-        # Because of boost/graph/properties.hpp:
-        "@boost_graph//:headers_only",
-        # Because of boost/property_map/property_map.hpp:
-        "@boost_property_map//:headers_only",
-        # Because of boost/type_index.hpp:
-        "@boost_type_index//:headers_only",
-        # Because of boost/typeof/typeof.hpp:
-        "@boost_typeof//:headers_only",
-        # Because of boost/numeric/interval.hpp:
-        "@boost_numeric_interval//:headers_only",
         # Because of boost/lexical_cast.hpp:
         "@boost_lexical_cast//:headers_only",
-        # Because of boost/predef.h:
-        "@boost_predef//:headers_only",
-        # Because of boost/chrono/duration.hpp:
-        "@boost_chrono//:headers_only",
-        # Because of boost/proto/context.hpp:
-        "@boost_proto//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/chrono/duration.hpp:
+        "@boost_chrono//:headers_only",
+        # Because of boost/property_tree/json_parser.hpp:
+        "@boost_property_tree//:headers_only",
+        # Because of boost/property_map/property_map.hpp:
+        "@boost_property_map//:headers_only",
         # Because of boost/uuid/detail/sha1.hpp:
         "@boost_uuid//:headers_only",
         # Because of boost/filesystem/path.hpp:
         "@boost_filesystem//:headers_only",
-        # Because of boost/property_tree/ptree.hpp:
-        "@boost_property_tree//:headers_only",
-        # Because of boost/function_types/result_type.hpp:
+        # Because of boost/proto/core.hpp:
+        "@boost_proto//:headers_only",
+        # Because of boost/type_index.hpp:
+        "@boost_type_index//:headers_only",
+        # Because of boost/numeric/interval.hpp:
+        "@boost_numeric_interval//:headers_only",
+        # Because of boost/typeof/typeof.hpp:
+        "@boost_typeof//:headers_only",
+        # Because of boost/function_types/parameter_types.hpp:
         "@boost_function_types//:headers_only",
-        # Because of boost/move/utility_core.hpp:
-        "@boost_move//:headers_only",
+        # Because of boost/predef/architecture/x86.h:
+        "@boost_predef//:headers_only",
         # Because of boost/ratio/ratio.hpp:
         "@boost_ratio//:headers_only",
-        # Because of boost/system/system_error.hpp:
-        "@boost_system//:headers_only",
+        # Because of boost/multi_index_container.hpp:
+        "@boost_multi_index//:headers_only",
+        # Because of boost/thread/tss.hpp:
+        "@boost_thread//:headers_only",
+        # Because of boost/move/utility.hpp:
+        "@boost_move//:headers_only",
         # Because of boost/io/detail/quoted_manip.hpp:
         "@boost_io//:headers_only",
         # Because of boost/functional/hash_fwd.hpp:
         "@boost_container_hash//:headers_only",
-        # Because of boost/thread/tss.hpp:
-        "@boost_thread//:headers_only",
-        # Because of boost/multi_index/indexed_by.hpp:
-        "@boost_multi_index//:headers_only",
+        # Because of boost/system/system_error.hpp:
+        "@boost_system//:headers_only",
         # Because of boost/container/container_fwd.hpp:
         "@boost_container//:headers_only",
         # Because of boost/rational.hpp:
         "@boost_rational//:headers_only",
-        # Because of boost/any.hpp:
-        "@boost_any//:headers_only",
         # Because of boost/foreach_fwd.hpp:
         "@boost_foreach//:headers_only",
+        # Because of boost/any.hpp:
+        "@boost_any//:headers_only",
         # Because of boost/numeric/conversion/cast.hpp:
         "@boost_numeric_conversion//:headers_only",
-        # Because of boost/atomic.hpp:
-        "@boost_atomic//:headers_only",
         # Because of boost/format.hpp:
         "@boost_format//:headers_only",
+        # Because of boost/atomic.hpp:
+        "@boost_atomic//:headers_only",
     ],
 )

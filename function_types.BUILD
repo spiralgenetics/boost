@@ -169,18 +169,18 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/arithmetic/dec.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/mpl/bitxor.hpp:
+        # Because of boost/mpl/aux_/lambda_support.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/type_traits/integral_constant.hpp:
+        # Because of boost/type_traits/remove_pointer.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/blank.hpp:
-        "@boost_detail//:headers_only",
         # Because of boost/type.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/preprocessor/slot/slot.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/blank.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
     ],

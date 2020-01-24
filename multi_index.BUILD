@@ -6,6 +6,7 @@ cc_library(
         "include/boost/multi_index/composite_key.hpp",
         "include/boost/multi_index/detail/access_specifier.hpp",
         "include/boost/multi_index/detail/adl_swap.hpp",
+        "include/boost/multi_index/detail/allocator_traits.hpp",
         "include/boost/multi_index/detail/archive_constructed.hpp",
         "include/boost/multi_index/detail/auto_space.hpp",
         "include/boost/multi_index/detail/base_type.hpp",
@@ -28,6 +29,7 @@ cc_library(
         "include/boost/multi_index/detail/index_node_base.hpp",
         "include/boost/multi_index/detail/index_saver.hpp",
         "include/boost/multi_index/detail/invariant_assert.hpp",
+        "include/boost/multi_index/detail/is_function.hpp",
         "include/boost/multi_index/detail/is_index_list.hpp",
         "include/boost/multi_index/detail/is_transparent.hpp",
         "include/boost/multi_index/detail/iter_adaptor.hpp",
@@ -63,6 +65,7 @@ cc_library(
         "include/boost/multi_index/identity.hpp",
         "include/boost/multi_index/identity_fwd.hpp",
         "include/boost/multi_index/indexed_by.hpp",
+        "include/boost/multi_index/key.hpp",
         "include/boost/multi_index/key_extractors.hpp",
         "include/boost/multi_index/mem_fun.hpp",
         "include/boost/multi_index/member.hpp",
@@ -91,6 +94,7 @@ cc_library(
         "include/boost/multi_index/composite_key.hpp",
         "include/boost/multi_index/detail/access_specifier.hpp",
         "include/boost/multi_index/detail/adl_swap.hpp",
+        "include/boost/multi_index/detail/allocator_traits.hpp",
         "include/boost/multi_index/detail/archive_constructed.hpp",
         "include/boost/multi_index/detail/auto_space.hpp",
         "include/boost/multi_index/detail/base_type.hpp",
@@ -113,6 +117,7 @@ cc_library(
         "include/boost/multi_index/detail/index_node_base.hpp",
         "include/boost/multi_index/detail/index_saver.hpp",
         "include/boost/multi_index/detail/invariant_assert.hpp",
+        "include/boost/multi_index/detail/is_function.hpp",
         "include/boost/multi_index/detail/is_index_list.hpp",
         "include/boost/multi_index/detail/is_transparent.hpp",
         "include/boost/multi_index/detail/iter_adaptor.hpp",
@@ -148,6 +153,7 @@ cc_library(
         "include/boost/multi_index/identity.hpp",
         "include/boost/multi_index/identity_fwd.hpp",
         "include/boost/multi_index/indexed_by.hpp",
+        "include/boost/multi_index/key.hpp",
         "include/boost/multi_index/key_extractors.hpp",
         "include/boost/multi_index/mem_fun.hpp",
         "include/boost/multi_index/member.hpp",
@@ -167,44 +173,44 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/preprocessor/seq/elem.hpp:
-        "@boost_preprocessor//:headers_only",
-        # Because of boost/throw_exception.hpp:
-        "@boost_throw_exception//:headers_only",
-        # Because of boost/serialization/access.hpp:
+        # Because of boost/serialization/nvp.hpp:
         "@boost_serialization//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
         # Because of boost/noncopyable.hpp:
         "@boost_core//:headers_only",
-        # Because of boost/detail/allocator_utilities.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/mpl/or.hpp:
+        # Because of boost/move/core.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/tuple/tuple.hpp:
+        "@boost_tuple//:headers_only",
+        # Because of boost/mpl/not.hpp:
         "@boost_mpl//:headers_only",
-        # Because of boost/functional/hash_fwd.hpp:
+        # Because of boost/call_traits.hpp:
+        "@boost_utility//:headers_only",
+        # Because of boost/foreach_fwd.hpp:
+        "@boost_foreach//:headers_only",
+        # Because of boost/type_traits/is_integral.hpp:
+        "@boost_type_traits//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/iterator/reverse_iterator.hpp:
+        "@boost_iterator//:headers_only",
+        # Because of boost/functional/hash.hpp:
         "@boost_container_hash//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/tuple/tuple.hpp:
-        "@boost_tuple//:headers_only",
-        # Because of boost/move/utility.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/foreach_fwd.hpp:
-        "@boost_foreach//:headers_only",
-        # Because of boost/call_traits.hpp:
-        "@boost_utility//:headers_only",
-        # Because of boost/iterator/reverse_iterator.hpp:
-        "@boost_iterator//:headers_only",
-        # Because of boost/detail/lightweight_mutex.hpp:
-        "@boost_smart_ptr//:headers_only",
-        # Because of boost/assert.hpp:
-        "@boost_assert//:headers_only",
         # Because of boost/integer/common_factor_rt.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/preprocessor/seq/elem.hpp:
+        "@boost_preprocessor//:headers_only",
+        # Because of boost/assert.hpp:
+        "@boost_assert//:headers_only",
+        # Because of boost/detail/lightweight_mutex.hpp:
+        "@boost_smart_ptr//:headers_only",
+        # Because of boost/detail/container_fwd.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/predef.h:
         "@boost_predef//:headers_only",
     ],

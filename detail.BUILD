@@ -65,19 +65,17 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/type_traits/is_base_of.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/utility/enable_if.hpp:
-        "@boost_core//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/mpl/aux_/lambda_support.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
+        # Because of boost/type_traits/has_nothrow_copy.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/preprocessor/enum_params.hpp:
         "@boost_preprocessor//:headers_only",
-        # Because of boost/assert.hpp:
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
+        # Because of boost/detail/iterator.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/current_function.hpp:
         "@boost_assert//:headers_only",
     ],
 )

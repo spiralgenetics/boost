@@ -136,7 +136,6 @@ cc_library(
         "include/boost/serialization/detail/shared_ptr_132.hpp",
         "include/boost/serialization/detail/shared_ptr_nmt_132.hpp",
         "include/boost/serialization/detail/stack_constructor.hpp",
-        "include/boost/serialization/ephemeral.hpp",
         "include/boost/serialization/export.hpp",
         "include/boost/serialization/extended_type_info.hpp",
         "include/boost/serialization/extended_type_info_no_rtti.hpp",
@@ -225,8 +224,18 @@ cc_library(
         "src/extended_type_info.cpp",
         "src/extended_type_info_no_rtti.cpp",
         "src/extended_type_info_typeid.cpp",
+        "src/polymorphic_binary_iarchive.cpp",
+        "src/polymorphic_binary_oarchive.cpp",
         "src/polymorphic_iarchive.cpp",
         "src/polymorphic_oarchive.cpp",
+        "src/polymorphic_text_iarchive.cpp",
+        "src/polymorphic_text_oarchive.cpp",
+        "src/polymorphic_text_wiarchive.cpp",
+        "src/polymorphic_text_woarchive.cpp",
+        "src/polymorphic_xml_iarchive.cpp",
+        "src/polymorphic_xml_oarchive.cpp",
+        "src/polymorphic_xml_wiarchive.cpp",
+        "src/polymorphic_xml_woarchive.cpp",
         "src/stl_port.cpp",
         "src/text_iarchive.cpp",
         "src/text_oarchive.cpp",
@@ -376,7 +385,6 @@ cc_library(
         "include/boost/serialization/detail/shared_ptr_132.hpp",
         "include/boost/serialization/detail/shared_ptr_nmt_132.hpp",
         "include/boost/serialization/detail/stack_constructor.hpp",
-        "include/boost/serialization/ephemeral.hpp",
         "include/boost/serialization/export.hpp",
         "include/boost/serialization/extended_type_info.hpp",
         "include/boost/serialization/extended_type_info_no_rtti.hpp",
@@ -440,38 +448,38 @@ cc_library(
     ],
     deps = [
         ":headers_only",
-        "@boost_assert//:assert",
-        "@boost_config//:config",
-        "@boost_integer//:integer",
-        "@boost_detail//:detail",
         "@boost_core//:core",
+        "@boost_detail//:detail",
+        "@boost_config//:config",
+        "@boost_assert//:assert",
+        "@boost_integer//:integer",
+        # Because of boost/config.hpp:
+        "@boost_config//:headers_only",
+        # Because of boost/integer_traits.hpp:
+        "@boost_integer//:headers_only",
+        # Because of boost/core/no_exceptions_support.hpp:
+        "@boost_core//:headers_only",
         # Because of boost/detail/utf8_codecvt_facet.ipp:
         "@boost_detail//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/integer_traits.hpp:
-        "@boost_integer//:headers_only",
-        # Because of boost/config.hpp:
-        "@boost_config//:headers_only",
-        # Because of boost/core/no_exceptions_support.hpp:
-        "@boost_core//:headers_only",
-        # Because of boost/spirit/include/classic_chset.hpp:
-        "@boost_spirit//:headers_only",
-        # Because of boost/type_traits/remove_const.hpp:
+        # Because of boost/mpl/greater.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/type_traits/is_base_and_derived.hpp:
         "@boost_type_traits//:headers_only",
         # Because of boost/static_assert.hpp:
         "@boost_static_assert//:headers_only",
-        # Because of boost/mpl/if.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/io/ios_state.hpp:
-        "@boost_io//:headers_only",
         # Because of boost/scoped_ptr.hpp:
         "@boost_smart_ptr//:headers_only",
+        # Because of boost/spirit/include/classic_chset.hpp:
+        "@boost_spirit//:headers_only",
+        # Because of boost/io/ios_state.hpp:
+        "@boost_io//:headers_only",
         # Because of boost/call_traits.hpp:
         "@boost_utility//:headers_only",
-        # Because of boost/detail/endian.hpp:
+        # Because of boost/predef/other/endian.h:
         "@boost_predef//:headers_only",
-        # Because of boost/preprocessor/control/if.hpp:
+        # Because of boost/preprocessor/stringize.hpp:
         "@boost_preprocessor//:headers_only",
         # Because of boost/iterator/iterator_adaptor.hpp:
         "@boost_iterator//:headers_only",
@@ -483,18 +491,18 @@ cc_library(
         "@boost_move//:headers_only",
         # Because of boost/optional.hpp:
         "@boost_optional//:headers_only",
-        # Because of boost/unordered_map.hpp:
-        "@boost_unordered//:headers_only",
         # Because of boost/variant.hpp:
         "@boost_variant//:headers_only",
-        # Because of boost/functional/hash.hpp:
-        "@boost_container_hash//:headers_only",
+        # Because of boost/unordered_map.hpp:
+        "@boost_unordered//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
-        # Because of boost/container/allocator_traits.hpp:
-        "@boost_container//:headers_only",
+        # Because of boost/functional/hash.hpp:
+        "@boost_container_hash//:headers_only",
         # Because of boost/tuple/tuple.hpp:
         "@boost_tuple//:headers_only",
+        # Because of boost/container/allocator_traits.hpp:
+        "@boost_container//:headers_only",
         # Because of boost/intrusive/pointer_traits.hpp:
         "@boost_intrusive//:headers_only",
     ],

@@ -7,8 +7,10 @@ cc_library(
         "include/boost/integer/common_factor.hpp",
         "include/boost/integer/common_factor_ct.hpp",
         "include/boost/integer/common_factor_rt.hpp",
+        "include/boost/integer/extended_euclidean.hpp",
         "include/boost/integer/integer_log2.hpp",
         "include/boost/integer/integer_mask.hpp",
+        "include/boost/integer/mod_inverse.hpp",
         "include/boost/integer/static_log2.hpp",
         "include/boost/integer/static_min_max.hpp",
         "include/boost/integer_fwd.hpp",
@@ -28,8 +30,10 @@ cc_library(
         "include/boost/integer/common_factor.hpp",
         "include/boost/integer/common_factor_ct.hpp",
         "include/boost/integer/common_factor_rt.hpp",
+        "include/boost/integer/extended_euclidean.hpp",
         "include/boost/integer/integer_log2.hpp",
         "include/boost/integer/integer_mask.hpp",
+        "include/boost/integer/mod_inverse.hpp",
         "include/boost/integer/static_log2.hpp",
         "include/boost/integer/static_min_max.hpp",
         "include/boost/integer_fwd.hpp",
@@ -41,10 +45,12 @@ cc_library(
         ":headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/static_assert.hpp:
-        "@boost_static_assert//:headers_only",
+        # Because of boost/throw_exception.hpp:
+        "@boost_throw_exception//:headers_only",
         # Because of boost/core/enable_if.hpp:
         "@boost_core//:headers_only",
+        # Because of boost/static_assert.hpp:
+        "@boost_static_assert//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
     ],

@@ -16,7 +16,6 @@ cc_library(
         "include/boost/variant/detail/enable_recursive.hpp",
         "include/boost/variant/detail/enable_recursive_fwd.hpp",
         "include/boost/variant/detail/forced_return.hpp",
-        "include/boost/variant/detail/generic_result_type.hpp",
         "include/boost/variant/detail/has_result_type.hpp",
         "include/boost/variant/detail/hash_variant.hpp",
         "include/boost/variant/detail/initializer.hpp",
@@ -26,6 +25,7 @@ cc_library(
         "include/boost/variant/detail/multivisitors_cpp14_based.hpp",
         "include/boost/variant/detail/multivisitors_preprocessor_based.hpp",
         "include/boost/variant/detail/over_sequence.hpp",
+        "include/boost/variant/detail/std_hash.hpp",
         "include/boost/variant/detail/substitute.hpp",
         "include/boost/variant/detail/substitute_fwd.hpp",
         "include/boost/variant/detail/variant_io.hpp",
@@ -63,7 +63,6 @@ cc_library(
         "include/boost/variant/detail/enable_recursive.hpp",
         "include/boost/variant/detail/enable_recursive_fwd.hpp",
         "include/boost/variant/detail/forced_return.hpp",
-        "include/boost/variant/detail/generic_result_type.hpp",
         "include/boost/variant/detail/has_result_type.hpp",
         "include/boost/variant/detail/hash_variant.hpp",
         "include/boost/variant/detail/initializer.hpp",
@@ -73,6 +72,7 @@ cc_library(
         "include/boost/variant/detail/multivisitors_cpp14_based.hpp",
         "include/boost/variant/detail/multivisitors_preprocessor_based.hpp",
         "include/boost/variant/detail/over_sequence.hpp",
+        "include/boost/variant/detail/std_hash.hpp",
         "include/boost/variant/detail/substitute.hpp",
         "include/boost/variant/detail/substitute_fwd.hpp",
         "include/boost/variant/detail/variant_io.hpp",
@@ -91,16 +91,22 @@ cc_library(
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/checked_delete.hpp:
-        "@boost_core//:headers_only",
+        # Because of boost/type_traits/remove_reference.hpp:
+        "@boost_type_traits//:headers_only",
         # Because of boost/config.hpp:
         "@boost_config//:headers_only",
-        # Because of boost/type_traits/is_same.hpp:
-        "@boost_type_traits//:headers_only",
-        # Because of boost/mpl/bool.hpp:
-        "@boost_mpl//:headers_only",
-        # Because of boost/preprocessor/inc.hpp:
+        # Because of boost/preprocessor/repetition.hpp:
         "@boost_preprocessor//:headers_only",
+        # Because of boost/bind.hpp:
+        "@boost_bind//:headers_only",
+        # Because of boost/move/utility.hpp:
+        "@boost_move//:headers_only",
+        # Because of boost/core/enable_if.hpp:
+        "@boost_core//:headers_only",
+        # Because of boost/mpl/aux_/na.hpp:
+        "@boost_mpl//:headers_only",
+        # Because of boost/blank_fwd.hpp:
+        "@boost_detail//:headers_only",
         # Because of boost/throw_exception.hpp:
         "@boost_throw_exception//:headers_only",
         # Because of boost/static_assert.hpp:
@@ -109,17 +115,11 @@ cc_library(
         "@boost_container_hash//:headers_only",
         # Because of boost/assert.hpp:
         "@boost_assert//:headers_only",
-        # Because of boost/move/move.hpp:
-        "@boost_move//:headers_only",
-        # Because of boost/blank_fwd.hpp:
-        "@boost_detail//:headers_only",
-        # Because of boost/bind.hpp:
-        "@boost_bind//:headers_only",
-        # Because of boost/call_traits.hpp:
-        "@boost_utility//:headers_only",
         # Because of boost/type_index.hpp:
         "@boost_type_index//:headers_only",
         # Because of boost/integer/common_factor_ct.hpp:
         "@boost_integer//:headers_only",
+        # Because of boost/call_traits.hpp:
+        "@boost_utility//:headers_only",
     ],
 )

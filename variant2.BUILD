@@ -3,7 +3,7 @@ package(default_visibility = ["//visibility:public"])
 cc_library(
     name = "headers_only",
     hdrs = [
-        "include/boost/static_assert.hpp",
+        "include/boost/variant2/variant.hpp",
     ],
     includes = [
         "include",
@@ -11,15 +11,17 @@ cc_library(
 )
 
 cc_library(
-    name = "static_assert",
+    name = "variant2",
     srcs = [],
     hdrs = [
-        "include/boost/static_assert.hpp",
+        "include/boost/variant2/variant.hpp",
     ],
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/detail/workaround.hpp:
         "@boost_config//:headers_only",
+        # Because of boost/mp11.hpp:
+        "@boost_mp11//:headers_only",
     ],
 )

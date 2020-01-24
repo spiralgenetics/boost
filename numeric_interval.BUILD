@@ -42,6 +42,7 @@ cc_library(
         "include/boost/numeric/interval/rounding.hpp",
         "include/boost/numeric/interval/transc.hpp",
         "include/boost/numeric/interval/utility.hpp",
+        "include/boost/numeric/interval/utility_fwd.hpp",
     ],
     includes = [
         "include",
@@ -91,15 +92,16 @@ cc_library(
         "include/boost/numeric/interval/rounding.hpp",
         "include/boost/numeric/interval/transc.hpp",
         "include/boost/numeric/interval/utility.hpp",
+        "include/boost/numeric/interval/utility_fwd.hpp",
     ],
     copts = [],
     deps = [
         ":headers_only",
-        # Because of boost/config.hpp:
+        # Because of boost/detail/fenv.hpp:
+        "@boost_detail//:headers_only",
+        # Because of boost/config/no_tr1/cmath.hpp:
         "@boost_config//:headers_only",
         # Because of boost/logic/tribool.hpp:
         "@boost_logic//:headers_only",
-        # Because of boost/detail/fenv.hpp:
-        "@boost_detail//:headers_only",
     ],
 )
