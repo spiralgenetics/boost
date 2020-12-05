@@ -3,7 +3,33 @@
 use strict;
 use Data::Dump qw(dump);
 
+my @skip_submodules = (
+    "compatibility",
+    "headers",
+    "numeric_odeint",
+    "numeric_ublas",
+    "test",
+    );
 my %submodule_lib;
+my %skip_submodule;
+for my $skip (@skip_submodules) {
+    $skip_submodule{$skip} = 1;
+}
+open(SUBMODULE_TIMES, "git submodule foreach git log -1 --pretty=format:'%ct %ci%n'|");
+my $cur_submodule;
+my %submodule_time;
+while (<SUBMODULE_TIMES>) {
+    chop;
+    if (/^Entering '(.*)'$/) {
+	$cur_submodule = $1;
+	$cur_submodule =~ s@libs/@@;
+    } else {
+	die $_ unless /^([0-9]+) .* ([-+][0-9][0-9][0-9][0-9])$/;
+	die $_ unless $cur_submodule;
+	$submodule_time{$cur_submodule} = "$1 $2";
+    }
+}
+close(SUBMODULE_TIMES);
 open(SUBMODULE_STATUS, "git submodule status|") || die "submodule status: $!";
 open(SUBMODULES, ">submodules.bzl") || die "submodules.bzl: $!";
 open(MASTER_BUILD, ">BUILD") || die "BUILD: $!";
@@ -23,11 +49,15 @@ while (<SUBMODULE_STATUS>) {
     }
     $submodule_lib{$dir} = $lib;
 #    print "$dir -> $lib\n";
+    next if $skip_submodule{$lib};
+    die $dir unless $submodule_time{$dir};
+    my $tm = $submodule_time{$dir};
     print SUBMODULES "
     new_git_repository(name=\"boost_${lib}\",
 commit=\"${git_commit}\",
 remote=\"https://github.com/boostorg/${repo_name}.git\",
-build_file=base+\"//:${lib}.BUILD\"
+build_file=base+\"//:${lib}.BUILD\",
+shallow_since=\"${tm}\",
 )\n";
     print MASTER_BUILD "
 alias(name=\"${lib}\", actual=\"\@boost_${lib}//:${lib}\")
@@ -72,6 +102,7 @@ sub pathinfo {
     }
     die $filename unless $pathinfo->{lib};
     return undef unless $pathinfo->{filename} =~ m@^((.*/)?${required_part})/@;
+    return undef if $skip_submodule{$pathinfo->{lib}};
     $pathinfo->{srcdir} = $1;
     my %includes;
 
